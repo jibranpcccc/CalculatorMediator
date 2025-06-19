@@ -142,7 +142,7 @@ export default function PensionCalculator() {
       {/* Results Section */}
       <div className="gradient-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border shadow-2xl">
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
             <span className="text-2xl sm:text-3xl">📊</span>
           </div>
           <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-3 sm:mb-4">Rezultatele Calculului</h3>
@@ -153,7 +153,7 @@ export default function PensionCalculator() {
           <div className="space-y-6 sm:space-y-8">
             <div className="result-card text-center">
               <div className="text-xs sm:text-sm lg:text-base font-bold text-gray-600 uppercase tracking-wider mb-3 sm:mb-4">Pensia Estimată</div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent mb-3 sm:mb-4">
+              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 bg-clip-text text-transparent mb-3 sm:mb-4">
                 {result.estimatedPension.toLocaleString()}
               </div>
               <div className="text-base sm:text-lg lg:text-xl font-bold text-gray-700">RON per lună</div>
@@ -189,8 +189,8 @@ export default function PensionCalculator() {
           </div>
         )}
         
-        <div className="mt-10 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl border-2 border-purple-100 shadow-lg">
-          <div className="text-sm text-purple-800 font-bold text-center">
+        <div className="mt-10 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border-2 border-orange-100 shadow-lg">
+          <div className="text-sm text-orange-800 font-bold text-center">
             ⚠️ Calculul este estimativ și se bazează pe legislația actuală din 2025
           </div>
         </div>

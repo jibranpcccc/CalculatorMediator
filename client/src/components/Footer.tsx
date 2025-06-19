@@ -3,7 +3,7 @@ import { Calculator, Facebook, Twitter, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-900 text-white mt-12 sm:mt-16 lg:mt-20">
+    <footer className="bg-gradient-to-br from-slate-900 via-stone-900 to-neutral-900 text-white mt-12 sm:mt-16 lg:mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
@@ -22,13 +22,13 @@ export default function Footer() {
               Calculatoare precise, ghiduri complete, legislație actualizată.
             </p>
             <div className="flex space-x-3 sm:space-x-4">
-              <a href="#" className="text-neutral-400 hover:text-primary transition-colors">
+              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300 hover:scale-110">
                 <Facebook className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-primary transition-colors">
+              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300 hover:scale-110">
                 <Twitter className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-primary transition-colors">
+              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300 hover:scale-110">
                 <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
               </a>
             </div>
@@ -38,10 +38,10 @@ export default function Footer() {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Calculatoare</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-neutral-300 text-sm sm:text-base">
-              <li><Link href="/" className="hover:text-primary transition-colors">Calculator Principal</Link></li>
-              <li><Link href="/calculator-anticipata" className="hover:text-primary transition-colors">Pensie Anticipată</Link></li>
-              <li><Link href="/calculator-pilon3" className="hover:text-primary transition-colors">Pilon III</Link></li>
-              <li><Link href="/planificator" className="hover:text-primary transition-colors">Planificator Financiar</Link></li>
+              <li><Link href="/" className="hover:text-orange-400 transition-colors duration-300">Calculator Principal</Link></li>
+              <li><Link href="/calculator-anticipata" className="hover:text-orange-400 transition-colors duration-300">Pensie Anticipată</Link></li>
+              <li><Link href="/calculator-pilon3" className="hover:text-orange-400 transition-colors duration-300">Pilon III</Link></li>
+              <li><Link href="/planificator" className="hover:text-orange-400 transition-colors duration-300">Planificator Financiar</Link></li>
             </ul>
           </div>
           
@@ -49,10 +49,10 @@ export default function Footer() {
           <div>
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Ghiduri</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-neutral-300 text-sm sm:text-base">
-              <li><Link href="/planificarea-pensiei" className="hover:text-primary transition-colors">Planificarea Pensiei</Link></li>
-              <li><Link href="/tipuri-de-pensii" className="hover:text-primary transition-colors">Tipuri de Pensii</Link></li>
-              <li><Link href="/legislatie-si-resurse" className="hover:text-primary transition-colors">Legislația 2025</Link></li>
-              <li><Link href="/blog" className="hover:text-primary transition-colors">Blog</Link></li>
+              <li><Link href="/planificarea-pensiei" className="hover:text-orange-400 transition-colors duration-300">Planificarea Pensiei</Link></li>
+              <li><Link href="/tipuri-de-pensii" className="hover:text-orange-400 transition-colors duration-300">Tipuri de Pensii</Link></li>
+              <li><Link href="/legislatie-si-resurse" className="hover:text-orange-400 transition-colors duration-300">Legislația 2025</Link></li>
+              <li><Link href="/blog" className="hover:text-orange-400 transition-colors duration-300">Blog</Link></li>
             </ul>
           </div>
           
@@ -60,10 +60,10 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4">Informații</h4>
             <ul className="space-y-1.5 sm:space-y-2 text-neutral-300 text-sm sm:text-base">
-              <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
-              <li><Link href="/despre" className="hover:text-primary transition-colors">Despre noi</Link></li>
-              <li><Link href="/confidentialitate" className="hover:text-primary transition-colors">Confidențialitate</Link></li>
-              <li><Link href="/termeni" className="hover:text-primary transition-colors">Termeni și condiții</Link></li>
+              <li><Link href="/contact" className="hover:text-orange-400 transition-colors duration-300">Contact</Link></li>
+              <li><Link href="/despre" className="hover:text-orange-400 transition-colors duration-300">Despre noi</Link></li>
+              <li><Link href="/confidentialitate" className="hover:text-orange-400 transition-colors duration-300">Confidențialitate</Link></li>
+              <li><Link href="/termeni" className="hover:text-orange-400 transition-colors duration-300">Termeni și condiții</Link></li>
             </ul>
           </div>
         </div>

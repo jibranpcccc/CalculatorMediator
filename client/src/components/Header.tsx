@@ -91,7 +91,7 @@ export default function Header() {
 
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className="h-10 sm:h-12 lg:h-14 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-blue-50 hover:scale-105 text-xs sm:text-sm lg:text-base">
+                    <NavigationMenuTrigger className="h-10 sm:h-12 lg:h-14 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-orange-50 hover:scale-105 text-xs sm:text-sm lg:text-base">
                       <span className="hidden lg:inline">{item.title}</span>
                       <span className="lg:hidden">
                         {item.title === "Planificarea Pensiei" ? "Planificare" : 
@@ -116,7 +116,7 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/blog">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-10 sm:h-12 lg:h-14 w-max items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
+                      "group inline-flex h-10 sm:h-12 lg:h-14 w-max items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-base font-bold transition-all duration-300 hover:bg-orange-50 hover:text-orange-700 focus:bg-orange-50 focus:text-orange-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
                     )}>
                       <span className="mr-1 sm:mr-2">📚</span>
                       <span className="hidden sm:inline">Blog</span>
