@@ -11,9 +11,10 @@ export default function PensionTypes() {
   return (
     <>
       <SEOHead 
-        title="Ghid Exhaustiv: Toate Tipurile de Pensii din România | 2025"
-        description="Descoperă ghidul complet despre toate tipurile de pensii disponibile în România: pensia pentru limită de vârstă, anticipată, de urmaș, de invaliditate și altele."
-        keywords="tipuri de pensii România, pensie de stat, pensie anticipată, pensie de urmaș, sistemul de pensii public"
+        title="Calculator Medie Facultate - Tipuri de Pensii România 2025 Ghid Complet"
+        description="Calculator Medie Facultate prezintă ghidul complet despre toate tipurile de pensii din România: pensie pentru limită de vârstă, anticipată, de urmaș și invaliditate."
+        keywords="calculator medie facultate, tipuri de pensii românia, pensie de stat, pensie anticipată"
+        canonicalUrl="https://calculatormediefacultate.com/tipuri-de-pensii"
       />
       
       <div className="min-h-screen bg-neutral-50">

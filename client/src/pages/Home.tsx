@@ -22,9 +22,9 @@ export default function Home() {
   return (
     <>
       <SEOHead 
-        title="Calculator Pensie 2025 - Calculează Online Pensia Rapid și Corect | calculatormediefacultate.ro"
-        description="Folosește cel mai precis calculator de pensie online pentru a-ți estima venitul la bătrânețe. Planifică-ți viitorul financiar cu instrumentele și ghidurile noastre complete."
-        keywords="calculator pensie, calcul pensie, simulator pensie online, pensia mea, calculatormediefacultate.ro"
+        title="Calculator Medie Facultate - Calculator Pensie România Online 2025"
+        description="Calculator Medie Facultate - cel mai precis calculator de pensie online pentru România. Calculează pensia ta în câteva secunde cu instrumentele noastre profesionale."
+        keywords="calculator medie facultate, calculator pensie, calcul pensie, simulator pensie online, pensia mea"
         canonicalUrl="https://calculatormediefacultate.com"
       />
       
@@ -35,12 +35,12 @@ export default function Home() {
           {/* Hero Section */}
           <section className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Calculator Pensie Online: <br />
-              <span className="text-primary">Află Pensia Ta în Câteva Secunde</span>
+              Calculator Medie Facultate: <br />
+              <span className="text-primary">Calculează Pensia Ta în Câteva Secunde</span>
             </h1>
             <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
-              Folosește cel mai precis calculator de pensie din România pentru a-ți estima venitul la bătrânețe. 
-              Planifică-ți viitorul financiar cu instrumentele și ghidurile noastre complete.
+              Calculator Medie Facultate - cel mai precis instrument de calculare a pensiei din România. 
+              Planifică-ți viitorul financiar cu calculatoarele și ghidurile noastre profesionale.
             </p>
             
             <TrustIndicators />
@@ -211,7 +211,7 @@ export default function Home() {
                 size="lg" 
                 variant="secondary"
                 className="inline-flex items-center"
-                onClick={() => trackEvent('cta_click', { type: 'calculator' })}
+                onClick={() => trackEvent('cta_click', 'user_interaction', 'calculator')}
               >
                 <Calculator className="mr-2 h-5 w-5" />
                 Calculează Pensia
@@ -220,7 +220,7 @@ export default function Home() {
                 size="lg" 
                 variant="outline" 
                 className="inline-flex items-center border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-                onClick={() => trackEvent('cta_click', { type: 'guides' })}
+                onClick={() => trackEvent('cta_click', 'user_interaction', 'guides')}
               >
                 <BookOpen className="mr-2 h-5 w-5" />
                 Citește Ghidurile

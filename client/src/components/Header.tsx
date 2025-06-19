@@ -62,7 +62,7 @@ export default function Header() {
             <div className="flex-shrink-0">
               <h1 className="text-xl font-bold text-neutral-900 flex items-center">
                 <Calculator className="text-primary mr-2" />
-                Calculator<span className="text-primary">Pensie</span>.ro
+                Calculator<span className="text-primary">Medie</span>Facultate
               </h1>
             </div>
           </Link>

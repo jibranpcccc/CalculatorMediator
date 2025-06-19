@@ -10,9 +10,10 @@ export default function PensionPlanning() {
   return (
     <>
       <SEOHead 
-        title="Ghid Complet pentru Planificarea Pensiei în România | 2025"
-        description="Planifică-ți pensia strategică cu ghidul nostru complet. Evită greșelile costisitoare și maximizează-ți veniturile la bătrânețe."
-        keywords="planificarea pensiei, strategii pensie, planificare financiară, pensie România"
+        title="Calculator Medie Facultate - Ghid Complet Planificarea Pensiei România 2025"
+        description="Calculator Medie Facultate oferă ghidul complet pentru planificarea pensiei. Strategii, calculatoare și sfaturi profesionale pentru o pensie liniștită."
+        keywords="calculator medie facultate, planificarea pensiei, strategii pensie, planificare financiară"
+        canonicalUrl="https://calculatormediefacultate.com/planificarea-pensiei"
       />
       
       <div className="min-h-screen bg-neutral-50">

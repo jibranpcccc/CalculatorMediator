@@ -58,9 +58,9 @@ export default function SEOHead({ title, description, keywords, canonicalUrl, og
     schemaScript.innerHTML = JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Calculator Pensie Romania",
+      "name": "Calculator Medie Facultate",
       "url": canonicalUrl || "https://calculatormediefacultate.com",
-      "description": "Calculatorul oficial pentru planificarea pensiei în România",
+      "description": "Calculator Medie Facultate - instrumentul profesional pentru calcularea pensiei în România",
       "sameAs": [
         "https://www.cnpp.ro"
       ]

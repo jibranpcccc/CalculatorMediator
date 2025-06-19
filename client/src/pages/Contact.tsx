@@ -12,8 +12,10 @@ export default function Contact() {
   return (
     <>
       <SEOHead 
-        title="Contact - Calculator Pensie România | Suport și Consultanță"
-        description="Contactează echipa noastră de experți pentru consultanță personalizată în planificarea pensiei. Suport profesional pentru viitorul tău financiar."
+        title="Calculator Medie Facultate - Contact Suport și Consultanță Pensii"
+        description="Calculator Medie Facultate - contactează echipa noastră de experți pentru consultanță personalizată în planificarea pensiei și suport profesional."
+        keywords="calculator medie facultate, contact, suport pensii, consultanta pensii"
+        canonicalUrl="https://calculatormediefacultate.com/contact"
       />
       
       <div className="min-h-screen bg-neutral-50">

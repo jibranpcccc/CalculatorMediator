@@ -8,8 +8,10 @@ export default function Blog() {
   return (
     <>
       <SEOHead 
-        title="Blog - Ghiduri și Articole despre Pensii | Calculator Pensie România"
-        description="Descoperă cele mai recente articole și ghiduri despre planificarea pensiei, legislația actuală și strategii de investiții pentru viitorul tău financiar."
+        title="Calculator Medie Facultate - Blog Ghiduri și Articole Pensii România"
+        description="Calculator Medie Facultate - descoperă articole și ghiduri experte despre planificarea pensiei, legislația actuală și strategii pentru viitorul tău financiar."
+        keywords="calculator medie facultate, blog pensii, ghiduri pensii, articole pensii romania"
+        canonicalUrl="https://calculatormediefacultate.com/blog"
       />
       
       <div className="min-h-screen bg-neutral-50">
