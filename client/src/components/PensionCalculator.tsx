@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator } from "lucide-react";
 import { calculatePension } from "@/lib/pensionCalculations";
+import { trackEvent } from "@/lib/analytics";
 import type { PensionCalculationData, PensionResult } from "@/types/pension";
 
 export default function PensionCalculator() {
@@ -20,7 +21,23 @@ export default function PensionCalculator() {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const handleInputChange = (field: keyof PensionCalculationData, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    try {
+      console.log(`Updating ${field} with value:`, value);
+      setFormData(prev => {
+        const newData = { ...prev, [field]: value };
+        console.log('New form data:', newData);
+        return newData;
+      });
+      
+      // Track user interaction
+      trackEvent('calculator_interaction', 'pension_calculator', field);
+    } catch (error) {
+      console.error('Error updating form data:', error, {
+        field,
+        value,
+        currentFormData: formData
+      });
+    }
   };
 
   const handleCalculate = () => {
@@ -119,13 +136,17 @@ export default function PensionCalculator() {
               <span className="text-sm">👤</span>
               Sexul
             </Label>
-            <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)}>
+            <Select value={formData.gender} onValueChange={(value) => {
+              if (value) {
+                handleInputChange('gender', value);
+              }
+            }}>
               <SelectTrigger className="input-modern text-sm sm:text-base">
                 <SelectValue placeholder="Selectează..." />
               </SelectTrigger>
               <SelectContent className="bg-white border-2 border-gray-200 rounded-xl shadow-xl">
-                <SelectItem value="male" className="hover:bg-blue-50 cursor-pointer text-sm py-2">Masculin</SelectItem>
-                <SelectItem value="female" className="hover:bg-blue-50 cursor-pointer text-sm py-2">Feminin</SelectItem>
+                <SelectItem value="male">Masculin</SelectItem>
+                <SelectItem value="female">Feminin</SelectItem>
               </SelectContent>
             </Select>
           </div>
