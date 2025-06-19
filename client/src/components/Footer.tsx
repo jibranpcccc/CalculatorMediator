@@ -13,13 +13,13 @@ export default function Footer() {
               <span className="hidden sm:inline">Calculator</span>
               <span className="text-primary">
                 <span className="sm:hidden">CMF</span>
-                <span className="hidden sm:inline">Pensie</span>
+                <span className="hidden sm:inline">MedieFacultate</span>
               </span>
-              <span className="hidden sm:inline">.ro</span>
+              <span className="hidden sm:inline">.com</span>
             </h3>
             <p className="text-neutral-300 mb-4 text-sm sm:text-base leading-relaxed">
-              Resursa ta de încredere pentru planificarea pensiei în România. 
-              Calculatoare precise, ghiduri complete, legislație actualizată.
+              Calculator medie facultate - resursa ta de încredere pentru calculul mediei de admitere și planificarea academică. 
+              Calculatoare precise, ghiduri complete, informații actualizate.
             </p>
             <div className="flex space-x-3 sm:space-x-4">
               <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300 hover:scale-110">
@@ -70,7 +70,7 @@ export default function Footer() {
         
         <div className="border-t border-neutral-700 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 text-center">
           <p className="text-neutral-400 text-xs sm:text-sm">
-            &copy; 2025 CalculatorPensie.ro. Toate drepturile rezervate. 
+            &copy; 2025 CalculatorMedieFacultate.com. Toate drepturile rezervate. 
             <span className="text-neutral-500 block sm:inline sm:ml-2 mt-1 sm:mt-0">Actualizat conform legislației din 2025</span>
           </p>
         </div>
