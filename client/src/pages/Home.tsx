@@ -31,37 +31,37 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mobile-overflow-hidden safe-padding">
         <Header />
         
-        <main className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 py-12 sm:py-16 lg:py-24">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           {/* Hero Section */}
-          <section className="text-center mb-16 sm:mb-20 lg:mb-28 mt-8 sm:mt-12 lg:mt-16">
-            <div className="mb-10 sm:mb-14 lg:mb-16">
-              <span className="inline-flex items-center px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full text-sm sm:text-base font-black bg-gradient-to-r from-orange-100 via-amber-100 to-yellow-100 text-orange-800 mb-8 sm:mb-10 lg:mb-12 shadow-xl border border-orange-200">
-                <span className="mr-2 text-lg sm:text-xl">⭐</span>
+          <section className="text-center mb-12 sm:mb-16 mt-4 sm:mt-6">
+            <div className="mb-6 sm:mb-8">
+              <span className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-orange-100 via-amber-100 to-yellow-100 text-orange-800 mb-6 sm:mb-8 shadow-lg border border-orange-200">
+                <span className="mr-1.5 text-sm sm:text-base">⭐</span>
                 <span className="hidden sm:inline">Cel mai precis calculator de pensie din România</span>
                 <span className="sm:hidden">Calculator #1 din România</span>
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-10 sm:mb-12 lg:mb-16 tracking-tight leading-tight px-4 sm:px-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tight leading-tight px-2 sm:px-4">
               Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie</span>
               <br className="block" />
               <span className="gradient-primary bg-clip-text text-transparent">Facultate</span>
             </h1>
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 max-w-5xl mx-auto mb-12 sm:mb-16 lg:mb-20 leading-relaxed font-medium px-6 sm:px-8">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium px-4 sm:px-6">
               Calculează pensia ta în câteva secunde cu cel mai avansat instrument de planificare financiară. 
-              <span className="font-bold text-gray-800 block mt-2">Profesional, rapid și 100% precis.</span>
+              <span className="font-bold text-gray-800 block mt-1.5">Profesional, rapid și 100% precis.</span>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center mb-12 sm:mb-16 lg:mb-20 px-6 sm:px-8">
-              <button className="btn-modern px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl text-white font-black text-base sm:text-lg lg:text-xl shadow-2xl group w-full sm:w-auto">
-                <span className="flex items-center justify-center gap-2 sm:gap-3">
-                  <Calculator className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 px-4 sm:px-6">
+              <button className="btn-modern px-5 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-bold text-sm sm:text-base shadow-xl group w-full sm:w-auto">
+                <span className="flex items-center justify-center gap-2">
+                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
                   <span className="hidden sm:inline">Calculează Pensia Acum</span>
                   <span className="sm:hidden">Calculează Acum</span>
                 </span>
               </button>
-              <button className="btn-secondary px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl group w-full sm:w-auto">
-                <span className="flex items-center justify-center gap-2 sm:gap-3">
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
+              <button className="btn-secondary px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base group w-full sm:w-auto">
+                <span className="flex items-center justify-center gap-2">
+                  <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
                   <span className="hidden sm:inline">Ghiduri Complete</span>
                   <span className="sm:hidden">Ghiduri</span>
                 </span>
@@ -72,15 +72,15 @@ export default function Home() {
           </section>
 
           {/* Main Pension Calculator */}
-          <section className="glass-effect rounded-2xl sm:rounded-3xl shadow-modern-lg p-6 sm:p-10 lg:p-16 mb-16 sm:mb-20 lg:mb-28 card-hover mx-2 sm:mx-4">
-            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-              <div className="icon-wrapper mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
-                <Calculator className="h-6 w-6 sm:h-8 sm:w-8" />
+          <section className="glass-effect rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-12 sm:mb-16 card-hover">
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="icon-wrapper mx-auto mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12">
+                <Calculator className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-neutral-900 mb-3 sm:mb-4 px-4">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 mb-2 sm:mb-3 px-2">
                 Calculator Principal de Pensie
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 font-medium px-4">
+              <p className="text-sm sm:text-base text-gray-600 font-medium px-2">
                 Introdu datele tale pentru un calcul precis și instant
               </p>
             </div>
@@ -89,12 +89,12 @@ export default function Home() {
           </section>
 
           {/* Tools and Resources Section */}
-          <section className="mb-16 sm:mb-20 lg:mb-28 px-2 sm:px-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-neutral-900 text-center mb-10 sm:mb-14 lg:mb-20 px-6 sm:px-8 leading-tight">
+          <section className="mb-12 sm:mb-16">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 text-center mb-8 sm:mb-10 px-4 leading-tight">
               Planifică-ți Viitorul: Unelte și Resurse Esențiale
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 sm:gap-10 lg:gap-12 px-2 sm:px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
               <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-orange-50/25 to-red-50/30">
                 <CardHeader className="text-center pb-6 sm:pb-8 p-6 sm:p-8">
                   <div className="icon-wrapper-alt bg-gradient-to-br from-orange-500 to-red-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">

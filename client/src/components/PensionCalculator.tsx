@@ -44,20 +44,20 @@ export default function PensionCalculator() {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20">
+    <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
       {/* Calculator Form */}
       <div className="form-section">
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <div className="icon-wrapper mx-auto mb-6 sm:mb-8 w-12 h-12 sm:w-16 sm:h-16">
-            <Calculator className="h-6 w-6 sm:h-8 sm:w-8" />
+        <div className="text-center mb-6">
+          <div className="icon-wrapper mx-auto mb-4 w-10 h-10 sm:w-12 sm:h-12">
+            <Calculator className="h-5 w-5 sm:h-6 sm:w-6" />
           </div>
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-4 sm:mb-6">Calculează Pensia Ta</h3>
-          <p className="text-base sm:text-lg text-gray-600 font-medium px-4 sm:px-6">Completează datele pentru un calcul precis și instant</p>
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900 mb-3">Calculează Pensia Ta</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium px-2">Completează datele pentru un calcul precis și instant</p>
         </div>
-        <div className="space-y-6 sm:space-y-8">
-          <div className="space-y-2 sm:space-y-3">
-            <Label htmlFor="birthDate" className="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
-              <span className="text-lg sm:text-xl">📅</span>
+        <div className="space-y-4 sm:space-y-5">
+          <div className="space-y-1.5">
+            <Label htmlFor="birthDate" className="text-sm font-semibold text-gray-800 flex items-center gap-1.5">
+              <span className="text-sm">📅</span>
               Data nașterii
             </Label>
             <Input
@@ -65,13 +65,13 @@ export default function PensionCalculator() {
               id="birthDate"
               value={formData.birthDate}
               onChange={(e) => handleInputChange('birthDate', e.target.value)}
-              className="input-modern w-full text-base sm:text-lg"
+              className="input-modern w-full text-sm sm:text-base"
             />
           </div>
           
-          <div className="space-y-2 sm:space-y-3">
-            <Label htmlFor="salary" className="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
-              <span className="text-lg sm:text-xl">💰</span>
+          <div className="space-y-1.5">
+            <Label htmlFor="salary" className="text-sm font-semibold text-gray-800 flex items-center gap-1.5">
+              <span className="text-sm">💰</span>
               <span className="hidden sm:inline">Salariul brut lunar actual (RON)</span>
               <span className="sm:hidden">Salariul lunar (RON)</span>
             </Label>
@@ -81,13 +81,13 @@ export default function PensionCalculator() {
               placeholder="ex: 5000"
               value={formData.salary}
               onChange={(e) => handleInputChange('salary', e.target.value)}
-              className="input-modern w-full text-base sm:text-lg"
+              className="input-modern w-full text-sm sm:text-base"
             />
           </div>
           
-          <div className="space-y-2 sm:space-y-3">
-            <Label htmlFor="workYears" className="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
-              <span className="text-lg sm:text-xl">⏱️</span>
+          <div className="space-y-1.5">
+            <Label htmlFor="workYears" className="text-sm font-semibold text-gray-800 flex items-center gap-1.5">
+              <span className="text-sm">⏱️</span>
               Vechime în muncă (ani)
             </Label>
             <Input
@@ -96,22 +96,22 @@ export default function PensionCalculator() {
               placeholder="ex: 15"
               value={formData.workYears}
               onChange={(e) => handleInputChange('workYears', e.target.value)}
-              className="input-modern w-full text-base sm:text-lg"
+              className="input-modern w-full text-sm sm:text-base"
             />
           </div>
           
-          <div className="space-y-2 sm:space-y-3">
-            <Label htmlFor="gender" className="text-sm sm:text-base font-bold text-gray-800 flex items-center gap-2">
-              <span className="text-lg sm:text-xl">👤</span>
+          <div className="space-y-1.5">
+            <Label htmlFor="gender" className="text-sm font-semibold text-gray-800 flex items-center gap-1.5">
+              <span className="text-sm">👤</span>
               Sexul
             </Label>
             <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)}>
-              <SelectTrigger className="input-modern text-base sm:text-lg">
+              <SelectTrigger className="input-modern text-sm sm:text-base">
                 <SelectValue placeholder="Selectează..." />
               </SelectTrigger>
-              <SelectContent className="bg-white border-2 border-gray-200 rounded-2xl shadow-xl">
-                <SelectItem value="male" className="hover:bg-blue-50 cursor-pointer text-sm sm:text-base py-3">Masculin</SelectItem>
-                <SelectItem value="female" className="hover:bg-blue-50 cursor-pointer text-sm sm:text-base py-3">Feminin</SelectItem>
+              <SelectContent className="bg-white border-2 border-gray-200 rounded-xl shadow-xl">
+                <SelectItem value="male" className="hover:bg-blue-50 cursor-pointer text-sm py-2">Masculin</SelectItem>
+                <SelectItem value="female" className="hover:bg-blue-50 cursor-pointer text-sm py-2">Feminin</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -120,77 +120,77 @@ export default function PensionCalculator() {
         <Button 
           onClick={handleCalculate}
           disabled={isCalculating || !formData.birthDate || !formData.salary || !formData.workYears || !formData.gender}
-          className="btn-modern w-full py-4 sm:py-5 lg:py-6 text-base sm:text-lg lg:text-xl font-black shadow-2xl rounded-2xl sm:rounded-3xl mt-6 sm:mt-8"
+          className="btn-modern w-full py-3 sm:py-4 text-sm sm:text-base font-bold shadow-xl rounded-xl mt-5"
           size="lg"
         >
           {isCalculating ? (
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <div className="w-5 h-5 sm:w-6 sm:h-6 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+            <div className="flex items-center justify-center gap-2">
+              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
               <span className="hidden sm:inline">Se calculează...</span>
               <span className="sm:hidden">Calculez...</span>
             </div>
           ) : (
-            <div className="flex items-center justify-center gap-2 sm:gap-3">
-              <Calculator className="h-5 w-5 sm:h-6 sm:w-6" />
-              <span className="hidden sm:inline">🚀 Calculează Pensia Acum</span>
-              <span className="sm:hidden">🚀 Calculează</span>
+            <div className="flex items-center justify-center gap-2">
+              <Calculator className="h-4 w-4 sm:h-5 sm:w-5" />
+              <span className="hidden sm:inline">Calculează Pensia Acum</span>
+              <span className="sm:hidden">Calculează</span>
             </div>
           )}
         </Button>
       </div>
       
       {/* Results Section */}
-      <div className="gradient-card rounded-2xl sm:rounded-3xl p-8 sm:p-10 lg:p-12 border shadow-2xl">
-        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
-            <span className="text-2xl sm:text-3xl">📊</span>
+      <div className="gradient-card rounded-xl p-6 sm:p-8 border shadow-xl">
+        <div className="text-center mb-6">
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg">
+            <span className="text-xl sm:text-2xl">📊</span>
           </div>
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-3 sm:mb-4">Rezultatele Calculului</h3>
-          <p className="text-base sm:text-lg text-gray-600 font-medium px-2">Analiza detaliată și precisă a pensiei tale</p>
+          <h3 className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900 mb-2">Rezultatele Calculului</h3>
+          <p className="text-sm sm:text-base text-gray-600 font-medium">Analiza detaliată și precisă a pensiei tale</p>
         </div>
         
         {result ? (
-          <div className="space-y-6 sm:space-y-8">
+          <div className="space-y-5">
             <div className="result-card text-center">
-              <div className="text-xs sm:text-sm lg:text-base font-bold text-gray-600 uppercase tracking-wider mb-3 sm:mb-4">Pensia Estimată</div>
-              <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 bg-clip-text text-transparent mb-3 sm:mb-4">
+              <div className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-2">Pensia Estimată</div>
+              <div className="text-2xl sm:text-3xl lg:text-4xl font-black bg-gradient-to-r from-orange-600 via-red-600 to-amber-600 bg-clip-text text-transparent mb-2">
                 {result.estimatedPension.toLocaleString()}
               </div>
-              <div className="text-base sm:text-lg lg:text-xl font-bold text-gray-700">RON per lună</div>
+              <div className="text-sm sm:text-base font-bold text-gray-700">RON per lună</div>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div className="stats-card text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">🎂</div>
-                <div className="text-xs sm:text-sm lg:text-base text-gray-600 mb-1 sm:mb-2 font-semibold">Vârsta pensionare</div>
-                <div className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900">{result.retirementAge} ani</div>
+                <div className="text-xl sm:text-2xl mb-2">🎂</div>
+                <div className="text-xs text-gray-600 mb-1 font-semibold">Vârsta pensionare</div>
+                <div className="text-sm sm:text-base font-black text-gray-900">{result.retirementAge} ani</div>
               </div>
               
               <div className="stats-card text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">⏳</div>
-                <div className="text-xs sm:text-sm lg:text-base text-gray-600 mb-1 sm:mb-2 font-semibold">Ani până la pensie</div>
-                <div className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900">{result.yearsToRetirement} ani</div>
+                <div className="text-xl sm:text-2xl mb-2">⏳</div>
+                <div className="text-xs text-gray-600 mb-1 font-semibold">Ani până la pensie</div>
+                <div className="text-sm sm:text-base font-black text-gray-900">{result.yearsToRetirement} ani</div>
               </div>
             </div>
 
             {result.totalContributions && (
               <div className="stats-card text-center">
-                <div className="text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">💳</div>
-                <div className="text-xs sm:text-sm lg:text-base text-gray-600 mb-1 sm:mb-2 font-semibold">Total contribuții estimate</div>
-                <div className="text-base sm:text-lg lg:text-xl font-bold text-gray-900">{result.totalContributions.toLocaleString()} RON</div>
+                <div className="text-xl sm:text-2xl mb-2">💳</div>
+                <div className="text-xs text-gray-600 mb-1 font-semibold">Total contribuții estimate</div>
+                <div className="text-sm sm:text-base font-bold text-gray-900">{result.totalContributions.toLocaleString()} RON</div>
               </div>
             )}
           </div>
         ) : (
-          <div className="text-center py-8 sm:py-12 lg:py-16">
-            <div className="text-4xl sm:text-6xl lg:text-8xl mb-4 sm:mb-6">🧮</div>
-            <div className="text-lg sm:text-xl lg:text-2xl text-gray-600 mb-3 sm:mb-4 font-bold px-2">Completează formularul</div>
-            <div className="text-sm sm:text-base lg:text-lg text-gray-500 font-medium px-2">pentru a vedea rezultatele calculului</div>
+          <div className="text-center py-8">
+            <div className="text-3xl sm:text-4xl mb-3">🧮</div>
+            <div className="text-base sm:text-lg text-gray-600 mb-2 font-bold">Completează formularul</div>
+            <div className="text-sm text-gray-500 font-medium">pentru a vedea rezultatele calculului</div>
           </div>
         )}
         
-        <div className="mt-10 p-6 bg-gradient-to-r from-orange-50 to-amber-50 rounded-3xl border-2 border-orange-100 shadow-lg">
-          <div className="text-sm text-orange-800 font-bold text-center">
+        <div className="mt-6 p-4 bg-gradient-to-r from-orange-50 to-amber-50 rounded-xl border border-orange-200 shadow-md">
+          <div className="text-xs sm:text-sm text-orange-800 font-semibold text-center">
             ⚠️ Calculul este estimativ și se bazează pe legislația actuală din 2025
           </div>
         </div>
