@@ -158,7 +158,7 @@ export default function EarlyRetirementCalculator() {
           {/* Results */}
           <div className="gradient-card rounded-3xl p-10 border shadow-2xl">
             <div className="text-center mb-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-pink-500 to-purple-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                 <span className="text-3xl">⚠️</span>
               </div>
               <h3 className="text-3xl font-black text-gray-900 mb-4">Rezultate Pensie Anticipată</h3>
@@ -181,7 +181,7 @@ export default function EarlyRetirementCalculator() {
                 
                 <div className="result-card text-center">
                   <div className="text-base font-bold text-gray-600 uppercase tracking-wider mb-4">Pensia Estimată cu Penalizare</div>
-                  <div className="text-6xl font-black bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4">
+                  <div className="text-6xl font-black bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
                     {result.estimatedPension.toLocaleString()}
                   </div>
                   <div className="text-xl font-bold text-gray-700">RON per lună</div>

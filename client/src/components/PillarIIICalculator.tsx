@@ -130,7 +130,7 @@ export default function PillarIIICalculator() {
           {/* Results */}
           <div className="gradient-card rounded-3xl p-10 border shadow-2xl">
             <div className="text-center mb-10">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+              <div className="w-20 h-20 bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
                 <span className="text-3xl">💎</span>
               </div>
               <h3 className="text-3xl font-black text-gray-900 mb-4">Proiecție Pilon III</h3>
@@ -141,7 +141,7 @@ export default function PillarIIICalculator() {
               <div className="space-y-8">
                 <div className="result-card text-center">
                   <div className="text-base font-bold text-gray-600 uppercase tracking-wider mb-4">Valoare Acumulată Estimată</div>
-                  <div className="text-6xl font-black bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                  <div className="text-6xl font-black bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent mb-4">
                     {result.toLocaleString()}
                   </div>
                   <div className="text-xl font-bold text-gray-700">RON</div>

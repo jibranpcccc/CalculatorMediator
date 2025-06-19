@@ -139,7 +139,7 @@ export default function PensionCalculator() {
       {/* Results Section */}
       <div className="gradient-card rounded-3xl p-10 border shadow-2xl">
         <div className="text-center mb-10">
-          <div className="w-20 h-20 bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+          <div className="w-20 h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
             <span className="text-3xl">📊</span>
           </div>
           <h3 className="text-3xl font-black text-gray-900 mb-4">Rezultatele Calculului</h3>
@@ -150,7 +150,7 @@ export default function PensionCalculator() {
           <div className="space-y-8">
             <div className="result-card text-center">
               <div className="text-base font-bold text-gray-600 uppercase tracking-wider mb-4">Pensia Estimată</div>
-              <div className="text-6xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-green-600 bg-clip-text text-transparent mb-4">
+              <div className="text-6xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent mb-4">
                 {result.estimatedPension.toLocaleString()}
               </div>
               <div className="text-xl font-bold text-gray-700">RON per lună</div>
@@ -186,8 +186,8 @@ export default function PensionCalculator() {
           </div>
         )}
         
-        <div className="mt-10 p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl border-2 border-blue-100 shadow-lg">
-          <div className="text-sm text-blue-800 font-bold text-center">
+        <div className="mt-10 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-3xl border-2 border-purple-100 shadow-lg">
+          <div className="text-sm text-purple-800 font-bold text-center">
             ⚠️ Calculul este estimativ și se bazează pe legislația actuală din 2025
           </div>
         </div>

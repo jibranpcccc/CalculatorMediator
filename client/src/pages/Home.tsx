@@ -28,15 +28,15 @@ export default function Home() {
         canonicalUrl="https://calculatormediefacultate.com"
       />
       
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-blue-50">
         <Header />
         
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           {/* Hero Section */}
           <section className="text-center mb-24">
             <div className="mb-12">
-              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 mb-8 shadow-lg">
-                <span className="mr-2">⭐</span>
+              <span className="inline-flex items-center px-8 py-4 rounded-full text-base font-black bg-gradient-to-r from-purple-100 via-pink-100 to-blue-100 text-purple-800 mb-8 shadow-xl border border-purple-200">
+                <span className="mr-2 text-xl">⭐</span>
                 Cel mai precis calculator de pensie din România
               </span>
             </div>
@@ -92,9 +92,9 @@ export default function Home() {
             </h2>
             
             <div className="grid md:grid-cols-3 gap-10">
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-blue-50/30">
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-purple-50/20 to-blue-50/30">
                 <CardHeader className="text-center pb-6">
-                  <div className="icon-wrapper-alt bg-gradient-to-br from-blue-500 to-blue-600 mx-auto mb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-purple-500 to-pink-500 mx-auto mb-6">
                     <Clock className="text-white text-3xl" />
                   </div>
                   <CardTitle className="text-2xl font-bold mb-4">Calculator Pensie Anticipată</CardTitle>
@@ -112,9 +112,9 @@ export default function Home() {
                 </CardContent>
               </Card>
               
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-green-50/30">
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-blue-50/20 to-cyan-50/30">
                 <CardHeader className="text-center pb-6">
-                  <div className="icon-wrapper-alt bg-gradient-to-br from-green-500 to-green-600 mx-auto mb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-blue-500 to-cyan-500 mx-auto mb-6">
                     <Users className="text-white text-3xl" />
                   </div>
                   <CardTitle className="text-2xl font-bold mb-4">Calculator Pilon III</CardTitle>
@@ -132,9 +132,9 @@ export default function Home() {
                 </CardContent>
               </Card>
               
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-amber-50/30">
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-yellow-50/20 to-orange-50/30">
                 <CardHeader className="text-center pb-6">
-                  <div className="icon-wrapper-alt bg-gradient-to-br from-amber-500 to-amber-600 mx-auto mb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-yellow-500 to-orange-500 mx-auto mb-6">
                     <Star className="text-white text-3xl" />
                   </div>
                   <CardTitle className="text-2xl font-bold mb-4">Planificator Financiar</CardTitle>
@@ -237,7 +237,7 @@ export default function Home() {
           </section>
 
           {/* Call to Action Section */}
-          <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-16 text-center text-white shadow-2xl">
+          <section className="bg-gradient-to-br from-purple-600 via-pink-600 to-blue-700 rounded-3xl p-16 text-center text-white shadow-2xl">
             <h2 className="text-5xl font-black mb-8">Începe să-ți planifici pensia astăzi!</h2>
             <p className="text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
               Nu lăsa viitorul la voia întâmplării. Folosește calculatoarele noastre și ghidurile experte pentru a-ți asigura o pensie liniștită.
