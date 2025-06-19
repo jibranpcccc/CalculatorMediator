@@ -34,14 +34,18 @@ export const initGA = () => {
 
 // Track page views - useful for single-page applications
 export const trackPageView = (url: string) => {
-  if (typeof window === 'undefined' || !window.gtag) return;
-  
-  const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
-  if (!measurementId) return;
-  
-  window.gtag('config', measurementId, {
-    page_path: url
-  });
+  try {
+    if (typeof window === 'undefined' || !window.gtag) return;
+    
+    const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (!measurementId) return;
+    
+    window.gtag('config', measurementId, {
+      page_path: url
+    });
+  } catch (error) {
+    console.warn('Analytics page view tracking failed:', error);
+  }
 };
 
 // Track events
@@ -51,11 +55,18 @@ export const trackEvent = (
   label?: string, 
   value?: number
 ) => {
-  if (typeof window === 'undefined' || !window.gtag) return;
-  
-  window.gtag('event', action, {
-    event_category: category,
-    event_label: label,
-    value: value,
-  });
+  try {
+    if (typeof window === 'undefined' || !window.gtag) return;
+    
+    const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
+    if (!measurementId) return;
+    
+    window.gtag('event', action, {
+      event_category: category,
+      event_label: label,
+      value: value,
+    });
+  } catch (error) {
+    console.warn('Analytics tracking failed:', error);
+  }
 };

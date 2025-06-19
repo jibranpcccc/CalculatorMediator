@@ -6,7 +6,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calculator } from "lucide-react";
 import { calculatePension } from "@/lib/pensionCalculations";
-import { trackEvent } from "@/lib/analytics";
 import type { PensionCalculationData, PensionResult } from "@/types/pension";
 
 export default function PensionCalculator() {
@@ -22,12 +21,9 @@ export default function PensionCalculator() {
 
   const handleInputChange = (field: keyof PensionCalculationData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    trackEvent('calculator_interaction', 'form', field);
   };
 
-  const handleCalculate = async () => {
-    console.log('Starting calculation with data:', formData);
-    
+  const handleCalculate = () => {
     if (!formData.birthDate || !formData.salary || !formData.workYears || !formData.gender) {
       alert('Te rugăm să completezi toate câmpurile!');
       return;
@@ -36,8 +32,6 @@ export default function PensionCalculator() {
     // Additional validation
     const salary = parseFloat(formData.salary);
     const workYears = parseInt(formData.workYears);
-    
-    console.log('Parsed values - salary:', salary, 'workYears:', workYears);
     
     if (isNaN(salary) || salary <= 0) {
       alert('Te rugăm să introduci un salariu valid!');
@@ -52,18 +46,12 @@ export default function PensionCalculator() {
     setIsCalculating(true);
     
     try {
-      console.log('Calling trackEvent...');
-      trackEvent('calculator_submission', 'pension_calculator');
-      
-      console.log('Calling calculatePension...');
       const calculationResult = calculatePension(formData);
-      console.log('Calculation result:', calculationResult);
-      
       setResult(calculationResult);
-      console.log('Result set successfully');
     } catch (error) {
       console.error('Calculation error:', error);
-      alert(`A apărut o eroare la calcularea pensiei: ${error.message}`);
+      const errorMessage = error instanceof Error ? error.message : 'Eroare necunoscută';
+      alert(`A apărut o eroare la calcularea pensiei: ${errorMessage}`);
     } finally {
       setIsCalculating(false);
     }
