@@ -100,6 +100,7 @@ Calculator Medie Facultate is a comprehensive Romanian pension calculator websit
 ## Changelog
 - June 19, 2025. Initial setup
 - June 19, 2025. Layout optimization: Reduced header navigation size, made calculator more compact, fixed footer overlapping issues, improved overall professional appearance
+- June 19, 2025. Created missing pages: calculator-anticipata, calculator-pilon3, planificator, despre, confidentialitate, termeni. Fixed all 404 footer link errors.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
