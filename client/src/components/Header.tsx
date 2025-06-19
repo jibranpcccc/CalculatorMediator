@@ -79,14 +79,14 @@ export default function Header() {
             <NavigationMenu>
               <NavigationMenuList className="gap-1">
                 <NavigationMenuItem>
-                  <Link href="/">
-                    <NavigationMenuLink className={cn(
-                      "group inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg bg-white/90 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-md hover:shadow-lg"
-                    )}>
+                  <NavigationMenuLink className={cn(
+                    "group inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg bg-white/90 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-md hover:shadow-lg"
+                  )} asChild>
+                    <Link href="/">
                       <span className="mr-1">🏠</span>
                       <span className="hidden sm:inline">Acasă</span>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 {navigationItems.map((item) => (
@@ -102,11 +102,11 @@ export default function Header() {
                     <NavigationMenuContent>
                       <div className="w-80 p-6 bg-white rounded-3xl shadow-2xl border-2 border-gray-100">
                         {item.items.map((subItem) => (
-                          <Link key={subItem.title} href={subItem.href}>
-                            <NavigationMenuLink className="block select-none rounded-2xl p-5 leading-none no-underline outline-none transition-all duration-300 hover:bg-blue-50 hover:shadow-lg hover:scale-105">
+                          <NavigationMenuLink key={subItem.title} className="block select-none rounded-2xl p-5 leading-none no-underline outline-none transition-all duration-300 hover:bg-blue-50 hover:shadow-lg hover:scale-105" asChild>
+                            <Link href={subItem.href}>
                               <div className="text-base font-bold text-gray-900 mb-2">{subItem.title}</div>
-                            </NavigationMenuLink>
-                          </Link>
+                            </Link>
+                          </NavigationMenuLink>
                         ))}
                       </div>
                     </NavigationMenuContent>
@@ -114,25 +114,25 @@ export default function Header() {
                 ))}
 
                 <NavigationMenuItem>
-                  <Link href="/blog">
-                    <NavigationMenuLink className={cn(
-                      "group inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg bg-white/90 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-orange-50 hover:text-orange-700 focus:bg-orange-50 focus:text-orange-700 focus:outline-none shadow-md hover:shadow-lg"
-                    )}>
+                  <NavigationMenuLink className={cn(
+                    "group inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg bg-white/90 px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold transition-all duration-300 hover:bg-orange-50 hover:text-orange-700 focus:bg-orange-50 focus:text-orange-700 focus:outline-none shadow-md hover:shadow-lg"
+                  )} asChild>
+                    <Link href="/blog">
                       <span className="mr-1">📚</span>
                       <span className="hidden sm:inline">Blog</span>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/contact">
-                    <NavigationMenuLink className={cn(
-                      "btn-modern inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                    )}>
+                  <NavigationMenuLink className={cn(
+                    "btn-modern inline-flex h-8 sm:h-9 w-max items-center justify-center rounded-lg px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-white shadow-lg hover:shadow-xl transition-all duration-300"
+                  )} asChild>
+                    <Link href="/contact">
                       <span className="mr-1">📞</span>
                       <span className="hidden sm:inline">Contact</span>
-                    </NavigationMenuLink>
-                  </Link>
+                    </Link>
+                  </NavigationMenuLink>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
@@ -148,42 +148,42 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-80">
                 <div className="flex flex-col space-y-4 mt-8">
-                  <Link href="/" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
+                  <Button variant="ghost" className="w-full justify-start" asChild>
+                    <Link href="/" onClick={() => setIsOpen(false)}>
                       Acasă
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                   
                   {navigationItems.map((item) => (
                     <div key={item.title} className="space-y-2">
-                      <Link href={item.href} onClick={() => setIsOpen(false)}>
-                        <Button variant="ghost" className="w-full justify-start font-medium">
+                      <Button variant="ghost" className="w-full justify-start font-medium" asChild>
+                        <Link href={item.href} onClick={() => setIsOpen(false)}>
                           {item.title}
-                        </Button>
-                      </Link>
+                        </Link>
+                      </Button>
                       <div className="pl-4 space-y-1">
                         {item.items.map((subItem) => (
-                          <Link key={subItem.title} href={subItem.href} onClick={() => setIsOpen(false)}>
-                            <Button variant="ghost" size="sm" className="w-full justify-start text-muted-foreground">
+                          <Button key={subItem.title} variant="ghost" size="sm" className="w-full justify-start text-muted-foreground" asChild>
+                            <Link href={subItem.href} onClick={() => setIsOpen(false)}>
                               {subItem.title}
-                            </Button>
-                          </Link>
+                            </Link>
+                          </Button>
                         ))}
                       </div>
                     </div>
                   ))}
                   
-                  <Link href="/blog" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
+                  <Button variant="ghost" className="w-full justify-start" asChild>
+                    <Link href="/blog" onClick={() => setIsOpen(false)}>
                       Blog
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                   
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    <Button variant="ghost" className="w-full justify-start">
+                  <Button variant="ghost" className="w-full justify-start" asChild>
+                    <Link href="/contact" onClick={() => setIsOpen(false)}>
                       Contact
-                    </Button>
-                  </Link>
+                    </Link>
+                  </Button>
                 </div>
               </SheetContent>
             </Sheet>
