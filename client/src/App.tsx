@@ -11,6 +11,20 @@ import Termeni from "@/pages/Termeni";
 import PensionPlanning from "@/pages/PensionPlanning";
 import PensionTypes from "@/pages/PensionTypes";
 import Legislation from "@/pages/Legislation";
+import PlanificareGhid from "@/pages/PlanificareGhid";
+import GreseliPlanificare from "@/pages/GreseliPlanificare";
+import PilonulIIvsIII from "@/pages/PilonulIIvsIII";
+import StrategiiInvestitii from "@/pages/StrategiiInvestitii";
+import TipuriPensiiGhid from "@/pages/TipuriPensiiGhid";
+import PensieLimitaVarsta from "@/pages/PensieLimitaVarsta";
+import PensieAnticipata from "@/pages/PensieAnticipata";
+import PensieUrmas from "@/pages/PensieUrmas";
+import PensieInvaliditate from "@/pages/PensieInvaliditate";
+import LegeaPensiilor from "@/pages/LegeaPensiilor";
+import VarstaPensionare from "@/pages/VarstaPensionare";
+import StagiuCotizare from "@/pages/StagiuCotizare";
+import IndexareaPensiilor from "@/pages/IndexareaPensiilor";
+import CumparareVechime from "@/pages/CumparareVechime";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -28,6 +42,20 @@ function Router() {
       <Route path="/planificarea-pensiei" component={PensionPlanning} />
       <Route path="/tipuri-de-pensii" component={PensionTypes} />
       <Route path="/legislatie-si-resurse" component={Legislation} />
+      <Route path="/planificare-ghid" component={PlanificareGhid} />
+      <Route path="/greseli-planificare" component={GreseliPlanificare} />
+      <Route path="/pilonul-2-vs-3" component={PilonulIIvsIII} />
+      <Route path="/strategii-investitii" component={StrategiiInvestitii} />
+      <Route path="/tipuri-pensii-ghid" component={TipuriPensiiGhid} />
+      <Route path="/pensie-limita-varsta" component={PensieLimitaVarsta} />
+      <Route path="/pensie-anticipata" component={PensieAnticipata} />
+      <Route path="/pensie-urmas" component={PensieUrmas} />
+      <Route path="/pensie-invaliditate" component={PensieInvaliditate} />
+      <Route path="/legea-pensiilor" component={LegeaPensiilor} />
+      <Route path="/varsta-pensionare" component={VarstaPensionare} />
+      <Route path="/stagiu-cotizare" component={StagiuCotizare} />
+      <Route path="/indexarea-pensiilor" component={IndexareaPensiilor} />
+      <Route path="/cumparare-vechime" component={CumparareVechime} />
       <Route component={NotFound} />
     </Switch>
   );
