@@ -22,7 +22,7 @@ export default function PensionCalculator() {
 
   const handleInputChange = (field: keyof PensionCalculationData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-    trackEvent('calculator_interaction', { field, value });
+    trackEvent('calculator_interaction', 'form', field);
   };
 
   const handleCalculate = async () => {
@@ -31,7 +31,7 @@ export default function PensionCalculator() {
     }
 
     setIsCalculating(true);
-    trackEvent('calculator_submission', formData);
+    trackEvent('calculator_submission', 'pension_calculator');
 
     try {
       const calculationResult = calculatePension(formData);

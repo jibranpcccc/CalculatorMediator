@@ -1,0 +1,7 @@
+# SPA fallback for client-side routing
+/*    /index.html   200
+
+# SEO-friendly redirects
+/calculator-pensie   /   301
+/pensii   /tipuri-de-pensii   301
+/calculare-pensie   /   301

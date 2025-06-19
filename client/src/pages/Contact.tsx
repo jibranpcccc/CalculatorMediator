@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -7,8 +8,28 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    trackEvent('contact_form_submit', 'form', 'contact');
+    
+    const mailtoLink = `mailto:contact@calculatormediefacultate.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+      `Nume: ${formData.firstName} ${formData.lastName}\nEmail: ${formData.email}\n\nMesaj:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+  };
+
   return (
     <>
       <SEOHead 
@@ -35,38 +56,68 @@ export default function Contact() {
               <CardHeader>
                 <CardTitle>Trimite-ne un mesaj</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid sm:grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName">Prenume</Label>
-                    <Input id="firstName" placeholder="Ion" />
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <Label htmlFor="firstName">Prenume</Label>
+                      <Input 
+                        id="firstName" 
+                        placeholder="Ion"
+                        value={formData.firstName}
+                        onChange={(e) => setFormData(prev => ({ ...prev, firstName: e.target.value }))}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="lastName">Nume</Label>
+                      <Input 
+                        id="lastName" 
+                        placeholder="Popescu"
+                        value={formData.lastName}
+                        onChange={(e) => setFormData(prev => ({ ...prev, lastName: e.target.value }))}
+                        required
+                      />
+                    </div>
                   </div>
+                  
                   <div>
-                    <Label htmlFor="lastName">Nume</Label>
-                    <Input id="lastName" placeholder="Popescu" />
+                    <Label htmlFor="email">Email</Label>
+                    <Input 
+                      id="email" 
+                      type="email" 
+                      placeholder="ion.popescu@email.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      required
+                    />
                   </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="ion.popescu@email.com" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="subject">Subiect</Label>
-                  <Input id="subject" placeholder="Întrebare despre calculul pensiei" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="message">Mesaj</Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Descrie întrebarea ta aici..." 
-                    rows={5}
-                  />
-                </div>
-                
-                <Button className="w-full">Trimite mesajul</Button>
+                  
+                  <div>
+                    <Label htmlFor="subject">Subiect</Label>
+                    <Input 
+                      id="subject" 
+                      placeholder="Întrebare despre calculul pensiei"
+                      value={formData.subject}
+                      onChange={(e) => setFormData(prev => ({ ...prev, subject: e.target.value }))}
+                      required
+                    />
+                  </div>
+                  
+                  <div>
+                    <Label htmlFor="message">Mesaj</Label>
+                    <Textarea 
+                      id="message" 
+                      placeholder="Descrie întrebarea ta aici..." 
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                      required
+                    />
+                  </div>
+                  
+                  <Button type="submit" className="w-full">Trimite mesajul</Button>
+                </form>
               </CardContent>
             </Card>
 
@@ -81,7 +132,7 @@ export default function Contact() {
                     <Mail className="text-primary" />
                     <div>
                       <p className="font-medium">Email</p>
-                      <p className="text-neutral-600">contact@calculatorpensie.ro</p>
+                      <p className="text-neutral-600">contact@calculatormediefacultate.com</p>
                     </div>
                   </div>
                   
