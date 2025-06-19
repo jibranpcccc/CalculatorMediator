@@ -31,28 +31,37 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <Header />
         
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           {/* Hero Section */}
-          <section className="text-center mb-20">
-            <div className="mb-8">
-              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-6">
-                🎯 Cel mai precis calculator de pensie din România
+          <section className="text-center mb-24">
+            <div className="mb-12">
+              <span className="inline-flex items-center px-6 py-3 rounded-full text-sm font-bold bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 mb-8 shadow-lg">
+                <span className="mr-2">⭐</span>
+                Cel mai precis calculator de pensie din România
               </span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
-              Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie Facultate</span>
+            <h1 className="text-6xl md:text-8xl font-black text-gray-900 mb-12 tracking-tight leading-tight">
+              Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie</span>
+              <br className="hidden sm:block" />
+              <span className="gradient-primary bg-clip-text text-transparent">Facultate</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-600 max-w-5xl mx-auto mb-16 leading-relaxed font-medium">
               Calculează pensia ta în câteva secunde cu cel mai avansat instrument de planificare financiară. 
-              <span className="font-semibold text-gray-800">Profesional, rapid și precis.</span>
+              <span className="font-bold text-gray-800 block mt-2">Profesional, rapid și 100% precis.</span>
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <button className="btn-modern px-8 py-4 rounded-2xl text-white font-bold text-lg shadow-lg">
-                🧮 Calculează Pensia Acum
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16">
+              <button className="btn-modern px-12 py-6 rounded-3xl text-white font-black text-xl shadow-2xl group">
+                <span className="flex items-center justify-center gap-3">
+                  <Calculator className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Calculează Pensia Acum
+                </span>
               </button>
-              <button className="px-8 py-4 rounded-2xl font-bold text-lg bg-white border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300">
-                📚 Ghiduri Complete
+              <button className="btn-secondary px-12 py-6 rounded-3xl font-black text-xl group">
+                <span className="flex items-center justify-center gap-3">
+                  <BookOpen className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Ghiduri Complete
+                </span>
               </button>
             </div>
             
@@ -60,71 +69,85 @@ export default function Home() {
           </section>
 
           {/* Main Pension Calculator */}
-          <section className="glass-effect rounded-3xl shadow-modern-lg p-8 mb-20 card-hover">
-            <div className="text-center mb-6">
-              <h2 className="text-2xl font-semibold text-neutral-900 flex items-center justify-center gap-3">
-                <Calculator className="text-primary" />
+          <section className="glass-effect rounded-3xl shadow-modern-lg p-12 mb-24 card-hover">
+            <div className="text-center mb-12">
+              <div className="icon-wrapper mx-auto mb-6">
+                <Calculator className="h-8 w-8" />
+              </div>
+              <h2 className="text-4xl font-black text-neutral-900 mb-4">
                 Calculator Principal de Pensie
               </h2>
+              <p className="text-lg text-gray-600 font-medium">
+                Introdu datele tale pentru un calcul precis și instant
+              </p>
             </div>
             
             <PensionCalculator />
           </section>
 
           {/* Tools and Resources Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-neutral-900 text-center mb-12">
+          <section className="mb-20">
+            <h2 className="text-5xl font-black text-neutral-900 text-center mb-16">
               Planifică-ți Viitorul: Unelte și Resurse Esențiale
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Clock className="text-primary text-2xl" />
+            <div className="grid md:grid-cols-3 gap-10">
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-blue-50/30">
+                <CardHeader className="text-center pb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-blue-500 to-blue-600 mx-auto mb-6">
+                    <Clock className="text-white text-3xl" />
                   </div>
-                  <CardTitle>Calculator Pensie Anticipată</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-2xl font-bold mb-4">Calculator Pensie Anticipată</CardTitle>
+                  <CardDescription className="text-lg text-gray-600 leading-relaxed">
                     Calculează penalizările și estimează pensia ta dacă alegi să te pensionezi anticipat.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <Button variant="outline" className="inline-flex items-center">
-                    Calculează acum <ArrowRight className="ml-2 h-4 w-4" />
+                <CardContent className="text-center pt-0">
+                  <Button className="btn-modern px-8 py-4 rounded-2xl font-bold group">
+                    <span className="flex items-center gap-2">
+                      Calculează acum 
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </Button>
                 </CardContent>
               </Card>
               
-              <Card className="hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="text-green-600 text-2xl" />
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-green-50/30">
+                <CardHeader className="text-center pb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-green-500 to-green-600 mx-auto mb-6">
+                    <Users className="text-white text-3xl" />
                   </div>
-                  <CardTitle>Calculator Pilon III</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-2xl font-bold mb-4">Calculator Pilon III</CardTitle>
+                  <CardDescription className="text-lg text-gray-600 leading-relaxed">
                     Estimează beneficiile unei pensii private și planifică contribuțiile optime.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <Button variant="outline" className="inline-flex items-center">
-                    Calculează acum <ArrowRight className="ml-2 h-4 w-4" />
+                <CardContent className="text-center pt-0">
+                  <Button className="btn-modern px-8 py-4 rounded-2xl font-bold group">
+                    <span className="flex items-center gap-2">
+                      Calculează acum 
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </Button>
                 </CardContent>
               </Card>
               
-              <Card className="hover:shadow-xl transition-shadow">
-                <CardHeader className="text-center">
-                  <div className="bg-amber-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Star className="text-amber-600 text-2xl" />
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white to-amber-50/30">
+                <CardHeader className="text-center pb-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-amber-500 to-amber-600 mx-auto mb-6">
+                    <Star className="text-white text-3xl" />
                   </div>
-                  <CardTitle>Planificator Financiar</CardTitle>
-                  <CardDescription>
+                  <CardTitle className="text-2xl font-bold mb-4">Planificator Financiar</CardTitle>
+                  <CardDescription className="text-lg text-gray-600 leading-relaxed">
                     Creează o strategie completă pentru o pensie liniștită și independența financiară.
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="text-center">
-                  <Button variant="outline" className="inline-flex items-center">
-                    Începe planificarea <ArrowRight className="ml-2 h-4 w-4" />
+                <CardContent className="text-center pt-0">
+                  <Button className="btn-modern px-8 py-4 rounded-2xl font-bold group">
+                    <span className="flex items-center gap-2">
+                      Începe planificarea 
+                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </Button>
                 </CardContent>
               </Card>
@@ -214,29 +237,32 @@ export default function Home() {
           </section>
 
           {/* Call to Action Section */}
-          <section className="bg-primary rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl font-bold mb-6">Începe să-ți planifici pensia astăzi!</h2>
-            <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
+          <section className="bg-gradient-to-br from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-16 text-center text-white shadow-2xl">
+            <h2 className="text-5xl font-black mb-8">Începe să-ți planifici pensia astăzi!</h2>
+            <p className="text-2xl text-white/90 mb-12 max-w-3xl mx-auto font-medium leading-relaxed">
               Nu lăsa viitorul la voia întâmplării. Folosește calculatoarele noastre și ghidurile experte pentru a-ți asigura o pensie liniștită.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
                 size="lg" 
-                variant="secondary"
-                className="inline-flex items-center"
+                className="btn-secondary px-12 py-6 rounded-3xl font-black text-xl group"
                 onClick={() => trackEvent('cta_click', 'user_interaction', 'calculator')}
               >
-                <Calculator className="mr-2 h-5 w-5" />
-                Calculează Pensia
+                <span className="flex items-center gap-3">
+                  <Calculator className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Calculează Pensia
+                </span>
               </Button>
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="inline-flex items-center border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="px-12 py-6 rounded-3xl font-black text-xl border-4 border-white text-white hover:bg-white hover:text-blue-700 transition-all duration-300 group"
                 onClick={() => trackEvent('cta_click', 'user_interaction', 'guides')}
               >
-                <BookOpen className="mr-2 h-5 w-5" />
-                Citește Ghidurile
+                <span className="flex items-center gap-3">
+                  <BookOpen className="h-6 w-6 group-hover:scale-110 transition-transform" />
+                  Citește Ghidurile
+                </span>
               </Button>
             </div>
           </section>

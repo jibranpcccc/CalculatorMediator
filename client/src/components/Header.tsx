@@ -54,17 +54,19 @@ export default function Header() {
   ];
 
   return (
-    <header className="glass-effect shadow-modern border-b border-white/20 sticky top-0 z-50">
+    <header className="glass-effect shadow-2xl border-b border-white/30 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-18">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <div className="flex-shrink-0">
-              <h1 className="text-2xl font-bold text-gray-900 flex items-center group-hover:scale-105 transition-transform duration-200">
-                <div className="icon-wrapper mr-3">
-                  <Calculator className="h-5 w-5" />
+              <h1 className="text-3xl font-black text-gray-900 flex items-center group-hover:scale-105 transition-all duration-300">
+                <div className="icon-wrapper mr-4 w-12 h-12">
+                  <Calculator className="h-6 w-6" />
                 </div>
-                Calculator<span className="gradient-primary bg-clip-text text-transparent">Medie</span>Facultate
+                <span>Calculator</span>
+                <span className="gradient-primary bg-clip-text text-transparent ml-1">Medie</span>
+                <span className="ml-1">Facultate</span>
               </h1>
             </div>
           </Link>
@@ -76,24 +78,25 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-12 w-max items-center justify-center rounded-xl bg-white/80 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-sm hover:shadow-md"
+                      "group inline-flex h-14 w-max items-center justify-center rounded-2xl bg-white/90 px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
                     )}>
-                      🏠 Acasă
+                      <span className="mr-2">🏠</span>
+                      Acasă
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
 
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className="h-12 px-6 py-3 rounded-xl bg-white/80 font-semibold shadow-sm hover:shadow-md transition-all duration-200 hover:bg-blue-50">
+                    <NavigationMenuTrigger className="h-14 px-8 py-4 rounded-2xl bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-blue-50 hover:scale-105 text-base">
                       {item.title}
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="w-72 p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
+                      <div className="w-80 p-6 bg-white rounded-3xl shadow-2xl border-2 border-gray-100">
                         {item.items.map((subItem) => (
                           <Link key={subItem.title} href={subItem.href}>
-                            <NavigationMenuLink className="block select-none rounded-xl p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-blue-50 hover:shadow-sm">
-                              <div className="text-sm font-semibold text-gray-900 mb-1">{subItem.title}</div>
+                            <NavigationMenuLink className="block select-none rounded-2xl p-5 leading-none no-underline outline-none transition-all duration-300 hover:bg-blue-50 hover:shadow-lg hover:scale-105">
+                              <div className="text-base font-bold text-gray-900 mb-2">{subItem.title}</div>
                             </NavigationMenuLink>
                           </Link>
                         ))}
@@ -105,9 +108,10 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/blog">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-12 w-max items-center justify-center rounded-xl bg-white/80 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-sm hover:shadow-md"
+                      "group inline-flex h-14 w-max items-center justify-center rounded-2xl bg-white/90 px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
                     )}>
-                      📚 Blog
+                      <span className="mr-2">📚</span>
+                      Blog
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -115,9 +119,10 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/contact">
                     <NavigationMenuLink className={cn(
-                      "btn-modern inline-flex h-12 w-max items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg hover:shadow-xl transition-all duration-200"
+                      "btn-modern inline-flex h-14 w-max items-center justify-center rounded-2xl px-8 py-4 text-base font-black text-white shadow-2xl hover:shadow-2xl transition-all duration-300"
                     )}>
-                      📞 Contact
+                      <span className="mr-2">📞</span>
+                      Contact
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

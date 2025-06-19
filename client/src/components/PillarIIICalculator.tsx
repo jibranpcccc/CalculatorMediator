@@ -40,112 +40,157 @@ export default function PillarIIICalculator() {
   const monthlyDeductible = maxDeductible / 12;
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-3">
-          <PiggyBank className="text-green-600" />
+    <Card className="glass-effect shadow-2xl border-0 rounded-3xl overflow-hidden">
+      <CardHeader className="text-center py-8">
+        <div className="icon-wrapper-alt bg-gradient-to-br from-green-500 to-green-600 mx-auto mb-6">
+          <PiggyBank className="text-white h-8 w-8" />
+        </div>
+        <CardTitle className="text-3xl font-black text-gray-900 mb-4">
           Calculator Contribuții Pilon III
         </CardTitle>
+        <p className="text-lg text-gray-600 font-medium">Planifică-ți pensia privată cu contribuții optime</p>
       </CardHeader>
-      <CardContent>
-        <div className="grid md:grid-cols-2 gap-8">
+      <CardContent className="p-10">
+        <div className="grid md:grid-cols-2 gap-16">
           {/* Form */}
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="monthlyContribution">Contribuție lunară (RON)</Label>
-              <Input
-                type="number"
-                id="monthlyContribution"
-                placeholder={`max ${monthlyDeductible.toFixed(0)} pentru deducere`}
-                value={monthlyContribution}
-                onChange={(e) => setMonthlyContribution(e.target.value)}
-              />
-              <p className="text-xs text-neutral-500 mt-1">
-                Maxim {monthlyDeductible.toFixed(0)} RON/lună pentru deducere fiscală
-              </p>
-            </div>
-            
-            <div>
-              <Label htmlFor="years">Ani de contribuție</Label>
-              <Input
-                type="number"
-                id="years"
-                placeholder="ex: 30"
-                value={years}
-                onChange={(e) => setYears(e.target.value)}
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="returnRate">Rata anuală de rentabilitate (%)</Label>
-              <Input
-                type="number"
-                id="returnRate"
-                step="0.1"
-                value={returnRate}
-                onChange={(e) => setReturnRate(e.target.value)}
-              />
-              <p className="text-xs text-neutral-500 mt-1">
-                Media istorică: 3-7% anual
-              </p>
+          <div className="form-section">
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <Label htmlFor="monthlyContribution" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">💰</span>
+                  Contribuție lunară (RON)
+                </Label>
+                <Input
+                  type="number"
+                  id="monthlyContribution"
+                  placeholder={`max ${monthlyDeductible.toFixed(0)} pentru deducere`}
+                  value={monthlyContribution}
+                  onChange={(e) => setMonthlyContribution(e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+                <p className="text-sm text-gray-600 font-medium">
+                  Maxim {monthlyDeductible.toFixed(0)} RON/lună pentru deducere fiscală
+                </p>
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="years" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">📅</span>
+                  Ani de contribuție
+                </Label>
+                <Input
+                  type="number"
+                  id="years"
+                  placeholder="ex: 30"
+                  value={years}
+                  onChange={(e) => setYears(e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="returnRate" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">📈</span>
+                  Rata anuală de rentabilitate (%)
+                </Label>
+                <Input
+                  type="number"
+                  id="returnRate"
+                  step="0.1"
+                  value={returnRate}
+                  onChange={(e) => setReturnRate(e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+                <p className="text-sm text-gray-600 font-medium">
+                  Media istorică: 3-7% anual
+                </p>
+              </div>
             </div>
             
             <Button 
               onClick={handleCalculate}
               disabled={isCalculating || !monthlyContribution || !years}
-              className="w-full"
+              className="btn-modern w-full py-6 text-xl font-black shadow-2xl rounded-3xl mt-8"
+              size="lg"
             >
-              {isCalculating ? "Se calculează..." : "Calculează Acumularea"}
+              {isCalculating ? (
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Se calculează...</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-3">
+                  <PiggyBank className="h-6 w-6" />
+                  <span>Calculează Acumularea</span>
+                </div>
+              )}
             </Button>
           </div>
           
           {/* Results */}
-          <div className="bg-green-50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Proiecție Pilon III</h3>
+          <div className="gradient-card rounded-3xl p-10 border shadow-2xl">
+            <div className="text-center mb-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <span className="text-3xl">💎</span>
+              </div>
+              <h3 className="text-3xl font-black text-gray-900 mb-4">Proiecție Pilon III</h3>
+              <p className="text-lg text-gray-600 font-medium">Estimarea acumulărilor private de pensie</p>
+            </div>
             
             {result ? (
-              <div className="space-y-4">
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-sm text-neutral-600">Valoare acumulată estimată</div>
-                    <div className="text-2xl font-bold text-green-600">{result.toLocaleString()} RON</div>
-                  </CardContent>
-                </Card>
+              <div className="space-y-8">
+                <div className="result-card text-center">
+                  <div className="text-base font-bold text-gray-600 uppercase tracking-wider mb-4">Valoare Acumulată Estimată</div>
+                  <div className="text-6xl font-black bg-gradient-to-r from-green-600 via-emerald-600 to-teal-600 bg-clip-text text-transparent mb-4">
+                    {result.toLocaleString()}
+                  </div>
+                  <div className="text-xl font-bold text-gray-700">RON</div>
+                </div>
                 
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-sm text-neutral-600">Total contribuții</div>
-                    <div className="text-lg font-semibold text-neutral-900">
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="stats-card text-center">
+                    <div className="text-4xl mb-4">💳</div>
+                    <div className="text-base text-gray-600 mb-2 font-semibold">Total contribuții</div>
+                    <div className="text-xl font-black text-gray-900">
                       {(parseFloat(monthlyContribution || "0") * 12 * parseInt(years || "0")).toLocaleString()} RON
                     </div>
-                  </CardContent>
-                </Card>
-                
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-sm text-neutral-600">Câștig din investiții</div>
-                    <div className="text-lg font-semibold text-green-600">
+                  </div>
+                  
+                  <div className="stats-card text-center">
+                    <div className="text-4xl mb-4">📈</div>
+                    <div className="text-base text-gray-600 mb-2 font-semibold">Câștig din investiții</div>
+                    <div className="text-xl font-black text-green-600">
                       {(result - (parseFloat(monthlyContribution || "0") * 12 * parseInt(years || "0"))).toLocaleString()} RON
                     </div>
-                  </CardContent>
-                </Card>
+                  </div>
+                </div>
                 
                 {parseFloat(monthlyContribution || "0") <= monthlyDeductible && (
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-blue-800">
-                      <strong>Avantaj fiscal:</strong> Economii de {(parseFloat(monthlyContribution || "0") * 12 * 0.1).toLocaleString()} RON/an
-                    </p>
+                  <div className="bg-gradient-to-r from-blue-50 to-green-50 p-6 rounded-3xl border-2 border-blue-200 shadow-lg">
+                    <div className="text-center">
+                      <div className="text-2xl mb-2">💰</div>
+                      <p className="text-lg font-bold text-blue-800 mb-2">
+                        Avantaj fiscal anual
+                      </p>
+                      <p className="text-xl font-black text-green-700">
+                        {(parseFloat(monthlyContribution || "0") * 12 * 0.1).toLocaleString()} RON economii
+                      </p>
+                    </div>
                   </div>
                 )}
               </div>
             ) : (
-              <div className="text-center py-8 text-neutral-500">
-                Completează formularul pentru proiecție
+              <div className="text-center py-16">
+                <div className="text-8xl mb-6">💎</div>
+                <div className="text-2xl text-gray-600 mb-4 font-bold">Completează formularul</div>
+                <div className="text-lg text-gray-500 font-medium">pentru a vedea proiecția Pilon III</div>
               </div>
             )}
             
-            <div className="mt-6 text-xs text-neutral-500">
-              * Calculul nu include comisioanele fondului de pensii
+            <div className="mt-10 p-6 bg-gradient-to-r from-green-50 to-blue-50 rounded-3xl border-2 border-green-100 shadow-lg">
+              <div className="text-sm text-green-800 font-bold text-center">
+                ℹ️ Calculul nu include comisioanele fondului de pensii
+              </div>
             </div>
           </div>
         </div>

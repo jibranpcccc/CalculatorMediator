@@ -44,122 +44,167 @@ export default function EarlyRetirementCalculator() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center gap-3">
-          <Calculator className="text-primary" />
+    <Card className="glass-effect shadow-2xl border-0 rounded-3xl overflow-hidden">
+      <CardHeader className="text-center py-8">
+        <div className="icon-wrapper mx-auto mb-6">
+          <Calculator className="h-8 w-8" />
+        </div>
+        <CardTitle className="text-3xl font-black text-gray-900 mb-4">
           Calculator Pensie Anticipată
         </CardTitle>
+        <p className="text-lg text-gray-600 font-medium">Calculează impactul pensionării anticipate</p>
       </CardHeader>
-      <CardContent>
-        <div className="grid md:grid-cols-2 gap-8">
+      <CardContent className="p-10">
+        <div className="grid md:grid-cols-2 gap-16">
           {/* Form */}
-          <div className="space-y-4">
-            <div>
-              <Label htmlFor="birthDate">Data nașterii</Label>
-              <Input
-                type="date"
-                id="birthDate"
-                value={formData.birthDate}
-                onChange={(e) => handleInputChange('birthDate', e.target.value)}
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="salary">Salariul brut lunar (RON)</Label>
-              <Input
-                type="number"
-                id="salary"
-                placeholder="ex: 5000"
-                value={formData.salary}
-                onChange={(e) => handleInputChange('salary', e.target.value)}
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="workYears">Vechime în muncă (ani)</Label>
-              <Input
-                type="number"
-                id="workYears"
-                placeholder="ex: 15"
-                value={formData.workYears}
-                onChange={(e) => handleInputChange('workYears', e.target.value)}
-              />
-            </div>
-            
-            <div>
-              <Label htmlFor="gender">Sexul</Label>
-              <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)}>
-                <SelectTrigger>
-                  <SelectValue placeholder="Selectează..." />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="male">Masculin</SelectItem>
-                  <SelectItem value="female">Feminin</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-            
-            <div>
-              <Label htmlFor="targetAge">Vârsta dorită de pensionare</Label>
-              <Input
-                type="number"
-                id="targetAge"
-                placeholder="ex: 62"
-                value={targetAge}
-                onChange={(e) => setTargetAge(e.target.value)}
-              />
+          <div className="form-section">
+            <div className="space-y-8">
+              <div className="space-y-3">
+                <Label htmlFor="birthDate" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">📅</span>
+                  Data nașterii
+                </Label>
+                <Input
+                  type="date"
+                  id="birthDate"
+                  value={formData.birthDate}
+                  onChange={(e) => handleInputChange('birthDate', e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="salary" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">💰</span>
+                  Salariul brut lunar (RON)
+                </Label>
+                <Input
+                  type="number"
+                  id="salary"
+                  placeholder="ex: 5000"
+                  value={formData.salary}
+                  onChange={(e) => handleInputChange('salary', e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="workYears" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">⏱️</span>
+                  Vechime în muncă (ani)
+                </Label>
+                <Input
+                  type="number"
+                  id="workYears"
+                  placeholder="ex: 15"
+                  value={formData.workYears}
+                  onChange={(e) => handleInputChange('workYears', e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="gender" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">👤</span>
+                  Sexul
+                </Label>
+                <Select value={formData.gender} onValueChange={(value) => handleInputChange('gender', value)}>
+                  <SelectTrigger className="input-modern text-lg">
+                    <SelectValue placeholder="Selectează..." />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border-2 border-gray-200 rounded-2xl shadow-xl">
+                    <SelectItem value="male" className="hover:bg-blue-50 cursor-pointer text-base py-3">Masculin</SelectItem>
+                    <SelectItem value="female" className="hover:bg-blue-50 cursor-pointer text-base py-3">Feminin</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              
+              <div className="space-y-3">
+                <Label htmlFor="targetAge" className="text-base font-bold text-gray-800 flex items-center gap-2">
+                  <span className="text-xl">🎯</span>
+                  Vârsta dorită de pensionare
+                </Label>
+                <Input
+                  type="number"
+                  id="targetAge"
+                  placeholder="ex: 62"
+                  value={targetAge}
+                  onChange={(e) => setTargetAge(e.target.value)}
+                  className="input-modern w-full text-lg"
+                />
+              </div>
             </div>
             
             <Button 
               onClick={handleCalculate}
               disabled={isCalculating || !formData.birthDate || !formData.salary || !formData.workYears || !formData.gender || !targetAge}
-              className="w-full"
+              className="btn-modern w-full py-6 text-xl font-black shadow-2xl rounded-3xl mt-8"
+              size="lg"
             >
-              {isCalculating ? "Se calculează..." : "Calculează Pensia Anticipată"}
+              {isCalculating ? (
+                <div className="flex items-center justify-center gap-3">
+                  <div className="w-6 h-6 border-3 border-white border-t-transparent rounded-full animate-spin"></div>
+                  <span>Se calculează...</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-3">
+                  <Calculator className="h-6 w-6" />
+                  <span>Calculează Pensia Anticipată</span>
+                </div>
+              )}
             </Button>
           </div>
           
           {/* Results */}
-          <div className="bg-neutral-50 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-neutral-900 mb-4">Rezultate</h3>
+          <div className="gradient-card rounded-3xl p-10 border shadow-2xl">
+            <div className="text-center mb-10">
+              <div className="w-20 h-20 bg-gradient-to-br from-orange-400 via-red-500 to-pink-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-xl">
+                <span className="text-3xl">⚠️</span>
+              </div>
+              <h3 className="text-3xl font-black text-gray-900 mb-4">Rezultate Pensie Anticipată</h3>
+              <p className="text-lg text-gray-600 font-medium">Analiza detaliată cu penalizări incluse</p>
+            </div>
             
             {result ? (
-              <div className="space-y-4">
+              <div className="space-y-8">
                 {result.penalty && result.penalty > 0 && (
-                  <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-                    <div className="flex items-start gap-2">
-                      <AlertTriangle className="text-amber-600 mt-0.5 flex-shrink-0" size={16} />
+                  <div className="bg-gradient-to-r from-red-50 to-orange-50 border-2 border-red-200 rounded-3xl p-6 shadow-lg">
+                    <div className="flex items-start gap-4">
+                      <AlertTriangle className="text-red-600 flex-shrink-0" size={24} />
                       <div>
-                        <p className="text-sm font-medium text-amber-800">Penalizare aplicată</p>
-                        <p className="text-sm text-amber-700">{result.penalty.toFixed(1)}% reducere permanentă</p>
+                        <p className="text-lg font-bold text-red-800 mb-2">Penalizare aplicată</p>
+                        <p className="text-base text-red-700 font-medium">{result.penalty.toFixed(1)}% reducere permanentă</p>
                       </div>
                     </div>
                   </div>
                 )}
                 
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-sm text-neutral-600">Pensia estimată cu penalizare</div>
-                    <div className="text-2xl font-bold text-primary">{result.estimatedPension.toLocaleString()} RON</div>
-                  </CardContent>
-                </Card>
+                <div className="result-card text-center">
+                  <div className="text-base font-bold text-gray-600 uppercase tracking-wider mb-4">Pensia Estimată cu Penalizare</div>
+                  <div className="text-6xl font-black bg-gradient-to-r from-red-600 via-orange-600 to-yellow-600 bg-clip-text text-transparent mb-4">
+                    {result.estimatedPension.toLocaleString()}
+                  </div>
+                  <div className="text-xl font-bold text-gray-700">RON per lună</div>
+                </div>
                 
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="text-sm text-neutral-600">Vârsta de pensionare</div>
-                    <div className="text-lg font-semibold text-neutral-900">{result.retirementAge} ani</div>
-                  </CardContent>
-                </Card>
+                <div className="stats-card text-center">
+                  <div className="text-4xl mb-4">🎂</div>
+                  <div className="text-base text-gray-600 mb-2 font-semibold">Vârsta de pensionare</div>
+                  <div className="text-2xl font-black text-gray-900">{result.retirementAge} ani</div>
+                </div>
               </div>
             ) : (
-              <div className="text-center py-8 text-neutral-500">
-                Completează formularul pentru calcul
+              <div className="text-center py-16">
+                <div className="text-8xl mb-6">⚠️</div>
+                <div className="text-2xl text-gray-600 mb-4 font-bold">Completează formularul</div>
+                <div className="text-lg text-gray-500 font-medium">pentru a vedea calculul pensiei anticipate</div>
               </div>
             )}
             
-            <div className="mt-6 text-xs text-neutral-500">
-              * Calculul include penalizările pentru pensionarea anticipată
+            <div className="mt-10 p-6 bg-gradient-to-r from-red-50 to-orange-50 rounded-3xl border-2 border-red-100 shadow-lg">
+              <div className="text-sm text-red-800 font-bold text-center">
+                ⚠️ Calculul include penalizările pentru pensionarea anticipată
+              </div>
             </div>
           </div>
         </div>
