@@ -56,17 +56,20 @@ export default function Header() {
   return (
     <header className="glass-effect shadow-2xl border-b border-white/30 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
             <div className="flex-shrink-0">
-              <h1 className="text-3xl font-black text-gray-900 flex items-center group-hover:scale-105 transition-all duration-300">
-                <div className="icon-wrapper mr-4 w-12 h-12">
-                  <Calculator className="h-6 w-6" />
+              <h1 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-black text-gray-900 flex items-center group-hover:scale-105 transition-all duration-300">
+                <div className="icon-wrapper mr-2 sm:mr-3 lg:mr-4 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12">
+                  <Calculator className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
                 </div>
-                <span>Calculator</span>
-                <span className="gradient-primary bg-clip-text text-transparent ml-1">Medie</span>
-                <span className="ml-1">Facultate</span>
+                <span className="hidden sm:inline">Calculator</span>
+                <span className="gradient-primary bg-clip-text text-transparent sm:ml-1">
+                  <span className="sm:hidden">CMF</span>
+                  <span className="hidden sm:inline">Medie</span>
+                </span>
+                <span className="hidden sm:inline sm:ml-1">Facultate</span>
               </h1>
             </div>
           </Link>
@@ -78,18 +81,23 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-14 w-max items-center justify-center rounded-2xl bg-white/90 px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
+                      "group inline-flex h-10 sm:h-12 lg:h-14 w-max items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
                     )}>
-                      <span className="mr-2">🏠</span>
-                      Acasă
+                      <span className="mr-1 sm:mr-2">🏠</span>
+                      <span className="hidden sm:inline">Acasă</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
 
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger className="h-14 px-8 py-4 rounded-2xl bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-blue-50 hover:scale-105 text-base">
-                      {item.title}
+                    <NavigationMenuTrigger className="h-10 sm:h-12 lg:h-14 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 rounded-xl sm:rounded-2xl bg-white/90 font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-blue-50 hover:scale-105 text-xs sm:text-sm lg:text-base">
+                      <span className="hidden lg:inline">{item.title}</span>
+                      <span className="lg:hidden">
+                        {item.title === "Planificarea Pensiei" ? "Planificare" : 
+                         item.title === "Tipuri de Pensii" ? "Tipuri" : 
+                         item.title === "Legislație & Resurse" ? "Legislație" : item.title}
+                      </span>
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="w-80 p-6 bg-white rounded-3xl shadow-2xl border-2 border-gray-100">
@@ -108,10 +116,10 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/blog">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-14 w-max items-center justify-center rounded-2xl bg-white/90 px-8 py-4 text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
+                      "group inline-flex h-10 sm:h-12 lg:h-14 w-max items-center justify-center rounded-xl sm:rounded-2xl bg-white/90 px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-base font-bold transition-all duration-300 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-lg hover:shadow-xl hover:scale-105"
                     )}>
-                      <span className="mr-2">📚</span>
-                      Blog
+                      <span className="mr-1 sm:mr-2">📚</span>
+                      <span className="hidden sm:inline">Blog</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -119,10 +127,10 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/contact">
                     <NavigationMenuLink className={cn(
-                      "btn-modern inline-flex h-14 w-max items-center justify-center rounded-2xl px-8 py-4 text-base font-black text-white shadow-2xl hover:shadow-2xl transition-all duration-300"
+                      "btn-modern inline-flex h-10 sm:h-12 lg:h-14 w-max items-center justify-center rounded-xl sm:rounded-2xl px-3 sm:px-6 lg:px-8 py-2 sm:py-3 lg:py-4 text-xs sm:text-sm lg:text-base font-black text-white shadow-2xl hover:shadow-2xl transition-all duration-300"
                     )}>
-                      <span className="mr-2">📞</span>
-                      Contact
+                      <span className="mr-1 sm:mr-2">📞</span>
+                      <span className="hidden sm:inline">Contact</span>
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
