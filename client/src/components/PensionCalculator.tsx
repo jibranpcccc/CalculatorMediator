@@ -21,22 +21,14 @@ export default function PensionCalculator() {
   const [isCalculating, setIsCalculating] = useState(false);
 
   const handleInputChange = (field: keyof PensionCalculationData, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    
+    // Track user interaction safely
     try {
-      console.log(`Updating ${field} with value:`, value);
-      setFormData(prev => {
-        const newData = { ...prev, [field]: value };
-        console.log('New form data:', newData);
-        return newData;
-      });
-      
-      // Track user interaction
       trackEvent('calculator_interaction', 'pension_calculator', field);
     } catch (error) {
-      console.error('Error updating form data:', error, {
-        field,
-        value,
-        currentFormData: formData
-      });
+      // Silent fail for analytics to prevent UI disruption
+      console.warn('Analytics tracking failed:', error);
     }
   };
 
@@ -65,10 +57,20 @@ export default function PensionCalculator() {
     try {
       const calculationResult = calculatePension(formData);
       setResult(calculationResult);
+      
+      // Track successful calculation
+      trackEvent('calculator_submission', 'pension_calculator', 'success');
     } catch (error) {
       console.error('Calculation error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Eroare necunoscută';
       alert(`A apărut o eroare la calcularea pensiei: ${errorMessage}`);
+      
+      // Track calculation error
+      try {
+        trackEvent('calculator_error', 'pension_calculator', 'calculation_failed');
+      } catch (trackError) {
+        console.warn('Analytics tracking failed:', trackError);
+      }
     } finally {
       setIsCalculating(false);
     }

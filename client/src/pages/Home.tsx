@@ -10,7 +10,7 @@ import { Link } from "wouter";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import PensionCalculator from "@/components/PensionCalculator";
+import SimplePensionCalculator from "@/components/SimplePensionCalculator";
 import TrustIndicators from "@/components/TrustIndicators";
 import SiloSection from "@/components/SiloSection";
 import ArticleCard from "@/components/ArticleCard";
@@ -86,7 +86,7 @@ export default function Home() {
               </p>
             </div>
             
-            <PensionCalculator />
+            <SimplePensionCalculator />
           </section>
 
           {/* Tools and Resources Section */}
