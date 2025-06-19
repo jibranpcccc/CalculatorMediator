@@ -258,7 +258,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center px-6 sm:px-8">
               <Button 
                 size="lg" 
-                className="btn-secondary px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl group w-full sm:w-auto"
+                className="btn-secondary px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl group w-full sm:w-auto bg-[#f97415]"
                 onClick={() => trackEvent('cta_click', 'user_interaction', 'calculator')}
               >
                 <span className="flex items-center justify-center gap-2 sm:gap-3">
