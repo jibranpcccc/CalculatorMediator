@@ -44,15 +44,15 @@ export default function PensionCalculator() {
   };
 
   return (
-    <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16">
+    <div className="grid lg:grid-cols-2 gap-10 sm:gap-14 lg:gap-20">
       {/* Calculator Form */}
       <div className="form-section">
-        <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-          <div className="icon-wrapper mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <div className="icon-wrapper mx-auto mb-6 sm:mb-8 w-12 h-12 sm:w-16 sm:h-16">
             <Calculator className="h-6 w-6 sm:h-8 sm:w-8" />
           </div>
-          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-3 sm:mb-4">Calculează Pensia Ta</h3>
-          <p className="text-base sm:text-lg text-gray-600 font-medium px-2">Completează datele pentru un calcul precis și instant</p>
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-gray-900 mb-4 sm:mb-6">Calculează Pensia Ta</h3>
+          <p className="text-base sm:text-lg text-gray-600 font-medium px-4 sm:px-6">Completează datele pentru un calcul precis și instant</p>
         </div>
         <div className="space-y-6 sm:space-y-8">
           <div className="space-y-2 sm:space-y-3">
@@ -140,8 +140,8 @@ export default function PensionCalculator() {
       </div>
       
       {/* Results Section */}
-      <div className="gradient-card rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 border shadow-2xl">
-        <div className="text-center mb-6 sm:mb-8 lg:mb-10">
+      <div className="gradient-card rounded-2xl sm:rounded-3xl p-8 sm:p-10 lg:p-12 border shadow-2xl">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 via-red-500 to-amber-500 rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 shadow-xl">
             <span className="text-2xl sm:text-3xl">📊</span>
           </div>

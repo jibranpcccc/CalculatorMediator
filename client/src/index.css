@@ -231,6 +231,12 @@
     overflow-x: hidden;
   }
   
+  /* Safe area insets for better spacing */
+  .safe-padding {
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+  
   @media (max-width: 640px) {
     .mobile-text-center {
       text-align: center;
@@ -242,6 +248,19 @@
     
     .mobile-w-full {
       width: 100%;
+    }
+    
+    /* Prevent content from being too close to screen edges */
+    .mobile-safe-margin {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .tablet-safe-margin {
+      margin-left: 1.5rem;
+      margin-right: 1.5rem;
     }
   }
 }

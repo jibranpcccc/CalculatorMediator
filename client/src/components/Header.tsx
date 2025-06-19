@@ -55,7 +55,7 @@ export default function Header() {
 
   return (
     <header className="glass-effect shadow-2xl border-b border-white/30 sticky top-0 z-50">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex justify-between items-center h-16 sm:h-18 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
