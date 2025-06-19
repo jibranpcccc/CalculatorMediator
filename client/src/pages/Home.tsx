@@ -28,26 +28,39 @@ export default function Home() {
         canonicalUrl="https://calculatormediefacultate.com"
       />
       
-      <div className="min-h-screen bg-neutral-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         <Header />
         
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           {/* Hero Section */}
-          <section className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Calculator Medie Facultate: <br />
-              <span className="text-primary">Calculează Pensia Ta în Câteva Secunde</span>
+          <section className="text-center mb-20">
+            <div className="mb-8">
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 mb-6">
+                🎯 Cel mai precis calculator de pensie din România
+              </span>
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-8 tracking-tight">
+              Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie Facultate</span>
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto mb-8">
-              Calculator Medie Facultate - cel mai precis instrument de calculare a pensiei din România. 
-              Planifică-ți viitorul financiar cu calculatoarele și ghidurile noastre profesionale.
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Calculează pensia ta în câteva secunde cu cel mai avansat instrument de planificare financiară. 
+              <span className="font-semibold text-gray-800">Profesional, rapid și precis.</span>
             </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <button className="btn-modern px-8 py-4 rounded-2xl text-white font-bold text-lg shadow-lg">
+                🧮 Calculează Pensia Acum
+              </button>
+              <button className="px-8 py-4 rounded-2xl font-bold text-lg bg-white border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300">
+                📚 Ghiduri Complete
+              </button>
+            </div>
             
             <TrustIndicators />
           </section>
 
           {/* Main Pension Calculator */}
-          <section className="bg-white rounded-2xl shadow-xl p-8 mb-16">
+          <section className="glass-effect rounded-3xl shadow-modern-lg p-8 mb-20 card-hover">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-semibold text-neutral-900 flex items-center justify-center gap-3">
                 <Calculator className="text-primary" />

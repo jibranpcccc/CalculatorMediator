@@ -54,15 +54,17 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b border-neutral-200 sticky top-0 z-50">
+    <header className="glass-effect shadow-modern border-b border-white/20 sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-18">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center group">
             <div className="flex-shrink-0">
-              <h1 className="text-xl font-bold text-neutral-900 flex items-center">
-                <Calculator className="text-primary mr-2" />
-                Calculator<span className="text-primary">Medie</span>Facultate
+              <h1 className="text-2xl font-bold text-gray-900 flex items-center group-hover:scale-105 transition-transform duration-200">
+                <div className="icon-wrapper mr-3">
+                  <Calculator className="h-5 w-5" />
+                </div>
+                Calculator<span className="gradient-primary bg-clip-text text-transparent">Medie</span>Facultate
               </h1>
             </div>
           </Link>
@@ -74,22 +76,24 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+                      "group inline-flex h-12 w-max items-center justify-center rounded-xl bg-white/80 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-sm hover:shadow-md"
                     )}>
-                      Acasă
+                      🏠 Acasă
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
 
                 {navigationItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="h-12 px-6 py-3 rounded-xl bg-white/80 font-semibold shadow-sm hover:shadow-md transition-all duration-200 hover:bg-blue-50">
+                      {item.title}
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <div className="w-64 p-2">
+                      <div className="w-72 p-4 bg-white rounded-2xl shadow-lg border border-gray-100">
                         {item.items.map((subItem) => (
                           <Link key={subItem.title} href={subItem.href}>
-                            <NavigationMenuLink className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                              <div className="text-sm font-medium leading-none">{subItem.title}</div>
+                            <NavigationMenuLink className="block select-none rounded-xl p-4 leading-none no-underline outline-none transition-all duration-200 hover:bg-blue-50 hover:shadow-sm">
+                              <div className="text-sm font-semibold text-gray-900 mb-1">{subItem.title}</div>
                             </NavigationMenuLink>
                           </Link>
                         ))}
@@ -101,9 +105,9 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/blog">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                      "group inline-flex h-12 w-max items-center justify-center rounded-xl bg-white/80 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 focus:text-blue-700 focus:outline-none shadow-sm hover:shadow-md"
                     )}>
-                      Blog
+                      📚 Blog
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
@@ -111,9 +115,9 @@ export default function Header() {
                 <NavigationMenuItem>
                   <Link href="/contact">
                     <NavigationMenuLink className={cn(
-                      "group inline-flex h-10 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                      "btn-modern inline-flex h-12 w-max items-center justify-center rounded-xl px-6 py-3 text-sm font-bold text-white shadow-lg hover:shadow-xl transition-all duration-200"
                     )}>
-                      Contact
+                      📞 Contact
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
