@@ -1,11 +1,31 @@
 import type { PensionCalculationData, PensionResult } from "@/types/pension";
 
 export function calculatePension(data: PensionCalculationData): PensionResult {
+  // Validate input data
+  if (!data.birthDate || !data.salary || !data.workYears || !data.gender) {
+    throw new Error("Missing required calculation data");
+  }
+
   const birthYear = new Date(data.birthDate).getFullYear();
   const currentYear = new Date().getFullYear();
+  
+  // Validate birth year
+  if (isNaN(birthYear) || birthYear < 1920 || birthYear > currentYear) {
+    throw new Error("Invalid birth date");
+  }
+  
   const age = currentYear - birthYear;
   const salary = parseFloat(data.salary);
   const workYears = parseInt(data.workYears);
+
+  // Validate numeric inputs
+  if (isNaN(salary) || salary <= 0 || salary > 100000) {
+    throw new Error("Invalid salary amount");
+  }
+  
+  if (isNaN(workYears) || workYears < 0 || workYears > 50) {
+    throw new Error("Invalid work years");
+  }
 
   // Romanian retirement age calculation based on current legislation
   const retirementAge = data.gender === "male" ? 65 : 63; // Simplified for 2025
@@ -19,7 +39,7 @@ export function calculatePension(data: PensionCalculationData): PensionResult {
   
   // Pension calculation using Romanian pension point system (simplified)
   const pensionPoints = totalContributions / 10000; // Simplified conversion
-  const estimatedPension = Math.round(pensionPoints * 81.7); // Current pension point value (approximated)
+  const estimatedPension = Math.max(0, Math.round(pensionPoints * 81.7)); // Current pension point value (approximated)
 
   return {
     estimatedPension,

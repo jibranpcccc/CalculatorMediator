@@ -27,6 +27,21 @@ export default function PensionCalculator() {
 
   const handleCalculate = async () => {
     if (!formData.birthDate || !formData.salary || !formData.workYears || !formData.gender) {
+      alert('Te rugăm să completezi toate câmpurile!');
+      return;
+    }
+
+    // Additional validation
+    const salary = parseFloat(formData.salary);
+    const workYears = parseInt(formData.workYears);
+    
+    if (isNaN(salary) || salary <= 0) {
+      alert('Te rugăm să introduci un salariu valid!');
+      return;
+    }
+    
+    if (isNaN(workYears) || workYears < 0) {
+      alert('Te rugăm să introduci o vechime validă!');
       return;
     }
 
@@ -38,6 +53,7 @@ export default function PensionCalculator() {
       setResult(calculationResult);
     } catch (error) {
       console.error('Calculation error:', error);
+      alert('A apărut o eroare la calcularea pensiei. Te rugăm să verifici datele introduse.');
     } finally {
       setIsCalculating(false);
     }
