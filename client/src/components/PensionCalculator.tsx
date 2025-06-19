@@ -26,6 +26,8 @@ export default function PensionCalculator() {
   };
 
   const handleCalculate = async () => {
+    console.log('Starting calculation with data:', formData);
+    
     if (!formData.birthDate || !formData.salary || !formData.workYears || !formData.gender) {
       alert('Te rugăm să completezi toate câmpurile!');
       return;
@@ -34,6 +36,8 @@ export default function PensionCalculator() {
     // Additional validation
     const salary = parseFloat(formData.salary);
     const workYears = parseInt(formData.workYears);
+    
+    console.log('Parsed values - salary:', salary, 'workYears:', workYears);
     
     if (isNaN(salary) || salary <= 0) {
       alert('Te rugăm să introduci un salariu valid!');
@@ -46,14 +50,20 @@ export default function PensionCalculator() {
     }
 
     setIsCalculating(true);
-    trackEvent('calculator_submission', 'pension_calculator');
-
+    
     try {
+      console.log('Calling trackEvent...');
+      trackEvent('calculator_submission', 'pension_calculator');
+      
+      console.log('Calling calculatePension...');
       const calculationResult = calculatePension(formData);
+      console.log('Calculation result:', calculationResult);
+      
       setResult(calculationResult);
+      console.log('Result set successfully');
     } catch (error) {
       console.error('Calculation error:', error);
-      alert('A apărut o eroare la calcularea pensiei. Te rugăm să verifici datele introduse.');
+      alert(`A apărut o eroare la calcularea pensiei: ${error.message}`);
     } finally {
       setIsCalculating(false);
     }

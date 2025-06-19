@@ -51,9 +51,14 @@ export function calculatePension(data: PensionCalculationData): PensionResult {
 }
 
 export function calculateEarlyRetirement(data: PensionCalculationData, targetAge: number): PensionResult {
+  // Validate targetAge
+  if (!targetAge || isNaN(targetAge) || targetAge < 50 || targetAge > 70) {
+    throw new Error("Invalid target retirement age");
+  }
+
   const result = calculatePension(data);
   const penaltyPerYear = 0.06; // 6% penalty per year for early retirement
-  const yearsBefore = result.retirementAge - targetAge;
+  const yearsBefore = Math.max(0, result.retirementAge - targetAge);
   const penalty = Math.min(yearsBefore * penaltyPerYear, 0.3); // Max 30% penalty
   
   return {
@@ -66,9 +71,27 @@ export function calculateEarlyRetirement(data: PensionCalculationData, targetAge
 }
 
 export function calculatePillarIII(monthlyContribution: number, years: number, returnRate: number = 0.05): number {
+  // Validate inputs
+  if (!monthlyContribution || isNaN(monthlyContribution) || monthlyContribution <= 0) {
+    throw new Error("Invalid monthly contribution");
+  }
+  
+  if (!years || isNaN(years) || years <= 0 || years > 50) {
+    throw new Error("Invalid investment period");
+  }
+  
+  if (isNaN(returnRate) || returnRate < 0 || returnRate > 1) {
+    throw new Error("Invalid return rate");
+  }
+
   // Compound interest calculation for private pension (Pillar III)
   const monthlyRate = returnRate / 12;
   const totalMonths = years * 12;
+  
+  // Handle edge case where monthlyRate is 0
+  if (monthlyRate === 0) {
+    return Math.round(monthlyContribution * totalMonths);
+  }
   
   const futureValue = monthlyContribution * 
     (Math.pow(1 + monthlyRate, totalMonths) - 1) / monthlyRate;
