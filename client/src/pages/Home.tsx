@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Calculator, Shield, Clock, CheckCircle, ArrowRight, BookOpen, Route, List, Gavel, Users, Star, Phone } from "lucide-react";
+import { Link } from "wouter";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -106,12 +107,14 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
-                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto">
-                    <span className="flex items-center justify-center gap-2">
-                      <span className="hidden sm:inline">Calculează acum</span>
-                      <span className="sm:hidden">Calculează</span>
-                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
+                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
+                    <Link href="/calculator-anticipata">
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="hidden sm:inline">Calculează acum</span>
+                        <span className="sm:hidden">Calculează</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -127,12 +130,14 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
-                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto">
-                    <span className="flex items-center justify-center gap-2">
-                      <span className="hidden sm:inline">Calculează acum</span>
-                      <span className="sm:hidden">Calculează</span>
-                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
+                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
+                    <Link href="/calculator-pilon3">
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="hidden sm:inline">Calculează acum</span>
+                        <span className="sm:hidden">Calculează</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -148,12 +153,14 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
-                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto">
-                    <span className="flex items-center justify-center gap-2">
-                      <span className="hidden sm:inline">Începe planificarea</span>
-                      <span className="sm:hidden">Planifică</span>
-                      <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                    </span>
+                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
+                    <Link href="/planificator">
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="hidden sm:inline">Începe planificarea</span>
+                        <span className="sm:hidden">Planifică</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
                   </Button>
                 </CardContent>
               </Card>

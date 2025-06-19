@@ -37,11 +37,11 @@ export default function SiloSection({ title, description, icon, items, href, col
           ))}
         </ul>
         
-        <Link href={href}>
-          <Button className={`w-full ${buttonClass} text-white inline-flex items-center`}>
+        <Button className={`w-full ${buttonClass} text-white inline-flex items-center`} asChild>
+          <Link href={href}>
             Explorează ghidurile <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </CardContent>
     </Card>
   );
