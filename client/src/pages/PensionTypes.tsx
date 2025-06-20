@@ -296,7 +296,7 @@ export default function PensionTypes() {
                   </Button>
                 </Link>
                 <Link href="/planificarea-pensiei">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
+                  <Button size="lg" variant="outline" className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-green-600">
                     Ghid de planificare
                   </Button>
                 </Link>
