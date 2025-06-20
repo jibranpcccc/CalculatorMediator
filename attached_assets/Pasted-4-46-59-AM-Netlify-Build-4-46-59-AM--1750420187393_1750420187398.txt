@@ -1,0 +1,72 @@
+4:46:59 AM: Netlify Build                                                 
+4:46:59 AM: ────────────────────────────────────────────────────────────────
+4:46:59 AM: ​
+4:46:59 AM: ❯ Version
+4:46:59 AM:   @netlify/build 33.4.6
+4:46:59 AM: ​
+4:46:59 AM: ❯ Flags
+4:46:59 AM:   accountId: 6829ebab4e15d2f11c454ddc
+4:46:59 AM:   baseRelDir: true
+4:46:59 AM:   buildId: 68554a147038dd000822887e
+4:46:59 AM:   deployId: 68554a147038dd0008228880
+4:46:59 AM: ​
+4:46:59 AM: ❯ Current directory
+4:46:59 AM:   /opt/build/repo
+4:46:59 AM: ​
+4:46:59 AM: ❯ Config file
+4:46:59 AM:   /opt/build/repo/netlify.toml
+4:46:59 AM: ​
+4:46:59 AM: ❯ Context
+4:46:59 AM:   production
+4:46:59 AM: ​
+4:46:59 AM: build.command from netlify.toml                               
+4:46:59 AM: ────────────────────────────────────────────────────────────────
+4:46:59 AM: ​
+4:46:59 AM: $ echo 'Using pre-built static files' && ls -la dist/
+4:46:59 AM: Using pre-built static files
+4:46:59 AM: ls: cannot access 'dist/': No such file or directory
+4:46:59 AM: ​
+4:46:59 AM: "build.command" failed                                        
+4:46:59 AM: ────────────────────────────────────────────────────────────────
+4:46:59 AM: ​
+4:46:59 AM:   Error message
+4:46:59 AM:   Command failed with exit code 2: echo 'Using pre-built static files' && ls -la dist/ (https://ntl.fyi/exit-code-2)
+4:46:59 AM: ​
+4:46:59 AM:   Error location
+4:46:59 AM:   In build.command from netlify.toml:
+4:46:59 AM:   echo 'Using pre-built static files' && ls -la dist/
+4:46:59 AM: ​
+4:46:59 AM:   Resolved config
+4:46:59 AM:   build:
+4:46:59 AM:     command: echo 'Using pre-built static files' && ls -la dist/
+4:46:59 AM:     commandOrigin: config
+4:46:59 AM:     environment:
+4:46:59 AM:       - NODE_VERSION
+4:46:59 AM:     publish: /opt/build/repo/dist
+4:46:59 AM:     publishOrigin: config
+4:46:59 AM:   headers:
+4:47:00 AM: Failed during stage 'building site': Build script returned non-zero exit code: 2 (https://ntl.fyi/exit-code-2)
+4:47:00 AM:     - for: /*
+      values:
+        Referrer-Policy: strict-origin-when-cross-origin
+        X-Content-Type-Options: nosniff
+        X-Frame-Options: DENY
+        X-XSS-Protection: 1; mode=block
+    - for: /static/*
+      values:
+        Cache-Control: public, max-age=31536000, immutable
+  headersOrigin: config
+  redirects:
+    - from: /calculator-pensie
+      status: 301
+      to: /
+    - from: /pensii
+      status: 301
+      to: /tipuri-de-pensii
+    - from: /*
+      status: 200
+      to: /index.html
+  redirectsOrigin: config
+4:47:00 AM: Build failed due to a user error: Build script returned non-zero exit code: 2
+4:47:00 AM: Failing build: Failed to build site
+4:47:00 AM: Finished processing build request in 18.566s
