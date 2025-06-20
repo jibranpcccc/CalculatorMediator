@@ -270,7 +270,7 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl border-2 sm:border-4 border-white text-white hover:bg-white hover:text-orange-700 transition-all duration-300 group w-full sm:w-auto"
+                className="px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl border-2 sm:border-4 border-white bg-white text-orange-700 hover:bg-orange-100 transition-all duration-300 group w-full sm:w-auto"
                 onClick={() => trackEvent('cta_click', 'user_interaction', 'guides')}
               >
                 <span className="flex items-center justify-center gap-2 sm:gap-3">
