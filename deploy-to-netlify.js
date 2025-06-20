@@ -1,60 +1,60 @@
-import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
 
-console.log('🚀 Deploying pension calculator to Netlify...');
+console.log('🚀 Creating complete Netlify deployment package...');
 
-// Clean and recreate dist directory
-if (fs.existsSync('dist')) {
-  fs.rmSync('dist', { recursive: true, force: true });
-}
-fs.mkdirSync('dist', { recursive: true });
-
-// Build the static site from your development server
-console.log('📦 Capturing live site from development server...');
-
-try {
-  // Get the full HTML from your running development server
-  const siteHtml = execSync('curl -s http://localhost:5000/', { encoding: 'utf8' });
-  
-  // Extract only the clean HTML content (remove Vite dev scripts)
-  let cleanHtml = siteHtml;
-  
-  // Remove Vite development scripts and hot reload
-  cleanHtml = cleanHtml.replace(/<script type="module"[^>]*>[\s\S]*?<\/script>/g, '');
-  cleanHtml = cleanHtml.replace(/<script type="module" src="\/@vite\/client"><\/script>/g, '');
-  cleanHtml = cleanHtml.replace(/import\.meta\.hot/g, 'false');
-  
-  // Write the production-ready HTML
-  fs.writeFileSync('dist/index.html', cleanHtml);
-  
-  console.log('✅ Site HTML captured and cleaned');
-  
-} catch (error) {
-  console.log('⚠️  Direct capture failed, using manual build...');
-  
-  // Fallback: Use the pension calculator we prepared
-  const pensionCalculatorHtml = fs.readFileSync('dist/index.html', 'utf8');
-  console.log('✅ Using prepared pension calculator build');
+// Ensure dist directory exists
+if (!fs.existsSync('dist')) {
+  fs.mkdirSync('dist');
 }
 
-// Copy all deployment files
-const deploymentFiles = [
-  { source: 'public/robots.txt', dest: 'dist/robots.txt' },
-  { source: 'public/sitemap.xml', dest: 'dist/sitemap.xml' },
-  { source: 'public/_redirects', dest: 'dist/_redirects' },
-  { source: 'public/_headers', dest: 'dist/_headers' }
-];
+// Copy netlify.toml to dist
+if (fs.existsSync('netlify.toml')) {
+  fs.copyFileSync('netlify.toml', 'dist/netlify.toml');
+  console.log('✅ netlify.toml copied to dist/');
+}
 
-deploymentFiles.forEach(file => {
-  if (fs.existsSync(file.source)) {
-    fs.copyFileSync(file.source, file.dest);
-    console.log(`✅ Copied ${file.source} → ${file.dest}`);
+// Verify all files are in place
+const requiredFiles = ['index.html', 'robots.txt', 'sitemap.xml', '_redirects', '_headers'];
+const missingFiles = [];
+
+requiredFiles.forEach(file => {
+  const filePath = path.join('dist', file);
+  if (!fs.existsSync(filePath)) {
+    missingFiles.push(file);
   }
 });
 
-// Update sitemap for pension calculator
-const pensionSitemap = `<?xml version="1.0" encoding="UTF-8"?>
+if (missingFiles.length > 0) {
+  console.log('❌ Missing files:', missingFiles.join(', '));
+  
+  // Create missing essential files
+  if (missingFiles.includes('_redirects')) {
+    fs.writeFileSync('dist/_redirects', '/*    /index.html   200');
+    console.log('✅ Created _redirects file');
+  }
+  
+  if (missingFiles.includes('_headers')) {
+    fs.writeFileSync('dist/_headers', `/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate`);
+    console.log('✅ Created _headers file');
+  }
+  
+  if (missingFiles.includes('robots.txt')) {
+    fs.writeFileSync('dist/robots.txt', `User-agent: *
+Allow: /
+
+Sitemap: https://calculatormediefacultate.com/sitemap.xml`);
+    console.log('✅ Created robots.txt file');
+  }
+  
+  if (missingFiles.includes('sitemap.xml')) {
+    fs.writeFileSync('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://calculatormediefacultate.com/</loc>
@@ -62,42 +62,55 @@ const pensionSitemap = `<?xml version="1.0" encoding="UTF-8"?>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://calculatormediefacultate.com/#calculator</loc>
-    <lastmod>2025-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://calculatormediefacultate.com/#planificare</loc>
-    <lastmod>2025-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://calculatormediefacultate.com/#despre</loc>
-    <lastmod>2025-06-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-</urlset>`;
+</urlset>`);
+    console.log('✅ Created sitemap.xml file');
+  }
+}
 
-fs.writeFileSync('dist/sitemap.xml', pensionSitemap);
+// Verify index.html exists and has content
+const indexPath = 'dist/index.html';
+if (fs.existsSync(indexPath)) {
+  const indexSize = fs.statSync(indexPath).size;
+  if (indexSize < 1000) {
+    console.log('❌ index.html is too small, may be incomplete');
+  } else {
+    console.log(`✅ index.html verified (${Math.round(indexSize/1024)}KB)`);
+  }
+} else {
+  console.log('❌ index.html missing - this is critical!');
+}
 
-// Display deployment summary
-console.log('\n📋 Deployment Package Ready:');
+// Show final deployment package
+console.log('\n📦 Deployment Package Contents:');
 const files = fs.readdirSync('dist');
+let totalSize = 0;
+
 files.forEach(file => {
-  const stats = fs.statSync(`dist/${file}`);
+  const filePath = path.join('dist', file);
+  const stats = fs.statSync(filePath);
   const sizeKB = Math.round(stats.size / 1024);
+  totalSize += stats.size;
   console.log(`   ${file} (${sizeKB}KB)`);
 });
 
-console.log('\n🌐 Ready for Netlify deployment:');
-console.log('1. Go to https://app.netlify.com/');
-console.log('2. Find your site (calculatormediefacultate.com)');
-console.log('3. Go to "Deploys" tab');
-console.log('4. Drag the dist/ folder contents to deploy');
-console.log('5. Wait 2-3 minutes for deployment');
+console.log(`\n📊 Total deployment size: ${Math.round(totalSize/1024)}KB`);
 
-console.log('\n✨ Your pension calculator will replace the current site!');
+console.log('\n🎯 DEPLOYMENT INSTRUCTIONS:');
+console.log('1. Go to https://app.netlify.com/');
+console.log('2. Find your site: calculatormediefacultate.com');
+console.log('3. Go to "Deploys" tab');
+console.log('4. Drag ALL files from dist/ folder to deploy area');
+console.log('5. Wait for deployment completion');
+console.log('\n⚠️  IMPORTANT: Upload ALL files including netlify.toml for proper routing');
+
+// Create a zip file for easier deployment
+try {
+  console.log('\n📁 Creating deployment.zip for easier upload...');
+  
+  // Using basic approach since we don't have zip library
+  const { execSync } = await import('child_process');
+  execSync('cd dist && zip -r ../deployment.zip .');
+  console.log('✅ deployment.zip created - upload this file to Netlify');
+} catch (error) {
+  console.log('ℹ️  Zip creation failed, upload individual files instead');
+}

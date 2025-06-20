@@ -1,24 +1,14 @@
 [build]
-  command = "npm install && node fix-layout-deployment.js"
   publish = "dist"
-
-[build.environment]
-  NODE_VERSION = "18"
-
-[[redirects]]
-  from = "/calculator-pensie"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/pensii"
-  to = "/tipuri-de-pensii"
-  status = 301
+  command = "echo 'Static site deployment'"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
 
 [[headers]]
   for = "/*"
@@ -29,6 +19,16 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
 
 [[headers]]
-  for = "/static/*"
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
