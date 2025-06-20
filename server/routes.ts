@@ -3,8 +3,20 @@ import { createServer, type Server } from "http";
 import { z } from "zod";
 import { insertContactSchema } from "@shared/schema";
 import { storage } from "./storage";
+import express from "express";
+import path from "path";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Serve sitemap.xml and robots.txt directly
+  const publicPath = path.resolve(process.cwd(), "public");
+  
+  app.get("/sitemap.xml", (req, res) => {
+    res.sendFile(path.join(publicPath, "sitemap.xml"));
+  });
+  
+  app.get("/robots.txt", (req, res) => {
+    res.sendFile(path.join(publicPath, "robots.txt"));
+  });
   // Contact form submission
   app.post("/api/contacts", async (req, res) => {
     try {
