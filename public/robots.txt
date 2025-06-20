@@ -1,4 +1,45 @@
 User-agent: *
 Allow: /
 
+# Sitemap location
 Sitemap: https://calculatormediefacultate.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Allow all calculator pages
+Allow: /calculator-*
+Allow: /planificator
+
+# Allow all educational content
+Allow: /pensie-*
+Allow: /legislatie-*
+Allow: /planificare-*
+Allow: /tipuri-*
+Allow: /strategii-*
+Allow: /greseli-*
+Allow: /pilonul-*
+Allow: /cumparare-*
+Allow: /indexarea-*
+Allow: /stagiu-*
+Allow: /varsta-*
+Allow: /legea-*
+
+# Allow company pages
+Allow: /despre
+Allow: /contact
+Allow: /blog
+
+# Standard pages
+Allow: /confidentialitate
+Allow: /termeni
+
+# Disallow admin or development paths (if any exist in future)
+Disallow: /admin/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$ 
+Disallow: /sitemap.xml
+
+# Re-allow sitemap.xml explicitly
+Allow: /sitemap.xml
