@@ -1,7 +1,7 @@
-# Calculator Medie Facultate - Romanian Pension Calculator
+# Calculator Medie Facultate - Romanian University Grade Calculator
 
 ## Overview
-Calculator Medie Facultate is a comprehensive Romanian pension calculator website built with modern web technologies. The application provides accurate pension calculations, educational content, and strategic planning tools for Romanian citizens. The project follows a three-silo SEO architecture strategy to maximize search engine visibility and user engagement.
+Calculator Medie Facultate is a comprehensive Romanian university grade calculator website built with modern web technologies. The application provides accurate grade calculations with ECTS credits, academic classification tools, and educational content for Romanian university students. The project is optimized to rank for "calculator medie facultate" on Google.ro with comprehensive SEO strategy.
 
 ## System Architecture
 
@@ -26,9 +26,9 @@ Calculator Medie Facultate is a comprehensive Romanian pension calculator websit
 ## Key Components
 
 ### Calculator System
-1. **Main Pension Calculator**: Standard Romanian pension calculations with current legislation
-2. **Early Retirement Calculator**: Includes penalty calculations for anticipatory retirement
-3. **Pillar III Calculator**: Private pension contribution projections with tax benefits
+1. **Main Grade Calculator**: University grade calculator with ECTS credits support and weighted average calculation
+2. **Academic Classification**: Automatic classification (Summa Cum Laude, Magna Cum Laude, etc.) based on grades
+3. **ECTS Grade Conversion**: European Credit Transfer System grade equivalencies (A-F scale)
 
 ### Content Management
 1. **SEO Silo Architecture**: Three strategic content silos for optimal search ranking
@@ -103,6 +103,7 @@ Calculator Medie Facultate is a comprehensive Romanian pension calculator websit
 - June 19, 2025. Created missing pages: calculator-anticipata, calculator-pilon3, planificator, despre, confidentialitate, termeni. Fixed all 404 footer link errors.
 - June 19, 2025. Fixed homepage calculator runtime errors: Resolved nested anchor tag issues in navigation, replaced complex calculator component with simplified version, eliminated Vite runtime error plugin conflicts, ensured all form inputs work correctly without errors.
 - June 20, 2025. Completed navigation system: Created 11 comprehensive pages for all dropdown navigation sections (pension types, planning guides, legislation). Fixed all 404 errors in header navigation menus. Improved button styling for better text visibility and contrast.
+- June 20, 2025. MAJOR TRANSFORMATION: Complete pivot from pension calculator to university grade calculator targeting "calculator medie facultate" keyword. Implemented comprehensive SEO strategy with ECTS credits calculator, weighted grade calculations, academic classifications, and extensive FAQ content optimized for Google.ro ranking.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.

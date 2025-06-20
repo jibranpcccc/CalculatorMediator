@@ -82,7 +82,7 @@ export default function SEOHead({
             "name": title,
             "url": baseUrl,
             "description": description,
-            "applicationCategory": "FinanceApplication",
+            "applicationCategory": "EducationalApplication",
             "operatingSystem": "Web Browser",
             "offers": {
               "@type": "Offer",

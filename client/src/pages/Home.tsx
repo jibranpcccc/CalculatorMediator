@@ -5,12 +5,12 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calculator, Shield, Clock, CheckCircle, ArrowRight, BookOpen, Route, List, Gavel, Users, Star, Phone } from "lucide-react";
+import { Calculator, Shield, Clock, CheckCircle, ArrowRight, BookOpen, Route, List, Gavel, Users, Star, Phone, GraduationCap } from "lucide-react";
 import { Link } from "wouter";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import SimplePensionCalculator from "@/components/SimplePensionCalculator";
+import GradeCalculator from "@/components/GradeCalculator";
 import TrustIndicators from "@/components/TrustIndicators";
 import SiloSection from "@/components/SiloSection";
 import ArticleCard from "@/components/ArticleCard";
@@ -38,9 +38,9 @@ export default function Home() {
   return (
     <>
       <SEOHead 
-        title="Calculator Pensie România 2025 - Calculează Pensia Online Gratuit"
-        description="Calculator oficial pensie România - calculează pensia de stat, anticipată și Pilonul III. Instrumente gratuite pentru planificarea pensiei tale."
-        keywords="calculator pensie romania, calcul pensie, pensie anticipata calculator, pilon 3 calculator, simulator pensie"
+        title="Calculator Medie Facultate - Calculează Media Generală Universitate Online"
+        description="Calculator medie facultate gratuit - calculează media generală, media ponderată cu credite ECTS și clasificarea academică. Sistem de notare universitar românesc."
+        keywords="calculator medie facultate, calcul medie universitate, medie ponderata credite, calculator note facultate, medie generala facultate, credite ECTS, sistem notare universitar"
         canonicalUrl="https://calculatormediefacultate.com"
         schemaType="calculator"
       />
@@ -52,34 +52,34 @@ export default function Home() {
           {/* Hero Section */}
           <section className="text-center mb-12 sm:mb-16 mt-4 sm:mt-6">
             <div className="mb-6 sm:mb-8">
-              <span className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-orange-100 via-amber-100 to-yellow-100 text-orange-800 mb-6 sm:mb-8 shadow-lg border border-orange-200">
-                <span className="mr-1.5 text-sm sm:text-base">⭐</span>
-                <span className="hidden sm:inline">Cel mai precis calculator de pensie din România</span>
-                <span className="sm:hidden">Calculator #1 din România</span>
+              <span className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-blue-100 via-purple-100 to-indigo-100 text-blue-800 mb-6 sm:mb-8 shadow-lg border border-blue-200">
+                <span className="mr-1.5 text-sm sm:text-base">🎓</span>
+                <span className="hidden sm:inline">Cel mai precis calculator medie facultate din România</span>
+                <span className="sm:hidden">Calculator #1 medie facultate</span>
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tight leading-tight px-2 sm:px-4">
-              Calculator <span className="gradient-primary bg-clip-text text-transparent">Pensie</span>
+              Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie</span>
               <br className="block" />
-              <span className="gradient-primary bg-clip-text text-transparent">România</span>
+              <span className="gradient-primary bg-clip-text text-transparent">Facultate</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium px-4 sm:px-6">
-              Calculează pensia ta în câteva secunde cu cel mai avansat instrument de planificare financiară. 
-              <span className="font-bold text-gray-800 block mt-1.5">Profesional, rapid și 100% precis.</span>
+              Calculează media generală și media ponderată cu credite ECTS în câteva secunde. 
+              <span className="font-bold text-gray-800 block mt-1.5">Sistem universitar românesc - precis și rapid.</span>
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 px-4 sm:px-6">
               <button className="btn-modern px-5 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-bold text-sm sm:text-base shadow-xl group w-full sm:w-auto">
                 <span className="flex items-center justify-center gap-2">
                   <Calculator className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Calculează Pensia Acum</span>
+                  <span className="hidden sm:inline">Calculează Media Acum</span>
                   <span className="sm:hidden">Calculează Acum</span>
                 </span>
               </button>
               <button className="btn-secondary px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base group w-full sm:w-auto">
                 <span className="flex items-center justify-center gap-2">
                   <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Ghiduri Complete</span>
+                  <span className="hidden sm:inline">Ghid Note & Credite</span>
                   <span className="sm:hidden">Ghiduri</span>
                 </span>
               </button>
@@ -95,85 +95,148 @@ export default function Home() {
                 <Calculator className="h-5 w-5 sm:h-6 sm:w-6" />
               </div>
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 mb-2 sm:mb-3 px-2">
-                Calculator Principal de Pensie
+                Calculator Medie Facultate cu Credite ECTS
               </h2>
               <p className="text-sm sm:text-base text-gray-600 font-medium px-2">
-                Introdu datele tale pentru un calcul precis și instant
+                Introdu notele și creditele pentru calculul mediei generale și mediei ponderate
               </p>
             </div>
             
-            <SimplePensionCalculator />
+            <GradeCalculator />
           </section>
 
-          {/* Tools and Resources Section */}
+          {/* How to Calculate Section - SEO Content */}
+          <section className="mb-12 sm:mb-16">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl sm:text-3xl font-bold text-neutral-900 text-center mb-8">
+                Cum se calculează media la facultate în România
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-12">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-4 flex items-center">
+                    <Calculator className="mr-3 h-6 w-6 text-blue-600" />
+                    Media Aritmetică Simplă
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Se calculează prin însumarea tuturor notelor și împărțirea la numărul de discipline:
+                  </p>
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <code className="text-sm">Media = (Nota1 + Nota2 + ... + NotaN) / N</code>
+                  </div>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-4 flex items-center">
+                    <Users className="mr-3 h-6 w-6 text-purple-600" />
+                    Media Ponderată cu Credite ECTS
+                  </h3>
+                  <p className="text-gray-600 mb-4">
+                    Calculul oficial în sistemul universitar românesc, ținând cont de creditele fiecărei discipline:
+                  </p>
+                  <div className="bg-purple-50 p-4 rounded-lg">
+                    <code className="text-sm">Media = Σ(Nota × Credite) / Σ(Credite)</code>
+                  </div>
+                </Card>
+              </div>
+              
+              <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl">
+                <h3 className="text-xl font-bold mb-6 text-center">Sistemul de Notare Universitară Românesc</h3>
+                <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-red-600">1-4</div>
+                    <div className="text-sm text-gray-600">Respins</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-orange-600">5-6</div>
+                    <div className="text-sm text-gray-600">Suficient</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-yellow-600">7-8</div>
+                    <div className="text-sm text-gray-600">Bine</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-blue-600">9</div>
+                    <div className="text-sm text-gray-600">Foarte Bine</div>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <div className="text-2xl font-bold text-green-600">10</div>
+                    <div className="text-sm text-gray-600">Excelent</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Academic Tools Section */}
           <section className="mb-12 sm:mb-16">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-black text-neutral-900 text-center mb-8 sm:mb-10 px-4 leading-tight">
-              Planifică-ți Viitorul: Unelte și Resurse Esențiale
+              Instrumente Academice pentru Studenți
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-orange-50/25 to-red-50/30">
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-blue-50/25 to-indigo-50/30">
                 <CardHeader className="text-center pb-6 sm:pb-8 p-6 sm:p-8">
-                  <div className="icon-wrapper-alt bg-gradient-to-br from-orange-500 to-red-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
-                    <Clock className="text-white text-xl sm:text-2xl lg:text-3xl" />
-                  </div>
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Calculator Pensie Anticipată</CardTitle>
-                  <CardDescription className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed px-2">
-                    Calculează penalizările și estimează pensia ta dacă alegi să te pensionezi anticipat.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
-                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
-                    <Link href="/calculator-anticipata">
-                      <span className="flex items-center justify-center gap-2">
-                        <span className="hidden sm:inline">Calculează acum</span>
-                        <span className="sm:hidden">Calculează</span>
-                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-              
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-emerald-50/25 to-teal-50/30">
-                <CardHeader className="text-center pb-4 sm:pb-6 p-4 sm:p-6">
-                  <div className="icon-wrapper-alt bg-gradient-to-br from-emerald-500 to-teal-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
-                    <Users className="text-white text-xl sm:text-2xl lg:text-3xl" />
-                  </div>
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Calculator Pilon III</CardTitle>
-                  <CardDescription className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed px-2">
-                    Estimează beneficiile unei pensii private și planifică contribuțiile optime.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
-                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
-                    <Link href="/calculator-pilon3">
-                      <span className="flex items-center justify-center gap-2">
-                        <span className="hidden sm:inline">Calculează acum</span>
-                        <span className="sm:hidden">Calculează</span>
-                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-              
-              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-blue-50/25 to-indigo-50/30 md:col-span-2 xl:col-span-1">
-                <CardHeader className="text-center pb-4 sm:pb-6 p-4 sm:p-6">
                   <div className="icon-wrapper-alt bg-gradient-to-br from-blue-500 to-indigo-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
                     <Star className="text-white text-xl sm:text-2xl lg:text-3xl" />
                   </div>
-                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Planificator Financiar</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Calculator Medie Bursă</CardTitle>
                   <CardDescription className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed px-2">
-                    Creează o strategie completă pentru o pensie liniștită și independența financiară.
+                    Verifică dacă îndeplinești condițiile de medie pentru obținerea bursei de studiu.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
                   <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
-                    <Link href="/planificator">
+                    <Link href="/calculator-bursa">
                       <span className="flex items-center justify-center gap-2">
-                        <span className="hidden sm:inline">Începe planificarea</span>
-                        <span className="sm:hidden">Planifică</span>
+                        <span className="hidden sm:inline">Verifică eligibilitatea</span>
+                        <span className="sm:hidden">Verifică</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-green-50/25 to-emerald-50/30">
+                <CardHeader className="text-center pb-4 sm:pb-6 p-4 sm:p-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-green-500 to-emerald-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
+                    <BookOpen className="text-white text-xl sm:text-2xl lg:text-3xl" />
+                  </div>
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Convertor Note ECTS</CardTitle>
+                  <CardDescription className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed px-2">
+                    Convertește notele române în sistemul european ECTS și invers pentru mobilități.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
+                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
+                    <Link href="/convertor-ects">
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="hidden sm:inline">Convertește note</span>
+                        <span className="sm:hidden">Convertește</span>
+                        <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="card-hover border-0 shadow-xl bg-gradient-to-br from-white via-purple-50/25 to-violet-50/30 md:col-span-2 xl:col-span-1">
+                <CardHeader className="text-center pb-4 sm:pb-6 p-4 sm:p-6">
+                  <div className="icon-wrapper-alt bg-gradient-to-br from-purple-500 to-violet-500 mx-auto mb-4 sm:mb-6 w-12 h-12 sm:w-16 sm:h-16">
+                    <Star className="text-white text-xl sm:text-2xl lg:text-3xl" />
+                  </div>
+                  <CardTitle className="text-lg sm:text-xl lg:text-2xl font-bold mb-3 sm:mb-4 leading-tight">Calculator Admitere Master</CardTitle>
+                  <CardDescription className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed px-2">
+                    Calculează media de admitere la masterat pe baza mediei de licență și notei la examen.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="text-center pt-0 px-4 sm:px-6 pb-6">
+                  <Button className="btn-modern px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold group w-full sm:w-auto" asChild>
+                    <Link href="/calculator-master">
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="hidden sm:inline">Calculează admitere</span>
+                        <span className="sm:hidden">Calculează</span>
                         <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                       </span>
                     </Link>
@@ -183,16 +246,92 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Knowledge Hub Section */}
+          {/* FAQ Section - Essential for SEO */}
+          <section className="mb-16">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-neutral-900 text-center mb-12">
+                Întrebări Frecvente despre Calculul Mediei la Facultate
+              </h2>
+              
+              <div className="space-y-6">
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Ce este media ponderată cu credite ECTS?</h3>
+                  <p className="text-gray-600">
+                    Media ponderată cu credite ECTS este calculul oficial folosit în sistemul universitar românesc. 
+                    Fiecare disciplină are un număr de credite ECTS care reflectă importanța și volumul de muncă. 
+                    Media se calculează multiplicând nota cu creditele pentru fiecare disciplină, apoi împărțind suma totală la numărul total de credite.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Cum se calculează media pentru bursă la facultate?</h3>
+                  <p className="text-gray-600">
+                    Pentru bursa de studiu se folosește media ponderată cu credite ECTS din anul anterior sau semestrul precedent. 
+                    Criteriile variază între universități, dar în general este necesară o medie minimă de 8.00-8.50 pentru bursa de merit. 
+                    Consultă regulamentul specific al universității tale pentru detalii exacte.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Ce diferență este între media aritmetică și cea ponderată?</h3>
+                  <p className="text-gray-600">
+                    Media aritmetică se calculează prin însumarea notelor împărțită la numărul de discipline, fără să țină cont de credite. 
+                    Media ponderată consideră creditele ECTS, dând mai multă importanță disciplinelor cu mai multe credite. 
+                    Media ponderată este cea oficială pentru toate procedurile administrative universitare.
+                  </p>
+                </Card>
+                
+                <Card className="p-6">
+                  <h3 className="text-xl font-bold mb-3">Cum convertesc notele pentru mobilitate Erasmus?</h3>
+                  <p className="text-gray-600">
+                    Pentru mobilități Erasmus, notele românești (1-10) se convertesc în sistemul ECTS (A, B, C, D, E, F). 
+                    Conversiile standard: 10 = A (Excelent), 9 = B (Foarte bine), 8 = C (Bine), 7 = D (Satisfăcător), 6 = E (Suficient), sub 6 = F (Respins). 
+                    Fiecare universitate poate avea propriile echivalențe specifice.
+                  </p>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* Academic Resources Section */}
           <section className="mb-16">
             <h2 className="text-3xl font-bold text-neutral-900 text-center mb-12">
-              Învață Totul Despre Sistemul de Pensii din România
+              Resurse Academice pentru Studenți
             </h2>
             
             <div className="grid md:grid-cols-3 gap-8">
-              {siloContent.map((silo, index) => (
-                <SiloSection key={index} {...silo} />
-              ))}
+              <Card className="p-6 text-center">
+                <BookOpen className="mx-auto mb-4 h-12 w-12 text-blue-600" />
+                <h3 className="text-xl font-bold mb-3">Ghid Sistem Universitar</h3>
+                <p className="text-gray-600 mb-4">
+                  Înțelege sistemul de credite ECTS, clasificările academice și procedurile universitare din România.
+                </p>
+                <Link href="/ghid-universitar">
+                  <Button className="w-full">Citește Ghidul</Button>
+                </Link>
+              </Card>
+              
+              <Card className="p-6 text-center">
+                <Calculator className="mx-auto mb-4 h-12 w-12 text-green-600" />
+                <h3 className="text-xl font-bold mb-3">Exemple Calcule</h3>
+                <p className="text-gray-600 mb-4">
+                  Vezi exemple practice de calcul al mediei pentru diferite situații academice și specializări.
+                </p>
+                <Link href="/exemple-calcule">
+                  <Button className="w-full">Vezi Exemple</Button>
+                </Link>
+              </Card>
+              
+              <Card className="p-6 text-center">
+                <Users className="mx-auto mb-4 h-12 w-12 text-purple-600" />
+                <h3 className="text-xl font-bold mb-3">Suport Student</h3>
+                <p className="text-gray-600 mb-4">
+                  Ai întrebări despre calculul mediei? Contactează echipa noastră de specialiști academici.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full">Contactează-ne</Button>
+                </Link>
+              </Card>
             </div>
           </section>
 
@@ -241,49 +380,49 @@ export default function Home() {
           </section>
 
           {/* Trust and Authority Section */}
-          <section className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-2xl p-12 mb-16">
+          <section className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-12 mb-16">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl font-bold text-neutral-900 mb-6">
-                De ce să ne alegi pentru planificarea pensiei?
+                De ce să ne alegi pentru calculul mediei la facultate?
               </h2>
               <p className="text-xl text-neutral-700 mb-12">
-                Suntem resursa de încredere pentru mii de români care își planifică viitorul financiar
+                Suntem resursa de încredere pentru mii de studenți români care își calculează media universitară
               </p>
               
               <div className="grid md:grid-cols-4 gap-8 mb-12">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">50,000+</div>
-                  <div className="text-neutral-700">Calcule efectuate</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">25,000+</div>
+                  <div className="text-neutral-700">Calcule medii efectuate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">95%</div>
-                  <div className="text-neutral-700">Precizie calcule</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">100%</div>
+                  <div className="text-neutral-700">Precizie ECTS</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">24/7</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
                   <div className="text-neutral-700">Disponibilitate</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">2025</div>
-                  <div className="text-neutral-700">Legislație actualizată</div>
+                  <div className="text-3xl font-bold text-blue-600 mb-2">2025</div>
+                  <div className="text-neutral-700">Sistem actualizat</div>
                 </div>
               </div>
               
               <div className="flex flex-wrap justify-center items-center gap-8 text-neutral-600">
                 <div className="flex items-center">
-                  <CheckCircle className="text-primary mr-2" />
-                  <span>Validat de experți</span>
+                  <CheckCircle className="text-blue-600 mr-2" />
+                  <span>Conform ECTS oficial</span>
                 </div>
                 <div className="flex items-center">
-                  <Shield className="text-primary mr-2" />
+                  <Shield className="text-blue-600 mr-2" />
                   <span>Date securizate SSL</span>
                 </div>
                 <div className="flex items-center">
-                  <Clock className="text-primary mr-2" />
-                  <span>Actualizat în timp real</span>
+                  <Clock className="text-blue-600 mr-2" />
+                  <span>Calcul instant</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="text-primary mr-2" />
+                  <Phone className="text-blue-600 mr-2" />
                   <span>Suport expert</span>
                 </div>
               </div>
