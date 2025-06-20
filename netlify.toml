@@ -1,5 +1,5 @@
 [build]
-  command = "node build-static.js"
+  command = "echo 'Using pre-built static files' && ls -la dist/"
   publish = "dist"
 
 [build.environment]
