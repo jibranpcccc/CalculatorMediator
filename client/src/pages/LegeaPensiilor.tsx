@@ -13,6 +13,13 @@ export default function LegeaPensiilor() {
         description="Ghid complet despre Legea Pensiilor 2025 din România. Modificări legislative, noutăți, impactul asupra pensionarilor și viitorilor pensionari."
         keywords="legea pensiilor 2025, modificari pensii, legislatie pensii romania, reforma pensii"
         canonicalUrl="https://calculatormediefacultate.com/legea-pensiilor"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50">

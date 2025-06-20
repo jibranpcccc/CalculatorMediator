@@ -55,6 +55,7 @@ export default function CalculatorAnticipata() {
         description="Calculator pensie anticipată parțială România 2025. Calculează pensia ta cu ieșirea anticipată la pensie, penalitățile și beneficiile financiare."
         keywords="calculator pensie anticipata, pensie anticipata partiala, iesire anticipata pensie, penalitati pensie"
         canonicalUrl="https://calculatormediefacultate.com/calculator-anticipata"
+        schemaType="calculator"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">

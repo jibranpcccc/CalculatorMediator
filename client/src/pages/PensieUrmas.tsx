@@ -12,6 +12,13 @@ export default function PensieUrmas() {
         description="Ghid complet despre pensia de urmaș în România. Condiții, beneficiari, calcul și drepturi pentru urmașii unei persoane decedate în 2025."
         keywords="pensie urmas, pensie deces, beneficiari pensie, protectie familia"
         canonicalUrl="https://calculatormediefacultate.com/pensie-urmas"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Tipuri Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-red-50">

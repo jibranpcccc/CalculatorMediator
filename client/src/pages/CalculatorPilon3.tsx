@@ -47,6 +47,7 @@ export default function CalculatorPilon3() {
         description="Calculator Pilon III pensie privată facultativă. Calculează beneficiile fiscale și acumulările din contribuțiile la pensia privată Pilonul 3."
         keywords="calculator pilon 3, pensie privata facultativa, pilon III, contributii pensie privata, beneficii fiscale"
         canonicalUrl="https://calculatormediefacultate.com/calculator-pilon3"
+        schemaType="calculator"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">

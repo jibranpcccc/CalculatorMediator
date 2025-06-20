@@ -12,6 +12,13 @@ export default function PensieAnticipata() {
         description="Ghid complet despre pensia anticipată parțială în România. Condiții, penalizări, calcul și simulări pentru pensionarea anticipată în 2025."
         keywords="pensie anticipata, pensionare anticipata, pensie partiala, penalizari pensie"
         canonicalUrl="https://calculatormediefacultate.com/pensie-anticipata"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Tipuri Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">

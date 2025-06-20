@@ -12,6 +12,7 @@ export default function Confidentialitate() {
         description="Politica de confidențialitate Calculator Medie Facultate. Află cum protejăm datele tale personale și care sunt drepturile tale conform GDPR."
         keywords="politica confidentialitate, protectia datelor, GDPR, privacitatea datelor"
         canonicalUrl="https://calculatormediefacultate.com/confidentialitate"
+        schemaType="website"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">

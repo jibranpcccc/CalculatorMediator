@@ -12,6 +12,7 @@ export default function Termeni() {
         description="Termeni și condiții de utilizare Calculator Medie Facultate. Regulile și condițiile pentru folosirea calculatoarelor de pensie și serviciilor noastre."
         keywords="termeni si conditii, conditii utilizare, regulament, responsabilitati"
         canonicalUrl="https://calculatormediefacultate.com/termeni"
+        schemaType="website"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">

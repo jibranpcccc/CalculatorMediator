@@ -83,6 +83,13 @@ export default function Legislation() {
         description="Ghid complet despre legislația pensiilor în România 2025. Înțelege legea pensiilor, vârsta de pensionare și calculul corect al pensiei."
         keywords="legislatie pensii, legea pensiilor 2025, varsta pensionare romania, stagiu cotizare"
         canonicalUrl="https://calculatormediefacultate.com/legislatie-si-resurse"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-neutral-50">

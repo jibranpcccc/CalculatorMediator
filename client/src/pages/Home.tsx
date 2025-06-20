@@ -27,6 +27,7 @@ export default function Home() {
         description="Calculator Medie Facultate - cel mai precis calculator de pensie online pentru România. Calculează pensia ta în câteva secunde cu instrumentele noastre profesionale."
         keywords="calculator medie facultate, calculator pensie, calcul pensie, simulator pensie online, pensia mea"
         canonicalUrl="https://calculatormediefacultate.com"
+        schemaType="calculator"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mobile-overflow-hidden safe-padding">

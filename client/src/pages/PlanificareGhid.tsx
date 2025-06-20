@@ -12,6 +12,13 @@ export default function PlanificareGhid() {
         description="Ghid complet pentru planificarea pensiei în România. Descoperă strategii eficiente, calculează pensia ta și planifică-ți viitorul financiar cu expertiza noastră."
         keywords="planificare pensie, ghid pensie, strategie pensie, calculare pensie, viitor financiar"
         canonicalUrl="https://calculatormediefacultate.com/planificare-ghid"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Planificare Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">

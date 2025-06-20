@@ -12,6 +12,13 @@ export default function VarstaPensionare() {
         description="Ghid complet despre vârsta standard de pensionare în România pentru 2025. Evoluția vârstei de pensionare, calendar modificări și impact asupra pensionarilor."
         keywords="varsta pensionare romania, varsta pensionare 2025, pensionare standard, modificari varsta"
         canonicalUrl="https://calculatormediefacultate.com/varsta-pensionare"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50">

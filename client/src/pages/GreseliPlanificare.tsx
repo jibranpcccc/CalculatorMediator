@@ -12,6 +12,13 @@ export default function GreseliPlanificare() {
         description="Descoperă cele mai frecvente greșeli în planificarea pensiei și cum să le eviți. Ghid complet pentru o strategie de pensionare reușită în România."
         keywords="greseli planificare pensie, erori pensie, strategii pensie, sfaturi pensie"
         canonicalUrl="https://calculatormediefacultate.com/greseli-planificare"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Planificare Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">

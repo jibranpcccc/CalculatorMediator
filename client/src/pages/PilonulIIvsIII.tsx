@@ -13,6 +13,13 @@ export default function PilonulIIvsIII() {
         description="Comparație detaliată între Pilonul II și Pilonul III de pensii. Descoperă diferențele, avantajele și dezavantajele fiecărui sistem de pensii private din România."
         keywords="pilon 2 vs pilon 3, pensii private romania, comparatie pensii, pilonul ii, pilonul iii"
         canonicalUrl="https://calculatormediefacultate.com/pilonul-2-vs-3"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Planificare Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50">

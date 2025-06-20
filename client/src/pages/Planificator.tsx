@@ -14,6 +14,7 @@ export default function Planificator() {
         description="Planificator financiar complet pentru pensie România. Strategii de planificare, calculatoare specializate și ghiduri pentru un viitor financiar sigur."
         keywords="planificator financiar, planificare pensie, strategie financiara, planificare viitor"
         canonicalUrl="https://calculatormediefacultate.com/planificator"
+        schemaType="calculator"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">

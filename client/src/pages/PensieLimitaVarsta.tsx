@@ -12,6 +12,13 @@ export default function PensieLimitaVarsta() {
         description="Tot ce trebuie să știi despre pensia pentru limită de vârstă în România. Vârsta de pensionare, condiții, calcul și simulări pentru 2025."
         keywords="pensie limita varsta, varsta pensionare romania, pensie standard, calcul pensie 2025"
         canonicalUrl="https://calculatormediefacultate.com/pensie-limita-varsta"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Tipuri Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">

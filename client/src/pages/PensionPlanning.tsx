@@ -14,6 +14,13 @@ export default function PensionPlanning() {
         description="Calculator Medie Facultate oferă ghidul complet pentru planificarea pensiei. Strategii, calculatoare și sfaturi profesionale pentru o pensie liniștită."
         keywords="calculator medie facultate, planificarea pensiei, strategii pensie, planificare financiară"
         canonicalUrl="https://calculatormediefacultate.com/planificarea-pensiei"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Planificare Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-neutral-50">

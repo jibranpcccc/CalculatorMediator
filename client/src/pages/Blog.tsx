@@ -12,6 +12,7 @@ export default function Blog() {
         description="Calculator Medie Facultate - descoperă articole și ghiduri experte despre planificarea pensiei, legislația actuală și strategii pentru viitorul tău financiar."
         keywords="calculator medie facultate, blog pensii, ghiduri pensii, articole pensii romania"
         canonicalUrl="https://calculatormediefacultate.com/blog"
+        schemaType="website"
       />
       
       <div className="min-h-screen bg-neutral-50">

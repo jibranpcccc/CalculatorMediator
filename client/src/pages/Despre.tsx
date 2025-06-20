@@ -12,6 +12,7 @@ export default function Despre() {
         description="Despre Calculator Medie Facultate - misiunea, viziunea și echipa din spatele celui mai precis calculator de pensie din România. Află povestea noastră."
         keywords="despre calculator medie facultate, echipa, misiune, viziune, pensii romania"
         canonicalUrl="https://calculatormediefacultate.com/despre"
+        schemaType="organization"
       />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50">

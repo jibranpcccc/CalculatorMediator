@@ -12,6 +12,13 @@ export default function PensieInvaliditate() {
         description="Ghid complet despre pensia de invaliditate în România. Condiții, graduri de invaliditate, calcul și proceduri pentru obținerea pensiei de invaliditate în 2025."
         keywords="pensie invaliditate, grad invaliditate, pensie dizabilitate, protectie sociala"
         canonicalUrl="https://calculatormediefacultate.com/pensie-invaliditate"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Tipuri Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50">

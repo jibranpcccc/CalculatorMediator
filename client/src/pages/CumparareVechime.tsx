@@ -12,6 +12,13 @@ export default function CumparareVechime() {
         description="Ghid complet despre cumpărarea vechimii în muncă pentru pensie în România. Condiții, costuri, proceduri și beneficii pentru completarea stagiului de cotizare în 2025."
         keywords="cumparare vechime pensie, completare stagiu, costuri vechime, proceduri pensie"
         canonicalUrl="https://calculatormediefacultate.com/cumparare-vechime"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">

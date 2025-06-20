@@ -12,6 +12,13 @@ export default function StrategiiInvestitii() {
         description="Descoperă strategiile de investiții optime pentru pensie în România. Ghid complet pentru diversificare, risc și randament pe termen lung."
         keywords="strategii investitii pensie, portofoliu pensie, investitii termen lung, fonduri pensie"
         canonicalUrl="https://calculatormediefacultate.com/strategii-investitii"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Planificare Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">

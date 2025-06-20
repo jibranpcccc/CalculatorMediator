@@ -12,6 +12,13 @@ export default function StagiuCotizare() {
         description="Ghid complet despre stagiul de cotizare necesar pentru pensie în România. Calculează vechimea, completează stagiul și optimizează contribuțiile pentru 2025."
         keywords="stagiu cotizare pensie, vechime pensie, ani cotizare, completare stagiu"
         canonicalUrl="https://calculatormediefacultate.com/stagiu-cotizare"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">

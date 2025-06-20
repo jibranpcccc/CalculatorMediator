@@ -12,6 +12,13 @@ export default function IndexareaPensiilor() {
         description="Ghid complet despre indexarea pensiilor în România pentru 2025. Formula de indexare, creșteri, calendar și impactul asupra pensionarilor."
         keywords="indexarea pensiilor 2025, cresterea pensiilor, formula indexare, majorarea pensiilor"
         canonicalUrl="https://calculatormediefacultate.com/indexarea-pensiilor"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Legislatie Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">

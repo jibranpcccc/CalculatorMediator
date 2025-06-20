@@ -13,6 +13,13 @@ export default function TipuriPensiiGhid() {
         description="Ghid complet despre tipurile de pensii din România: pensia pentru limită de vârstă, anticipată, de urmaș și de invaliditate. Calculează-ți pensia acum."
         keywords="tipuri pensii romania, pensie limita varsta, pensie anticipata, pensie urmas, pensie invaliditate"
         canonicalUrl="https://calculatormediefacultate.com/tipuri-pensii-ghid"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Tipuri Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">

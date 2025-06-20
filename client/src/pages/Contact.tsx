@@ -37,6 +37,7 @@ export default function Contact() {
         description="Calculator Medie Facultate - contactează echipa noastră de experți pentru consultanță personalizată în planificarea pensiei și suport profesional."
         keywords="calculator medie facultate, contact, suport pensii, consultanta pensii"
         canonicalUrl="https://calculatormediefacultate.com/contact"
+        schemaType="organization"
       />
       
       <div className="min-h-screen bg-neutral-50">

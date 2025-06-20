@@ -15,6 +15,13 @@ export default function PensionTypes() {
         description="Calculator Medie Facultate prezintă ghidul complet despre toate tipurile de pensii din România: pensie pentru limită de vârstă, anticipată, de urmaș și invaliditate."
         keywords="calculator medie facultate, tipuri de pensii românia, pensie de stat, pensie anticipată"
         canonicalUrl="https://calculatormediefacultate.com/tipuri-de-pensii"
+        schemaType="article"
+        articleData={{
+          datePublished: "2025-01-01",
+          dateModified: "2025-06-19",
+          author: "Calculator Medie Facultate",
+          category: "Pensii"
+        }}
       />
       
       <div className="min-h-screen bg-neutral-50">
