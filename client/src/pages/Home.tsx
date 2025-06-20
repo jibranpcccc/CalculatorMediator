@@ -232,9 +232,11 @@ export default function Home() {
             </div>
             
             <div className="text-center mt-12">
-              <Button size="lg" className="inline-flex items-center">
-                Vezi toate articolele <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link href="/blog">
+                <Button size="lg" className="inline-flex items-center">
+                  Vezi toate articolele <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </section>
 

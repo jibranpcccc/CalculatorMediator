@@ -27,6 +27,7 @@ import VarstaPensionare from "@/pages/VarstaPensionare";
 import StagiuCotizare from "@/pages/StagiuCotizare";
 import IndexareaPensiilor from "@/pages/IndexareaPensiilor";
 import CumparareVechime from "@/pages/CumparareVechime";
+import ArticleDetail from "@/pages/ArticleDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -58,6 +59,7 @@ function Router() {
       <Route path="/stagiu-cotizare" component={StagiuCotizare} />
       <Route path="/indexarea-pensiilor" component={IndexareaPensiilor} />
       <Route path="/cumparare-vechime" component={CumparareVechime} />
+      <Route path="/articol/:slug" component={ArticleDetail} />
       <Route component={NotFound} />
     </Switch>
   );
