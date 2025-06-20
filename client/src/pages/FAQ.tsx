@@ -2,14 +2,16 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import FAQSection from "@/components/FAQSection";
+import FAQPageSchema from "@/components/FAQPageSchema";
 
 export default function FAQ() {
   return (
     <>
+      <FAQPageSchema />
       <SEOHead 
-        title="Calculator Medie Facultate - Întrebări Frecvente despre Pensii România"
-        description="Găsește răspunsuri la toate întrebările despre calculul pensiei, planificarea pensiei și legislația din România. Ghid complet FAQ."
-        keywords="intrebari frecvente pensii, FAQ pensii romania, calculator pensie intrebari"
+        title="Întrebări Frecvente Pensii România - FAQ Calculator Pensie 2025"
+        description="Răspunsuri complete la întrebări despre calculul pensiei, planificarea pensiei și legislația din România. Ghid expert FAQ pensii."
+        keywords="intrebari frecvente pensii, FAQ pensii romania, calculator pensie intrebari, raspunsuri pensii"
         canonicalUrl="https://calculatormediefacultate.com/faq"
         schemaType="website"
       />

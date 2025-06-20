@@ -70,3 +70,15 @@ export const trackEvent = (
     console.warn('Analytics tracking failed:', error);
   }
 };
+
+export const trackCalculatorUsage = (calculatorType: string, result?: number) => {
+  trackEvent('calculate', 'Calculator', calculatorType, result);
+};
+
+export const trackPageEngagement = (pageName: string, timeSpent: number) => {
+  trackEvent('engagement', 'Page Time', pageName, timeSpent);
+};
+
+export const trackDownload = (resource: string) => {
+  trackEvent('download', 'Resource', resource);
+};

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import ArticleCard from "@/components/ArticleCard";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useQuery } from "@tanstack/react-query";
 import type { Article } from "@shared/schema";
 
@@ -34,6 +35,7 @@ export default function Blog() {
         <Header />
         
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Breadcrumb />
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-neutral-900 mb-4">Blog</h1>
             <p className="text-xl text-neutral-600 max-w-2xl mx-auto">

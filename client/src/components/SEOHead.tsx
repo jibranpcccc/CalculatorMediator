@@ -55,6 +55,9 @@ export default function SEOHead({
     setMetaTag('twitter:card', 'summary_large_image');
     setMetaTag('twitter:title', title);
     setMetaTag('twitter:description', description);
+    if (ogImage) setMetaTag('twitter:image', ogImage);
+    setMetaTag('twitter:site', '@calculatorpensie');
+    setMetaTag('twitter:creator', '@calculatorpensie');
 
     // Canonical URL
     if (canonicalUrl) {

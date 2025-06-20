@@ -4,8 +4,10 @@ import type { Article } from "@shared/schema";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import Breadcrumb from "@/components/Breadcrumb";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, User } from "lucide-react";
+import { Link } from "wouter";
 
 export default function ArticleDetail() {
   const [match, params] = useRoute("/articol/:slug");
@@ -98,6 +100,7 @@ export default function ArticleDetail() {
         <Header />
         
         <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <Breadcrumb />
           <article>
             {/* Article Header */}
             <header className="mb-8">
@@ -132,8 +135,11 @@ export default function ArticleDetail() {
               <div className="mb-8">
                 <img 
                   src={article.imageUrl} 
-                  alt={article.title}
+                  alt={`Imagine principală pentru articolul: ${article.title}`}
                   className="w-full h-64 sm:h-80 object-cover rounded-lg shadow-lg"
+                  loading="lazy"
+                  width="800"
+                  height="320"
                 />
               </div>
             )}
@@ -148,9 +154,11 @@ export default function ArticleDetail() {
 
             {/* Back to Blog Link */}
             <div className="mt-12 pt-8 border-t border-neutral-200">
-              <a href="/blog" className="inline-flex items-center text-primary hover:text-primary/80 font-medium">
-                ← Înapoi la toate articolele
-              </a>
+              <Link href="/blog">
+                <span className="inline-flex items-center text-primary hover:text-primary/80 font-medium">
+                  ← Citește mai multe articole despre pensii
+                </span>
+              </Link>
             </div>
           </article>
         </main>

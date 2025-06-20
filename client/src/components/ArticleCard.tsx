@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "wouter";
+import LazyImage from "@/components/LazyImage";
 
 interface ArticleCardProps {
   title: string;
@@ -20,10 +21,12 @@ export default function ArticleCard({ title, description, category, date, href, 
 
   return (
     <Card className="overflow-hidden hover:shadow-xl transition-shadow">
-      <img 
+      <LazyImage 
         src={imageUrl} 
-        alt={title}
+        alt={`Imagine pentru articolul: ${title}`}
         className="w-full h-48 object-cover"
+        width={400}
+        height={192}
       />
       <CardContent className="p-6">
         <Badge className={`mb-2 ${categoryColors[category as keyof typeof categoryColors] || 'bg-gray-100 text-gray-700'}`}>

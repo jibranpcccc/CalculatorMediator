@@ -38,9 +38,9 @@ export default function Home() {
   return (
     <>
       <SEOHead 
-        title="Calculator Medie Facultate - Calculator Pensie România Online 2025"
-        description="Calculator Medie Facultate - cel mai precis calculator de pensie online pentru România. Calculează pensia ta în câteva secunde cu instrumentele noastre profesionale."
-        keywords="calculator medie facultate, calculator pensie, calcul pensie, simulator pensie online, pensia mea"
+        title="Calculator Pensie România 2025 - Calculează Pensia Online Gratuit"
+        description="Calculator oficial pensie România - calculează pensia de stat, anticipată și Pilonul III. Instrumente gratuite pentru planificarea pensiei tale."
+        keywords="calculator pensie romania, calcul pensie, pensie anticipata calculator, pilon 3 calculator, simulator pensie"
         canonicalUrl="https://calculatormediefacultate.com"
         schemaType="calculator"
       />
@@ -48,7 +48,7 @@ export default function Home() {
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mobile-overflow-hidden safe-padding">
         <Header />
         
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           {/* Hero Section */}
           <section className="text-center mb-12 sm:mb-16 mt-4 sm:mt-6">
             <div className="mb-6 sm:mb-8">
@@ -59,9 +59,9 @@ export default function Home() {
               </span>
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-6 sm:mb-8 tracking-tight leading-tight px-2 sm:px-4">
-              Calculator <span className="gradient-primary bg-clip-text text-transparent">Medie</span>
+              Calculator <span className="gradient-primary bg-clip-text text-transparent">Pensie</span>
               <br className="block" />
-              <span className="gradient-primary bg-clip-text text-transparent">Facultate</span>
+              <span className="gradient-primary bg-clip-text text-transparent">România</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-4xl mx-auto mb-8 sm:mb-10 leading-relaxed font-medium px-4 sm:px-6">
               Calculează pensia ta în câteva secunde cu cel mai avansat instrument de planificare financiară. 
