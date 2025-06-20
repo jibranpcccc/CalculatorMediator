@@ -28,6 +28,7 @@ import StagiuCotizare from "@/pages/StagiuCotizare";
 import IndexareaPensiilor from "@/pages/IndexareaPensiilor";
 import CumparareVechime from "@/pages/CumparareVechime";
 import ArticleDetail from "@/pages/ArticleDetail";
+import FAQ from "@/pages/FAQ";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -60,6 +61,7 @@ function Router() {
       <Route path="/indexarea-pensiilor" component={IndexareaPensiilor} />
       <Route path="/cumparare-vechime" component={CumparareVechime} />
       <Route path="/articol/:slug" component={ArticleDetail} />
+      <Route path="/faq" component={FAQ} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -180,6 +180,12 @@ export default function Header() {
                   </Button>
                   
                   <Button variant="ghost" className="w-full justify-start" asChild>
+                    <Link href="/faq" onClick={() => setIsOpen(false)}>
+                      Întrebări Frecvente
+                    </Link>
+                  </Button>
+                  
+                  <Button variant="ghost" className="w-full justify-start" asChild>
                     <Link href="/contact" onClick={() => setIsOpen(false)}>
                       Contact
                     </Link>

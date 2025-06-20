@@ -182,6 +182,12 @@ export default function Contact() {
                     <p className="font-medium text-sm">Cât de des se actualizează informațiile?</p>
                     <p className="text-neutral-600 text-sm">Actualizăm toate informațiile lunar sau ori de câte ori apar modificări legislative.</p>
                   </div>
+                  
+                  <div className="mt-4 pt-3 border-t">
+                    <a href="/faq" className="text-primary hover:text-primary/80 font-medium text-sm">
+                      Vezi toate întrebările frecvente →
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>
