@@ -202,7 +202,7 @@ export default function PensionPlanning() {
                   </Button>
                 </Link>
                 <Link href="/contact">
-                  <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                  <Button size="lg" variant="outline" className="border-white bg-white text-orange-600 hover:bg-orange-50 hover:text-orange-700">
                     Contactează un expert
                   </Button>
                 </Link>
