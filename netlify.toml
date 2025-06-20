@@ -1,5 +1,5 @@
 [build]
-  command = "npm install && node deploy-replit-to-netlify.js"
+  command = "npm install && node fix-layout-deployment.js"
   publish = "dist"
 
 [build.environment]

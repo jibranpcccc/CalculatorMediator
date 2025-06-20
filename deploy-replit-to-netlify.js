@@ -88,34 +88,34 @@ const gradeCalculatorContent = `
       </div>
 
       <!-- Calculator Card -->
-      <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+      <div class="bg-white rounded-lg shadow-lg p-6 mb-8 calculator-card">
         <h2 class="text-2xl font-bold text-center mb-6">Calculator Medie Facultate cu Credite ECTS</h2>
-        <p class="text-center text-gray-600 mb-8">Introdu notele și creditele pentru calculul mediei generale și mediei ponderate</p>
+        <p class="text-center text-gray-600 mb-6">Introdu notele și creditele pentru calculul mediei generale și mediei ponderate</p>
         
-        <div id="subjects-container">
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 p-4 bg-gray-50 rounded-lg subject-row">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Numele disciplinei</label>
-              <input type="text" placeholder="ex: Matematică, Programare..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-name">
+        <div id="subjects-container" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg subject-row">
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-700">Numele disciplinei</label>
+              <input type="text" placeholder="ex: Matematică, Programare..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-name">
             </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Nota (1-10)</label>
-              <input type="number" min="1" max="10" step="0.01" placeholder="8.50" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-grade">
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-700">Nota (1-10)</label>
+              <input type="number" min="1" max="10" step="0.01" placeholder="8.50" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-grade">
             </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-2">Credite ECTS</label>
-              <input type="number" min="1" max="30" placeholder="6" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-credits">
+            <div class="space-y-2">
+              <label class="block text-sm font-medium text-gray-700">Credite ECTS</label>
+              <input type="number" min="1" max="30" placeholder="6" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-credits">
             </div>
-            <div class="flex items-end">
-              <button type="button" class="w-10 h-10 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors remove-subject" style="display: none;">×</button>
+            <div class="flex items-end justify-center">
+              <button type="button" class="w-10 h-10 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors remove-subject hidden">×</button>
             </div>
           </div>
         </div>
 
-        <div class="text-center space-x-4 mb-8">
-          <button type="button" onclick="addSubject()" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors">+ Adaugă disciplină</button>
-          <button type="button" onclick="calculateGrades()" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">Calculează Media</button>
-          <button type="button" onclick="resetCalculator()" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors">Resetează</button>
+        <div class="flex flex-wrap justify-center gap-4 mt-6 mb-6">
+          <button type="button" onclick="addSubject()" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors font-medium">+ Adaugă disciplină</button>
+          <button type="button" onclick="calculateGrades()" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors font-medium">Calculează Media</button>
+          <button type="button" onclick="resetCalculator()" class="bg-gray-600 text-white px-6 py-2 rounded-md hover:bg-gray-700 transition-colors font-medium">Resetează</button>
         </div>
 
         <!-- Results Section -->
@@ -269,29 +269,85 @@ const productionHTML = `<!DOCTYPE html>
             }
         }
     </script>
+    <style>
+        /* Fix layout and viewport issues */
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Ensure proper spacing and layout */
+        .main-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        main {
+            flex: 1;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+        
+        /* Fix header navigation spacing */
+        .nav-dropdown {
+            z-index: 1000;
+        }
+        
+        /* Ensure calculator card is properly visible */
+        .calculator-card {
+            margin: 2rem auto;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        /* Fix responsive grid on mobile */
+        @media (max-width: 768px) {
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+            
+            .mobile-menu-button {
+                display: block;
+            }
+        }
+        
+        /* Ensure content is always visible */
+        .content-container {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    ${gradeCalculatorContent}
+    <div class="main-container">
+        ${gradeCalculatorContent}
+    </div>
 
     <script>
         function addSubject() {
             const container = document.getElementById('subjects-container');
             const newRow = document.createElement('div');
-            newRow.className = 'grid grid-cols-1 md:grid-cols-4 gap-4 mb-4 p-4 bg-gray-50 rounded-lg subject-row';
+            newRow.className = 'grid grid-cols-1 md:grid-cols-4 gap-4 p-4 bg-gray-50 rounded-lg subject-row';
             newRow.innerHTML = \`
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Numele disciplinei</label>
-                    <input type="text" placeholder="ex: Matematică, Programare..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-name">
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-700">Numele disciplinei</label>
+                    <input type="text" placeholder="ex: Matematică, Programare..." class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-name">
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Nota (1-10)</label>
-                    <input type="number" min="1" max="10" step="0.01" placeholder="8.50" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-grade">
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-700">Nota (1-10)</label>
+                    <input type="number" min="1" max="10" step="0.01" placeholder="8.50" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-grade">
                 </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Credite ECTS</label>
-                    <input type="number" min="1" max="30" placeholder="6" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 subject-credits">
+                <div class="space-y-2">
+                    <label class="block text-sm font-medium text-gray-700">Credite ECTS</label>
+                    <input type="number" min="1" max="30" placeholder="6" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent subject-credits">
                 </div>
-                <div class="flex items-end">
+                <div class="flex items-end justify-center">
                     <button type="button" onclick="removeSubject(this)" class="w-10 h-10 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors remove-subject">×</button>
                 </div>
             \`;
