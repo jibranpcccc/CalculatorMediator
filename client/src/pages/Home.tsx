@@ -17,9 +17,24 @@ import ArticleCard from "@/components/ArticleCard";
 import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 import { siloContent } from "@/data/siloContent";
-import { latestArticles } from "@/data/articles";
+import { useQuery } from "@tanstack/react-query";
+import type { Article } from "@shared/schema";
 
 export default function Home() {
+  const { data: articles, isLoading: articlesLoading } = useQuery<Article[]>({
+    queryKey: ['/api/articles'],
+  });
+
+  const formatDate = (dateString: string | Date | null) => {
+    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('ro-RO', { 
+      day: 'numeric', 
+      month: 'short', 
+      year: 'numeric' 
+    });
+  };
+
   return (
     <>
       <SEOHead 
@@ -188,9 +203,32 @@ export default function Home() {
             </h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {latestArticles.map((article, index) => (
-                <ArticleCard key={index} {...article} />
-              ))}
+              {articlesLoading && (
+                <>
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="animate-pulse">
+                      <div className="bg-gray-200 h-48 w-full rounded-t-lg mb-4"></div>
+                      <div className="bg-gray-200 h-4 w-3/4 mb-2 rounded"></div>
+                      <div className="bg-gray-200 h-4 w-1/2 rounded"></div>
+                    </div>
+                  ))}
+                </>
+              )}
+              {articles && articles.length > 0 && (
+                <>
+                  {articles.slice(0, 3).map((article) => (
+                    <ArticleCard 
+                      key={article.id} 
+                      title={article.title}
+                      description={article.description}
+                      category={article.category}
+                      date={formatDate(article.createdAt)}
+                      href={`/articol/${article.slug || article.id}`}
+                      imageUrl={article.imageUrl || ''}
+                    />
+                  ))}
+                </>
+              )}
             </div>
             
             <div className="text-center mt-12">

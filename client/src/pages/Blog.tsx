@@ -2,9 +2,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import ArticleCard from "@/components/ArticleCard";
-import { latestArticles } from "@/data/articles";
+import { useQuery } from "@tanstack/react-query";
+import type { Article } from "@shared/schema";
 
 export default function Blog() {
+  const { data: articles, isLoading, error } = useQuery<Article[]>({
+    queryKey: ['/api/articles'],
+  });
+
+  const formatDate = (dateString: string | Date | null) => {
+    if (!dateString) return 'N/A';
+    const date = new Date(dateString);
+    return date.toLocaleDateString('ro-RO', { 
+      day: 'numeric', 
+      month: 'short', 
+      year: 'numeric' 
+    });
+  };
+
   return (
     <>
       <SEOHead 
@@ -26,11 +41,39 @@ export default function Blog() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestArticles.map((article, index) => (
-              <ArticleCard key={index} {...article} />
-            ))}
-          </div>
+          {isLoading && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[1, 2, 3].map((i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="bg-gray-200 h-48 w-full rounded-t-lg mb-4"></div>
+                  <div className="bg-gray-200 h-4 w-3/4 mb-2 rounded"></div>
+                  <div className="bg-gray-200 h-4 w-1/2 rounded"></div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {error && (
+            <div className="text-center py-12">
+              <p className="text-red-600">Eroare la încărcarea articolelor</p>
+            </div>
+          )}
+
+          {articles && articles.length > 0 && (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article) => (
+                <ArticleCard 
+                  key={article.id} 
+                  title={article.title}
+                  description={article.description}
+                  category={article.category}
+                  date={formatDate(article.createdAt)}
+                  href={`/articol/${article.slug || article.id}`}
+                  imageUrl={article.imageUrl || ''}
+                />
+              ))}
+            </div>
+          )}
         </main>
         
         <Footer />
