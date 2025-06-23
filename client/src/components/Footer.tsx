@@ -18,40 +18,41 @@ export default function Footer() {
               <span className="hidden sm:inline">.com</span>
             </h3>
             <p className="text-neutral-300 mb-4 text-sm leading-relaxed">
-              Calculator medie facultate - resursa ta de încredere pentru calculul mediei de admitere și planificarea academică.
+              Calculatorul de medie pentru facultate cel mai precis din România. 
+              Calculează media generală și ponderată cu credite ECTS pentru universitățile românești.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300">
+              <a href="https://facebook.com/calculatormediefacultate" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300" title="Facebook Calculator Medie Facultate">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300">
+              <a href="https://twitter.com/cmf_romania" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300" title="Twitter Calculator Medie Facultate">
                 <Twitter className="h-4 w-4" />
               </a>
-              <a href="#" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300">
+              <a href="https://linkedin.com/company/calculator-medie-facultate" className="text-neutral-400 hover:text-orange-400 transition-colors duration-300" title="LinkedIn Calculator Medie Facultate">
                 <Linkedin className="h-4 w-4" />
               </a>
             </div>
           </div>
           
-          {/* Quick Links */}
+          {/* Calculatoare */}
           <div>
             <h4 className="text-sm sm:text-base font-semibold mb-3">Calculatoare</h4>
             <ul className="space-y-2 text-neutral-300 text-sm">
-              <li><Link href="/" className="hover:text-orange-400 transition-colors duration-300">Calculator Principal</Link></li>
-              <li><Link href="/calculator-anticipata" className="hover:text-orange-400 transition-colors duration-300">Pensie Anticipată</Link></li>
-              <li><Link href="/calculator-pilon3" className="hover:text-orange-400 transition-colors duration-300">Pilon III</Link></li>
-              <li><Link href="/planificator" className="hover:text-orange-400 transition-colors duration-300">Planificator Financiar</Link></li>
+              <li><Link href="/" className="hover:text-orange-400 transition-colors duration-300">Calculator Medie Generală</Link></li>
+              <li><Link href="/#calculator-section" className="hover:text-orange-400 transition-colors duration-300">Calculator Medie Ponderată</Link></li>
+              <li><Link href="/convertor-ects" className="hover:text-orange-400 transition-colors duration-300">Convertor Note ECTS</Link></li>
+              <li><Link href="/calculator-bursa" className="hover:text-orange-400 transition-colors duration-300">Calculator Bursă Merit</Link></li>
             </ul>
           </div>
           
           {/* Ghiduri */}
           <div>
-            <h4 className="text-sm sm:text-base font-semibold mb-3">Ghiduri</h4>
+            <h4 className="text-sm sm:text-base font-semibold mb-3">Ghiduri Educaționale</h4>
             <ul className="space-y-2 text-neutral-300 text-sm">
-              <li><Link href="/planificarea-pensiei" className="hover:text-orange-400 transition-colors duration-300">Planificarea Pensiei</Link></li>
-              <li><Link href="/tipuri-de-pensii" className="hover:text-orange-400 transition-colors duration-300">Tipuri de Pensii</Link></li>
-              <li><Link href="/legislatie-si-resurse" className="hover:text-orange-400 transition-colors duration-300">Legislația 2025</Link></li>
-              <li><Link href="/blog" className="hover:text-orange-400 transition-colors duration-300">Blog</Link></li>
+              <li><Link href="/ghid-calcul-medie" className="hover:text-orange-400 transition-colors duration-300">Ghid Calcul Medie</Link></li>
+              <li><Link href="/ghid-ects" className="hover:text-orange-400 transition-colors duration-300">Sistemul ECTS</Link></li>
+              <li><Link href="/clasificari-academice" className="hover:text-orange-400 transition-colors duration-300">Clasificări Academice</Link></li>
+              <li><Link href="/blog" className="hover:text-orange-400 transition-colors duration-300">Blog Educațional</Link></li>
             </ul>
           </div>
           
@@ -72,7 +73,7 @@ export default function Footer() {
             &copy; 2025 CalculatorMedieFacultate.com. Toate drepturile rezervate.
           </p>
           <p className="text-neutral-500 text-xs mt-1">
-            Actualizat conform legislației din 2025
+            Calculator medie facultate actualizat pentru anul universitar 2024-2025
           </p>
         </div>
       </div>

@@ -96,27 +96,35 @@ export default function Home() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-12 px-4 sm:px-6">
-              <button className="btn-modern px-5 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-bold text-sm sm:text-base shadow-xl group w-full sm:w-auto">
+              <button 
+                onClick={() => {
+                  document.getElementById('calculator-section')?.scrollIntoView({ behavior: 'smooth' });
+                  trackEvent('Button Click', 'Hero CTA - Calculate Grade');
+                }}
+                className="btn-modern px-5 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-bold text-sm sm:text-base shadow-xl group w-full sm:w-auto"
+              >
                 <span className="flex items-center justify-center gap-2">
                   <Calculator className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
                   <span className="hidden sm:inline">Calculează Media Acum</span>
                   <span className="sm:hidden">Calculează Acum</span>
                 </span>
               </button>
-              <button className="btn-secondary px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base group w-full sm:w-auto">
-                <span className="flex items-center justify-center gap-2">
-                  <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Ghid Note & Credite</span>
-                  <span className="sm:hidden">Ghiduri</span>
-                </span>
-              </button>
+              <Link href="/blog">
+                <button className="btn-secondary px-5 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-sm sm:text-base group w-full sm:w-auto">
+                  <span className="flex items-center justify-center gap-2">
+                    <BookOpen className="h-4 w-4 sm:h-5 sm:w-5 group-hover:scale-110 transition-transform" />
+                    <span className="hidden sm:inline">Ghid Note & Credite</span>
+                    <span className="sm:hidden">Ghiduri</span>
+                  </span>
+                </button>
+              </Link>
             </div>
             
             <TrustIndicators />
           </section>
 
-          {/* Main Pension Calculator */}
-          <section className="glass-effect rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-12 sm:mb-16 card-hover">
+          {/* Grade Calculator */}
+          <section id="calculator-section" className="glass-effect rounded-xl shadow-lg p-4 sm:p-6 lg:p-8 mb-12 sm:mb-16 card-hover">
             <div className="text-center mb-6 sm:mb-8">
               <div className="icon-wrapper mx-auto mb-3 sm:mb-4 w-10 h-10 sm:w-12 sm:h-12">
                 <Calculator className="h-5 w-5 sm:h-6 sm:w-6" />

@@ -31,6 +31,9 @@ import IndexareaPensiilor from "@/pages/IndexareaPensiilor";
 import CumparareVechime from "@/pages/CumparareVechime";
 import ArticleDetail from "@/pages/ArticleDetail";
 import FAQ from "@/pages/FAQ";
+import GhidCalculMediae from "@/pages/GhidCalculMediae";
+import ConvertorECTS from "@/pages/ConvertorECTS";
+import CalculatorBursa from "@/pages/CalculatorBursa";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -64,6 +67,9 @@ function Router() {
       <Route path="/cumparare-vechime" component={CumparareVechime} />
       <Route path="/articol/:slug" component={ArticleDetail} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/ghid-calcul-medie" component={GhidCalculMediae} />
+      <Route path="/convertor-ects" component={ConvertorECTS} />
+      <Route path="/calculator-bursa" component={CalculatorBursa} />
       <Route component={NotFound} />
     </Switch>
   );
