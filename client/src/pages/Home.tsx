@@ -511,34 +511,39 @@ export default function Home() {
 
           {/* Call to Action Section */}
           <section className="bg-gradient-to-br from-orange-600 via-red-600 to-orange-800 rounded-2xl sm:rounded-3xl p-8 sm:p-12 lg:p-20 text-center text-white shadow-2xl mx-2 sm:mx-4">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 sm:mb-6 lg:mb-8 leading-tight">Începe să-ți planifici pensia astăzi!</h2>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black mb-4 sm:mb-6 lg:mb-8 leading-tight">Calculează-ți media la facultate astăzi!</h2>
             <p className="text-base sm:text-lg lg:text-xl xl:text-2xl text-white/90 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-4">
-              Nu lăsa viitorul la voia întâmplării. Folosește calculatoarele noastre și ghidurile experte pentru a-ți asigura o pensie liniștită.
+              Nu lăsa rezultatele la voia întâmplării. Folosește calculatorul nostru și ghidurile experte pentru a-ți optimiza performanțele academice.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 justify-center px-6 sm:px-8">
               <Button 
                 size="lg" 
                 className="btn-secondary px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl group w-full sm:w-auto bg-[#f97415]"
-                onClick={() => trackEvent('cta_click', 'user_interaction', 'calculator')}
+                onClick={() => {
+                  trackEvent('cta_click', 'user_interaction', 'calculator');
+                  document.getElementById('calculator-section')?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 <span className="flex items-center justify-center gap-2 sm:gap-3">
                   <Calculator className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Calculează Pensia</span>
+                  <span className="hidden sm:inline">Calculează Media</span>
                   <span className="sm:hidden">Calculează</span>
                 </span>
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl border-2 sm:border-4 border-white bg-white text-orange-700 hover:bg-orange-100 transition-all duration-300 group w-full sm:w-auto"
-                onClick={() => trackEvent('cta_click', 'user_interaction', 'guides')}
-              >
-                <span className="flex items-center justify-center gap-2 sm:gap-3">
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
-                  <span className="hidden sm:inline">Citește Ghidurile</span>
-                  <span className="sm:hidden">Ghiduri</span>
-                </span>
-              </Button>
+              <Link href="/blog">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="px-6 sm:px-8 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-2xl sm:rounded-3xl font-black text-base sm:text-lg lg:text-xl border-2 sm:border-4 border-white bg-white text-orange-700 hover:bg-orange-100 transition-all duration-300 group w-full sm:w-auto"
+                  onClick={() => trackEvent('cta_click', 'user_interaction', 'guides')}
+                >
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 group-hover:scale-110 transition-transform" />
+                    <span className="hidden sm:inline">Citește Ghidurile</span>
+                    <span className="sm:hidden">Ghiduri</span>
+                  </span>
+                </Button>
+              </Link>
             </div>
           </section>
         </main>
