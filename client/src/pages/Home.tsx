@@ -29,7 +29,7 @@ export default function Home() {
       category: "Ghiduri",
       createdAt: "2025-01-20",
       slug: "ghid-calcul-medie-facultate",
-      imageUrl: "/images/guide-grade-calculation.jpg"
+      imageUrl: "/images/guide-grade-calculation.svg"
     },
     {
       id: 2,
@@ -38,7 +38,7 @@ export default function Home() {
       category: "Educație",
       createdAt: "2025-01-18",
       slug: "sistem-credite-ects-romania",
-      imageUrl: "/images/ects-system.jpg"
+      imageUrl: "/images/ects-system.svg"
     },
     {
       id: 3,
@@ -47,7 +47,7 @@ export default function Home() {
       category: "Burse",
       createdAt: "2025-01-15",
       slug: "bursa-studiu-calcul-medie",
-      imageUrl: "/images/scholarship-guide.jpg"
+      imageUrl: "/images/scholarship-guide.svg"
     }
   ];
   const articlesLoading = false;
