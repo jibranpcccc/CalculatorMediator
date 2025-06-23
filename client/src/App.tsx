@@ -34,6 +34,8 @@ import FAQ from "@/pages/FAQ";
 import GhidCalculMediae from "@/pages/GhidCalculMediae";
 import ConvertorECTS from "@/pages/ConvertorECTS";
 import CalculatorBursa from "@/pages/CalculatorBursa";
+import GhidECTS from "@/pages/GhidECTS";
+import ClasificariAcademice from "@/pages/ClasificariAcademice";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -70,6 +72,8 @@ function Router() {
       <Route path="/ghid-calcul-medie" component={GhidCalculMediae} />
       <Route path="/convertor-ects" component={ConvertorECTS} />
       <Route path="/calculator-bursa" component={CalculatorBursa} />
+      <Route path="/ghid-ects" component={GhidECTS} />
+      <Route path="/clasificari-academice" component={ClasificariAcademice} />
       <Route component={NotFound} />
     </Switch>
   );
