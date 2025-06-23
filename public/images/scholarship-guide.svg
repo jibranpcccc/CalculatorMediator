@@ -1,0 +1,49 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="scholarshipBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ecfdf5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1fae5;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#scholarshipBg)"/>
+  <rect x="30" y="30" width="340" height="240" fill="#fff" rx="12" stroke="#10b981" stroke-width="2"/>
+  
+  <!-- Trophy/Award Icon -->
+  <rect x="170" y="60" width="60" height="8" fill="#fbbf24" rx="4"/>
+  <rect x="185" y="68" width="30" height="40" fill="#f59e0b" rx="4"/>
+  <rect x="175" y="108" width="50" height="20" fill="#92400e" rx="4"/>
+  <circle cx="200" cy="85" r="12" fill="#fbbf24"/>
+  <text x="200" y="90" fill="#92400e" font-family="Arial, sans-serif" font-size="10" font-weight="bold" text-anchor="middle">1</text>
+  
+  <!-- Money/Scholarship symbols -->
+  <rect x="80" y="140" width="60" height="30" fill="#10b981" rx="6"/>
+  <text x="110" y="160" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">800 RON</text>
+  
+  <rect x="160" y="140" width="80" height="30" fill="#059669" rx="6"/>
+  <text x="200" y="160" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">1500 RON</text>
+  
+  <rect x="260" y="140" width="60" height="30" fill="#047857" rx="6"/>
+  <text x="290" y="160" fill="#fff" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle">600 RON</text>
+  
+  <!-- Grade requirements -->
+  <text x="110" y="185" fill="#065f46" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">Merit ≥8.5</text>
+  <text x="200" y="185" fill="#065f46" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">1 Dec ≥9.5</text>
+  <text x="290" y="185" fill="#065f46" font-family="Arial, sans-serif" font-size="10" text-anchor="middle">Socială</text>
+  
+  <!-- Student figures -->
+  <circle cx="80" cy="210" r="8" fill="#10b981"/>
+  <rect x="76" y="218" width="8" height="15" fill="#10b981"/>
+  <rect x="72" y="225" width="16" height="8" fill="#10b981"/>
+  
+  <circle cx="200" cy="210" r="8" fill="#059669"/>
+  <rect x="196" y="218" width="8" height="15" fill="#059669"/>
+  <rect x="192" y="225" width="16" height="8" fill="#059669"/>
+  
+  <circle cx="320" cy="210" r="8" fill="#047857"/>
+  <rect x="316" y="218" width="8" height="15" fill="#047857"/>
+  <rect x="312" y="225" width="16" height="8" fill="#047857"/>
+  
+  <!-- Title -->
+  <text x="200" y="250" fill="#065f46" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle">Ghid Burse de Studiu</text>
+  <text x="200" y="270" fill="#047857" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Merit, Sociale, 1 Decembrie</text>
+</svg>

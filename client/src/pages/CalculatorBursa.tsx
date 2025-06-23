@@ -64,6 +64,31 @@ export default function CalculatorBursa() {
         schemaType="calculator"
       />
       
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculator Bursă Merit",
+            "description": "Calculator pentru verificarea eligibilității la burse de merit, sociale și 1 Decembrie în universitățile din România",
+            "url": "https://calculatormediefacultate.com/calculator-bursa",
+            "applicationCategory": "EducationalApplication",
+            "featureList": [
+              "Verificare eligibilitate bursă de merit",
+              "Calculator bursă socială",
+              "Verificare criterii bursă 1 Decembrie",
+              "Estimare sumă bursă"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "RON"
+            }
+          })
+        }}
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
         <Header />
         

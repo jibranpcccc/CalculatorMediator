@@ -12,6 +12,45 @@ export default function GhidCalculMediae() {
         keywords="ghid calcul medie facultate, medie generala, medie ponderata, credite ECTS, clasificare academica"
         canonicalUrl="https://calculatormediefacultate.com/ghid-calcul-medie"
         schemaType="article"
+        articleData={{
+          datePublished: "2025-01-20",
+          dateModified: "2025-01-23",
+          author: "Calculator Medie Facultate",
+          category: "Ghiduri Educaționale"
+        }}
+      />
+      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "Cum să calculezi media la facultate",
+            "description": "Ghid pas cu pas pentru calculul mediei generale și mediei ponderate cu credite ECTS în universitățile din România",
+            "image": "https://calculatormediefacultate.com/images/guide-grade-calculation.svg",
+            "step": [
+              {
+                "@type": "HowToStep",
+                "name": "Calculează media aritmetică simplă",
+                "text": "Adună toate notele și împarte la numărul de discipline",
+                "image": "https://calculatormediefacultate.com/images/guide-grade-calculation.svg"
+              },
+              {
+                "@type": "HowToStep", 
+                "name": "Calculează media ponderată cu credite ECTS",
+                "text": "Folosește formula: Σ(Nota × Credite) / Σ(Credite)",
+                "image": "https://calculatormediefacultate.com/images/guide-grade-calculation.svg"
+              },
+              {
+                "@type": "HowToStep",
+                "name": "Determină clasificarea academică",
+                "text": "Verifică în ce categorie se încadrează media ta: Summa Cum Laude (10.00), Magna Cum Laude (9.50-9.99), etc.",
+                "image": "https://calculatormediefacultate.com/images/academic-classification.svg"
+              }
+            ]
+          })
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">

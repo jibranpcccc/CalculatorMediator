@@ -14,7 +14,7 @@ export default function Blog() {
       category: "Ghiduri",
       date: "20 Jan 2025",
       slug: "ghid-calcul-medie-facultate",
-      imageUrl: "/images/guide-grade-calculation.jpg"
+      imageUrl: "/images/guide-grade-calculation.svg"
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ export default function Blog() {
       category: "Educație",
       date: "18 Jan 2025",
       slug: "sistem-credite-ects-romania",
-      imageUrl: "/images/ects-system.jpg"
+      imageUrl: "/images/ects-system.svg"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ export default function Blog() {
       category: "Burse",
       date: "15 Jan 2025",
       slug: "bursa-studiu-calcul-medie",
-      imageUrl: "/images/scholarship-guide.jpg"
+      imageUrl: "/images/scholarship-guide.svg"
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ export default function Blog() {
       category: "Clasificări",
       date: "12 Jan 2025",
       slug: "clasificarea-academica-summa-cum-laude",
-      imageUrl: "/images/academic-classification.jpg"
+      imageUrl: "/images/academic-classification.svg"
     },
     {
       id: 5,
@@ -50,7 +50,7 @@ export default function Blog() {
       category: "ECTS",
       date: "10 Jan 2025",
       slug: "echivalenta-note-ects",
-      imageUrl: "/images/ects-equivalency.jpg"
+      imageUrl: "/images/ects-equivalency.svg"
     },
     {
       id: 6,
@@ -59,7 +59,7 @@ export default function Blog() {
       category: "Master",
       date: "8 Jan 2025",
       slug: "medie-ponderata-master",
-      imageUrl: "/images/master-gpa.jpg"
+      imageUrl: "/images/master-gpa.svg"
     }
   ];
 
@@ -71,6 +71,48 @@ export default function Blog() {
         keywords="calculator medie facultate, blog educație, ghiduri universitare, credite ECTS, burse studiu, medie ponderată"
         canonicalUrl="https://calculatormediefacultate.com/blog"
         schemaType="website"
+      />
+      
+      {/* Blog Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": "Blog Calculator Medie Facultate",
+            "description": "Ghiduri și articole educaționale despre calculul mediei la facultate, sistemul ECTS și universitățile din România",
+            "url": "https://calculatormediefacultate.com/blog",
+            "author": {
+              "@type": "Organization",
+              "name": "Calculator Medie Facultate"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Calculator Medie Facultate",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://calculatormediefacultate.com/images/logo.png"
+              }
+            },
+            "blogPost": articles.map(article => ({
+              "@type": "BlogPosting",
+              "headline": article.title,
+              "description": article.description,
+              "url": `https://calculatormediefacultate.com/articol/${article.slug}`,
+              "datePublished": new Date(article.date).toISOString(),
+              "author": {
+                "@type": "Organization",
+                "name": "Calculator Medie Facultate"
+              },
+              "image": {
+                "@type": "ImageObject",
+                "url": `https://calculatormediefacultate.com${article.imageUrl}`
+              },
+              "articleSection": article.category
+            }))
+          })
+        }}
       />
       
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">

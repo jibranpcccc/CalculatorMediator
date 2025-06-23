@@ -1,0 +1,33 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://calculatormediefacultate.com/sitemap.xml
+
+# Priority crawling for main content
+Allow: /blog
+Allow: /ghid-calcul-medie
+Allow: /convertor-ects
+Allow: /calculator-bursa
+Allow: /articol/
+
+# Block unnecessary crawling
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /*.json$
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Crawl-delay for other bots
+User-agent: *
+Crawl-delay: 1

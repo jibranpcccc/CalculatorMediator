@@ -72,6 +72,89 @@ export default function Home() {
         schemaType="calculator"
       />
       
+      {/* Enhanced Calculator Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Calculator Medie Facultate",
+            "description": "Calculator gratuit pentru calculul mediei la facultate cu credite ECTS și clasificări academice pentru universitățile din România",
+            "url": "https://calculatormediefacultate.com",
+            "applicationCategory": "EducationalApplication",
+            "operatingSystem": "Web Browser",
+            "browserRequirements": "Requires JavaScript. Requires HTML5.",
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "RON",
+              "availability": "https://schema.org/InStock"
+            },
+            "featureList": [
+              "Calculator medie generală",
+              "Calculator medie ponderată cu credite ECTS", 
+              "Clasificări academice automate",
+              "Convertor note ECTS",
+              "Calculator eligibilitate bursă"
+            ],
+            "about": {
+              "@type": "Thing",
+              "name": "Calculul mediei la facultate în România"
+            },
+            "creator": {
+              "@type": "Organization",
+              "name": "Calculator Medie Facultate",
+              "url": "https://calculatormediefacultate.com"
+            },
+            "datePublished": "2025-01-01",
+            "dateModified": "2025-01-23",
+            "inLanguage": "ro-RO",
+            "audience": {
+              "@type": "Audience",
+              "audienceType": "Studenți universitari români"
+            }
+          })
+        }}
+      />
+      
+      {/* FAQ Schema for Homepage */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Cum se calculează media la facultate?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Media la facultate se calculează prin două metode: media aritmetică simplă (toate notele au aceeași importanță) sau media ponderată cu credite ECTS (fiecare materie contează în funcție de numărul de credite)."
+                }
+              },
+              {
+                "@type": "Question", 
+                "name": "Ce sunt creditele ECTS?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "ECTS (European Credit Transfer System) este sistemul european de credite care măsoară încărcarea de lucru a studentului. Un credit ECTS reprezintă aproximativ 25-30 ore de lucru."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Ce înseamnă Summa Cum Laude?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Summa Cum Laude este cea mai înaltă distincție academică, acordată pentru media 10.00. Această clasificare demonstrează excelența academică excepțională."
+                }
+              }
+            ]
+          })
+        }}
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 mobile-overflow-hidden safe-padding">
         <Header />
         

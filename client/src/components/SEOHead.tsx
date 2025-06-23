@@ -56,8 +56,8 @@ export default function SEOHead({
     setMetaTag('twitter:title', title);
     setMetaTag('twitter:description', description);
     if (ogImage) setMetaTag('twitter:image', ogImage);
-    setMetaTag('twitter:site', '@calculatorpensie');
-    setMetaTag('twitter:creator', '@calculatorpensie');
+    setMetaTag('twitter:site', '@cmf_romania');
+    setMetaTag('twitter:creator', '@cmf_romania');
 
     // Canonical URL
     if (canonicalUrl) {

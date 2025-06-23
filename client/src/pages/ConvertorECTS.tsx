@@ -36,6 +36,30 @@ export default function ConvertorECTS() {
         schemaType="calculator"
       />
       
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Convertor Note ECTS",
+            "description": "Calculator gratuit pentru conversia notelor din sistemul românesc în echivalentele ECTS europene",
+            "url": "https://calculatormediefacultate.com/convertor-ects",
+            "applicationCategory": "EducationalApplication",
+            "featureList": [
+              "Conversie note românești în ECTS",
+              "Tabel complet de echivalențe",
+              "Explicații detaliate pentru fiecare grad ECTS"
+            ],
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "RON"
+            }
+          })
+        }}
+      />
+      
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50">
         <Header />
         
