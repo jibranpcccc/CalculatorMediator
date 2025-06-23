@@ -1,0 +1,43 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#grad5)"/>
+  
+  <!-- Conversion arrows -->
+  <path d="M100 125 L180 125" stroke="white" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M220 125 L300 125" stroke="white" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="white"/>
+    </marker>
+  </defs>
+  
+  <!-- Romanian grade system -->
+  <rect x="30" y="80" width="80" height="90" rx="8" fill="white" opacity="0.9"/>
+  <text x="70" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">România</text>
+  <text x="70" y="130" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#dc2626" text-anchor="middle">9.5</text>
+  <text x="70" y="150" font-family="Arial, sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Foarte Bine</text>
+  
+  <!-- ECTS grade system -->
+  <rect x="320" y="80" width="80" height="90" rx="8" fill="white" opacity="0.9"/>
+  <text x="360" y="105" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">ECTS</text>
+  <text x="360" y="135" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#dc2626" text-anchor="middle">A</text>
+  <text x="360" y="155" font-family="Arial, sans-serif" font-size="12" fill="#dc2626" text-anchor="middle">Excellent</text>
+  
+  <!-- Conversion symbol -->
+  <circle cx="200" cy="125" r="25" fill="white" opacity="0.9"/>
+  <text x="200" y="135" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#dc2626" text-anchor="middle">=</text>
+  
+  <!-- Grade examples -->
+  <text x="50" y="40" font-family="Arial, sans-serif" font-size="14" fill="white">10 → A</text>
+  <text x="150" y="40" font-family="Arial, sans-serif" font-size="14" fill="white">8-9 → B</text>
+  <text x="250" y="40" font-family="Arial, sans-serif" font-size="14" fill="white">7 → C</text>
+  <text x="330" y="40" font-family="Arial, sans-serif" font-size="14" fill="white">6 → D</text>
+</svg>

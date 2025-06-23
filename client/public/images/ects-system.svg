@@ -1,0 +1,39 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#grad2)"/>
+  
+  <!-- EU stars circle -->
+  <circle cx="200" cy="125" r="60" fill="none" stroke="white" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Stars around circle -->
+  <g fill="white" opacity="0.9">
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(0 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(30 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(60 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(90 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(120 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(150 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(180 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(210 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(240 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(270 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(300 200 125)"/>
+    <polygon points="200,65 202,71 208,71 203,75 205,81 200,77 195,81 197,75 192,71 198,71" transform="rotate(330 200 125)"/>
+  </g>
+  
+  <!-- ECTS text in center -->
+  <text x="200" y="135" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white" text-anchor="middle">ECTS</text>
+  
+  <!-- Grade letters -->
+  <text x="50" y="50" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white">A</text>
+  <text x="350" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white">B</text>
+  <text x="30" y="200" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="white">C</text>
+  <text x="330" y="230" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white">D</text>
+</svg>
