@@ -1,4 +1,7 @@
 import { Switch, Route } from "wouter";
+import { useEffect } from "react";
+import { initGA, trackPageView } from "@/lib/analytics";
+import { useAnalytics } from "@/hooks/use-analytics";
 // Static deployment - removed backend dependencies
 import Home from "@/pages/Home";
 import Blog from "@/pages/Blog";
@@ -67,7 +70,18 @@ function Router() {
 }
 
 function App() {
-  return <Router />;
+  const analytics = useAnalytics();
+
+  useEffect(() => {
+    // Initialize analytics for static deployment
+    initGA();
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-yellow-50">
+      <Router />
+    </div>
+  );
 }
 
 export default App;
