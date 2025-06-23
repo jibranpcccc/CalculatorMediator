@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "echo 'Static site deployment'"
+  command = "./fast-deploy.sh"
 
 [[redirects]]
   from = "/*"
