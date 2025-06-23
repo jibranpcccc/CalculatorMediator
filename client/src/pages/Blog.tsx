@@ -3,65 +3,11 @@ import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import ArticleCard from "@/components/ArticleCard";
 import Breadcrumb from "@/components/Breadcrumb";
+import { getAllArticles } from "@/data/articleContent";
 
 export default function Blog() {
-  // Static articles for university grade calculator theme
-  const articles = [
-    {
-      id: 1,
-      title: "Ghidul complet pentru calculul mediei la facultate",
-      description: "Învață cum să calculezi corect media cu credite ECTS și să înțelegi sistemul de notare universitar românesc.",
-      category: "Ghiduri",
-      date: "20 Jan 2025",
-      slug: "ghid-calcul-medie-facultate",
-      imageUrl: "/images/guide-grade-calculation.svg"
-    },
-    {
-      id: 2,
-      title: "Sistemul de credite ECTS în universitățile românești",
-      description: "Totul despre sistemul European Credit Transfer System și cum funcționează în România.",
-      category: "Educație",
-      date: "18 Jan 2025",
-      slug: "sistem-credite-ects-romania",
-      imageUrl: "/images/ects-system.svg"
-    },
-    {
-      id: 3,
-      title: "Cum să obții bursa de studiu: calculul mediei",
-      description: "Criterii și calcule pentru obținerea bursei de merit în universitățile românești.",
-      category: "Burse",
-      date: "15 Jan 2025",
-      slug: "bursa-studiu-calcul-medie",
-      imageUrl: "/images/scholarship-guide.svg"
-    },
-    {
-      id: 4,
-      title: "Clasificarea academică: Summa Cum Laude explicată",
-      description: "Înțelege clasificările academice și ce înseamnă pentru cariera ta universitară.",
-      category: "Clasificări",
-      date: "12 Jan 2025",
-      slug: "clasificarea-academica-summa-cum-laude",
-      imageUrl: "/images/academic-classification.svg"
-    },
-    {
-      id: 5,
-      title: "Echivalența notelor ECTS: Ghid complet",
-      description: "Cum se convertesc notele din sistemul românesc în echivalentele ECTS europene.",
-      category: "ECTS",
-      date: "10 Jan 2025",
-      slug: "echivalenta-note-ects",
-      imageUrl: "/images/ects-equivalency.svg"
-    },
-    {
-      id: 6,
-      title: "Calculul mediei ponderate pentru studenții la master",
-      description: "Particularități ale calculului mediei pentru programele de masterat în România.",
-      category: "Master",
-      date: "8 Jan 2025",
-      slug: "medie-ponderata-master",
-      imageUrl: "/images/master-gpa.svg"
-    }
-  ];
+  // Get articles from static data
+  const articles = getAllArticles();
 
   return (
     <>
@@ -100,10 +46,10 @@ export default function Blog() {
               "headline": article.title,
               "description": article.description,
               "url": `https://calculatormediefacultate.com/articol/${article.slug}`,
-              "datePublished": new Date(article.date).toISOString(),
+              "datePublished": article.date,
               "author": {
                 "@type": "Organization",
-                "name": "Calculator Medie Facultate"
+                "name": article.author
               },
               "image": {
                 "@type": "ImageObject",

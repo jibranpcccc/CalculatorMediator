@@ -17,50 +17,12 @@ import ArticleCard from "@/components/ArticleCard";
 import SEOHead from "@/components/SEOHead";
 import { trackEvent } from "@/lib/analytics";
 import { siloContent } from "@/data/siloContent";
-// Removed backend dependencies for static deployment
+import { getAllArticles } from "@/data/articleContent";
 
 export default function Home() {
-  // Static data for frontend-only deployment
-  const articles = [
-    {
-      id: 1,
-      title: "Ghidul complet pentru calculul mediei la facultate",
-      description: "Învață cum să calculezi corect media cu credite ECTS și să înțelegi sistemul de notare universitar românesc.",
-      category: "Ghiduri",
-      createdAt: "2025-01-20",
-      slug: "ghid-calcul-medie-facultate",
-      imageUrl: "/images/guide-grade-calculation.svg"
-    },
-    {
-      id: 2,
-      title: "Sistemul de credite ECTS în universitățile românești",
-      description: "Totul despre sistemul European Credit Transfer System și cum funcționează în România.",
-      category: "Educație",
-      createdAt: "2025-01-18",
-      slug: "sistem-credite-ects-romania",
-      imageUrl: "/images/ects-system.svg"
-    },
-    {
-      id: 3,
-      title: "Cum să obții bursa de studiu: calculul mediei",
-      description: "Criterii și calcule pentru obținerea bursei de merit în universitățile românești.",
-      category: "Burse",
-      createdAt: "2025-01-15",
-      slug: "bursa-studiu-calcul-medie",
-      imageUrl: "/images/scholarship-guide.svg"
-    }
-  ];
+  // Get articles from static data
+  const articles = getAllArticles().slice(0, 3); // Show first 3 articles
   const articlesLoading = false;
-
-  const formatDate = (dateString: string | Date | null) => {
-    if (!dateString) return 'N/A';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ro-RO', { 
-      day: 'numeric', 
-      month: 'short', 
-      year: 'numeric' 
-    });
-  };
 
   return (
     <>
@@ -473,15 +435,15 @@ export default function Home() {
               )}
               {articles && articles.length > 0 && (
                 <>
-                  {articles.slice(0, 3).map((article) => (
+                  {articles.map((article) => (
                     <ArticleCard 
                       key={article.id} 
                       title={article.title}
                       description={article.description}
                       category={article.category}
-                      date={formatDate(article.createdAt)}
-                      href={`/articol/${article.slug || article.id}`}
-                      imageUrl={article.imageUrl || ''}
+                      date={article.date}
+                      href={`/articol/${article.slug}`}
+                      imageUrl={article.imageUrl}
                     />
                   ))}
                 </>

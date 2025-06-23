@@ -1,41 +1,29 @@
 import { useRoute } from "wouter";
-import { useQuery } from "@tanstack/react-query";
-import type { Article } from "@shared/schema";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User } from "lucide-react";
+import { Calendar, User, Clock } from "lucide-react";
 import { Link } from "wouter";
+import { getArticleBySlug } from "@/data/articleContent";
 
 export default function ArticleDetail() {
   const [match, params] = useRoute("/articol/:slug");
   const slug = params?.slug;
 
-  const { data: article, isLoading, error } = useQuery<Article>({
-    queryKey: ['/api/articles', slug],
-    queryFn: async () => {
-      const response = await fetch(`/api/articles/${slug}`);
-      if (!response.ok) {
-        throw new Error('Article not found');
-      }
-      return response.json();
-    },
-    enabled: !!slug,
-  });
-
-  const formatDate = (dateString: string | Date | null) => {
-    if (!dateString) return 'N/A';
-    const date = new Date(dateString);
-    return date.toLocaleDateString('ro-RO', { 
-      day: 'numeric', 
-      month: 'long', 
-      year: 'numeric' 
-    });
-  };
+  // Get article from static data instead of API
+  const article = slug ? getArticleBySlug(slug) : undefined;
+  const isLoading = false;
+  const error = !article;
 
   const categoryColors = {
+    "Ghiduri": "bg-orange-100 text-orange-700",
+    "Educație": "bg-blue-100 text-blue-700",
+    "Burse": "bg-green-100 text-green-700",
+    "Clasificări": "bg-purple-100 text-purple-700",
+    "ECTS": "bg-indigo-100 text-indigo-700",
+    "Master": "bg-cyan-100 text-cyan-700",
     "Planificare": "bg-primary text-primary-foreground",
     "Investiții": "bg-green-100 text-green-700",
     "Legislație": "bg-amber-100 text-amber-700",
@@ -85,13 +73,13 @@ export default function ArticleDetail() {
       <SEOHead
         title={`${article.title} - Calculator Medie Facultate`}
         description={article.description}
-        keywords={`${article.category.toLowerCase()}, pensii romania, ${article.title.toLowerCase()}`}
+        keywords={`${article.category.toLowerCase()}, calculator medie facultate, ${article.title.toLowerCase()}`}
         canonicalUrl={`https://calculatormediefacultate.com/articol/${article.slug}`}
         schemaType="article"
         articleData={{
-          datePublished: article.createdAt?.toString(),
-          dateModified: article.updatedAt?.toString(),
-          author: "Calculator Medie Facultate",
+          datePublished: article.date,
+          dateModified: article.date,
+          author: article.author,
           category: article.category,
         }}
       />
@@ -118,14 +106,18 @@ export default function ArticleDetail() {
                 {article.description}
               </p>
               
-              <div className="flex items-center gap-6 text-sm text-neutral-500">
+              <div className="flex items-center gap-6 text-sm text-neutral-500 border-b border-neutral-200 pb-6">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" />
-                  <span>{formatDate(article.createdAt)}</span>
+                  <User className="h-4 w-4" />
+                  <span>{article.author}</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <User className="w-4 h-4" />
-                  <span>Calculator Medie Facultate</span>
+                  <Calendar className="h-4 w-4" />
+                  <span>{article.date}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="h-4 w-4" />
+                  <span>{article.readTime} citire</span>
                 </div>
               </div>
             </header>
@@ -146,17 +138,17 @@ export default function ArticleDetail() {
 
             {/* Article Content */}
             <div 
-              className="prose prose-lg max-w-none prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-a:text-primary prose-strong:text-neutral-900"
+              className="prose prose-lg max-w-none prose-headings:text-neutral-900 prose-p:text-neutral-700 prose-a:text-orange-600 prose-strong:text-neutral-900 prose-code:text-orange-600 prose-code:bg-orange-50 prose-code:px-1 prose-code:rounded"
               dangerouslySetInnerHTML={{ 
-                __html: article.content?.replace(/\n/g, '<br>').replace(/## /g, '<h2>').replace(/# /g, '<h1>') || ''
+                __html: article.content || ''
               }}
             />
 
             {/* Back to Blog Link */}
             <div className="mt-12 pt-8 border-t border-neutral-200">
               <Link href="/blog">
-                <span className="inline-flex items-center text-primary hover:text-primary/80 font-medium">
-                  ← Citește mai multe articole despre pensii
+                <span className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium transition-colors">
+                  ← Citește mai multe articole educaționale
                 </span>
               </Link>
             </div>
