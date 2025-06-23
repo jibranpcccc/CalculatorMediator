@@ -1,6 +1,6 @@
 [build]
   publish = "dist/public"
-  command = "node capture-react-app.js"
+  command = "node simple-build.js"
 
 [[redirects]]
   from = "/*"

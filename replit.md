@@ -106,6 +106,7 @@ Calculator Medie Facultate is a comprehensive Romanian university grade calculat
 - June 20, 2025. MAJOR TRANSFORMATION: Complete pivot from pension calculator to university grade calculator targeting "calculator medie facultate" keyword. Implemented comprehensive SEO strategy with ECTS credits calculator, weighted grade calculations, academic classifications, and extensive FAQ content optimized for Google.ro ranking.
 - June 23, 2025. NETLIFY DEPLOYMENT FIX: Resolved Netlify showing old data by fixing build configuration. Created fast deployment script that bypasses slow Vite build process, generates optimized static HTML with complete calculator functionality, and includes proper Netlify configuration files for immediate deployment.
 - June 23, 2025. DESIGN SYNC COMPLETE: Fixed version mismatch between Replit (orange/yellow design) and Netlify (blue/white design). Created deployment script that captures exact React application design and generates optimized static version matching Replit interface. Cleaned up unnecessary deployment files causing build conflicts.
+- June 23, 2025. DEPLOYMENT SOLUTION: Resolved Vite build timeout issues by creating simplified build script (simple-build.js) that generates self-contained HTML with embedded CSS matching exact Replit design. Eliminates dependency build complexity while preserving full calculator functionality and orange/yellow theme.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
