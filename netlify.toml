@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "node build-frontend.js"
+  command = "node netlify-build-final.js || node netlify-simple.js"
 
 [[redirects]]
   from = "/*"
@@ -11,6 +11,7 @@
   NODE_VERSION = "18"
   NPM_FLAGS = "--silent"
   VITE_BUILD_TIMEOUT = "600"
+  VITE_GA_MEASUREMENT_ID = "G-PLACEHOLDER"
 
 [[headers]]
   for = "/*"
