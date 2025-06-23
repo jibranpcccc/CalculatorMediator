@@ -1,6 +1,6 @@
 [build]
-  publish = "dist"
-  command = "./fast-deploy.sh"
+  publish = "dist/public"
+  command = "node capture-react-app.js"
 
 [[redirects]]
   from = "/*"
@@ -9,6 +9,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  NPM_FLAGS = "--silent"
+  VITE_BUILD_TIMEOUT = "600"
 
 [[headers]]
   for = "/*"
