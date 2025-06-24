@@ -36,6 +36,7 @@ import ConvertorECTS from "@/pages/ConvertorECTS";
 import CalculatorBursa from "@/pages/CalculatorBursa";
 import GhidECTS from "@/pages/GhidECTS";
 import ClasificariAcademice from "@/pages/ClasificariAcademice";
+import GhidBurse from "@/pages/GhidBurse";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -74,6 +75,7 @@ function Router() {
       <Route path="/calculator-bursa" component={CalculatorBursa} />
       <Route path="/ghid-ects" component={GhidECTS} />
       <Route path="/clasificari-academice" component={ClasificariAcademice} />
+      <Route path="/ghid-burse" component={GhidBurse} />
       <Route component={NotFound} />
     </Switch>
   );
