@@ -37,6 +37,10 @@ import CalculatorBursa from "@/pages/CalculatorBursa";
 import GhidECTS from "@/pages/GhidECTS";
 import ClasificariAcademice from "@/pages/ClasificariAcademice";
 import GhidBurse from "@/pages/GhidBurse";
+import UniversitatiStat from "@/pages/UniversitatiStat";
+import UniversitatiPrivate from "@/pages/UniversitatiPrivate";
+import ProgrameStudiu from "@/pages/ProgrameStudiu";
+import Admitere2025 from "@/pages/Admitere2025";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -76,6 +80,10 @@ function Router() {
       <Route path="/ghid-ects" component={GhidECTS} />
       <Route path="/clasificari-academice" component={ClasificariAcademice} />
       <Route path="/ghid-burse" component={GhidBurse} />
+      <Route path="/universitati-stat" component={UniversitatiStat} />
+      <Route path="/universitati-private" component={UniversitatiPrivate} />
+      <Route path="/programe-studiu" component={ProgrameStudiu} />
+      <Route path="/admitere-2025" component={Admitere2025} />
       <Route component={NotFound} />
     </Switch>
   );
