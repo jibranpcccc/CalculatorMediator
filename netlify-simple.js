@@ -40,8 +40,11 @@ try {
     fs.rmSync('dist-temp', { recursive: true, force: true });
   }
 
-  // Create SPA redirect
-  fs.writeFileSync('dist/_redirects', '/*    /index.html   200\n');
+  // Create _redirects with ads.txt redirect and SPA routing
+  const redirectsContent =  `/ads.txt  https://srv.adstxtmanager.com/74573/calculatormediefacultate.com  301
+/*    /index.html   200
+`;
+  fs.writeFileSync('dist/_redirects', redirectsContent);
 
   // Verify build
   if (!fs.existsSync('dist/index.html')) {
