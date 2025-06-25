@@ -3,6 +3,11 @@
   command = "node netlify-build-final.js || node netlify-simple.js"
 
 [[redirects]]
+  from = "/ads.txt"
+  to = "https://srv.adstxtmanager.com/74573/calculatormediefacultate.com"
+  status = 301
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
