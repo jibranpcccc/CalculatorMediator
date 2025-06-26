@@ -154,6 +154,17 @@ const createNetlifyConfig = () => {
 `;
   fs.writeFileSync('dist/_redirects', redirectsContent);
   console.log('✅ Created _redirects file with ads.txt redirect');
+
+  // Copy robots.txt and sitemap.xml from client/public to dist
+  if (fs.existsSync('client/public/robots.txt')) {
+    fs.copyFileSync('client/public/robots.txt', 'dist/robots.txt');
+    console.log('✅ Copied robots.txt');
+  }
+  
+  if (fs.existsSync('client/public/sitemap.xml')) {
+    fs.copyFileSync('client/public/sitemap.xml', 'dist/sitemap.xml');
+    console.log('✅ Copied sitemap.xml');
+  }
   
   // Create _headers file for security
   const headersContent = `/*

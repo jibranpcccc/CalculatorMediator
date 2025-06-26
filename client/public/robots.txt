@@ -1,17 +1,42 @@
 User-agent: *
 Allow: /
 
-# Important pages for SEO
+# High priority pages for SEO
 Allow: /
+Allow: /calculator-bursa
+Allow: /convertor-ects
 Allow: /blog
 Allow: /ghid-ects
 Allow: /clasificari-academice
-Allow: /calculator-bursa
-Allow: /convertor-ects
+Allow: /ghid-calcul-medie
+Allow: /ghid-burse
 Allow: /articol/*
+Allow: /despre
+Allow: /contact
+Allow: /faq
+
+# Block unnecessary paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*ref=*
+Disallow: /*?*source=*
 
 # Sitemap location
 Sitemap: https://calculatormediefacultate.com/sitemap.xml
 
-# Crawl delay (optional)
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Google-specific directives
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing-specific directives  
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1

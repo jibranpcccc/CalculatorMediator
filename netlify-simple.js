@@ -46,6 +46,14 @@ try {
 `;
   fs.writeFileSync('dist/_redirects', redirectsContent);
 
+  // Copy SEO files
+  if (fs.existsSync('client/public/robots.txt')) {
+    fs.copyFileSync('client/public/robots.txt', 'dist/robots.txt');
+  }
+  if (fs.existsSync('client/public/sitemap.xml')) {
+    fs.copyFileSync('client/public/sitemap.xml', 'dist/sitemap.xml');
+  }
+
   // Verify build
   if (!fs.existsSync('dist/index.html')) {
     throw new Error('index.html not found');
