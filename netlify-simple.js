@@ -41,7 +41,7 @@ try {
   }
 
   // Create _redirects with ads.txt redirect and SPA routing
-  const redirectsContent =  `/ads.txt  https://srv.adstxtmanager.com/74573/calculatormediefacultate.com  301
+  const redirectsContent =  `/ads.txt  https://srv.adstxtmanager.com/19390/calculatormediefacultate.com  301
 /*    /index.html   200
 `;
   fs.writeFileSync('dist/_redirects', redirectsContent);
