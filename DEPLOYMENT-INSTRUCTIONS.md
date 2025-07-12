@@ -1,57 +1,33 @@
-# 🚀 DEPLOYMENT INSTRUCTIONS - Ads.txt Redirect Fix
+# 🚀 DEPLOYMENT INSTRUCTIONS
 
-## Current Status
-- ❌ Live site still serves ads.txt content directly
-- ✅ All redirect configurations are correctly set up in Replit
-- ✅ Build files are ready for deployment
-
-## The Problem
-The redirect configuration exists in the build files but hasn't been deployed to Netlify yet. The live site is still using the old configuration.
-
-## The Solution
-Deploy the updated build files to Netlify to activate the redirect.
-
-## Files Ready for Deployment
-```
-dist/
-├── index.html         (10.6KB - Complete calculator app)
-├── _redirects         (104B - Redirect configuration)
-├── _headers          (306B - Security headers)
-├── robots.txt        (101B - SEO configuration)
-└── sitemap.xml       (279B - Search engine indexing)
-```
-
-## Redirect Configuration
-```
-/ads.txt  https://srv.adstxtmanager.com/19390/calculatormediefacultate.com  301
-/*    /index.html   200
-```
-
-## How to Deploy
-1. **Commit Changes**: Push all files to your repository
-2. **Netlify Deploy**: Trigger a new deployment
-3. **Wait for Build**: Allow build process to complete
-4. **Test Redirect**: Check if the redirect works
-
-## Testing After Deployment
-```bash
-curl -I https://calculatormediefacultate.com/ads.txt
-# Should return: HTTP/2 301 (redirect)
-# Currently returns: HTTP/2 200 (direct content)
-```
+## Quick Deploy (Recommended)
+1. **Open Netlify Dashboard**: Go to https://app.netlify.com/
+2. **Manual Deploy**: Click "Deploy manually" or drag & drop
+3. **Upload Files**: Drag the entire `dist` folder to the deploy area
+4. **Wait**: Let Netlify process the deployment (1-2 minutes)
+5. **Test**: Visit https://calculatormediefacultate.com/ads.txt
 
 ## Expected Result
-After deployment:
-- ✅ `/ads.txt` will redirect to ads.txt manager
-- ✅ Site will work normally
-- ✅ SEO and security headers will be active
+The URL should redirect to: https://srv.adstxtmanager.com/19390/calculatormediefacultate.com
+
+## Files Ready for Deployment
+- ✅ `dist/_redirects` - Redirect configuration
+- ✅ `dist/netlify.toml` - Netlify settings
+- ✅ `dist/index.html` - Main site
+- ✅ `dist/robots.txt` - SEO configuration
+- ✅ `dist/sitemap.xml` - Site structure
+
+## Verification Commands
+```bash
+# Test redirect
+curl -I https://calculatormediefacultate.com/ads.txt
+
+# Should return:
+# HTTP/2 301
+# Location: https://srv.adstxtmanager.com/19390/calculatormediefacultate.com
+```
 
 ## Troubleshooting
-If redirect doesn't work after deployment:
-1. Check Netlify deploy logs
-2. Verify _redirects file is in publish directory
-3. Check for any Netlify configuration conflicts
-4. Ensure no other ads.txt file exists in the site
-
-## Support
-The redirect is correctly configured and will work once deployed to Netlify.
+- **Still showing ads.txt content**: Clear cache, wait 2 minutes
+- **404 error**: Check if deployment completed successfully
+- **No redirect**: Verify _redirects file was uploaded correctly
