@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Medie Facultate - Calculează Media Universității</title>
+    <meta name="description" content="Calculator gratuit pentru calcularea mediei la facultate cu credite ECTS. Clasificări academice, conversii note și ghiduri complete pentru studenți.">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #f8fafc; color: #333; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; padding: 2rem; text-align: center; }
+        .calculator { background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 2rem 0; }
+        .btn { background: #f97316; color: white; padding: 12px 24px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .btn:hover { background: #ea580c; }
+        .result { background: #f0f9ff; padding: 1rem; border-radius: 5px; margin-top: 1rem; }
+        .input-group { margin: 1rem 0; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Calculator Medie Facultate</h1>
+        <p>Calculează media cu credite ECTS</p>
+    </div>
+    
+    <div class="container">
+        <div class="calculator">
+            <h2>Calculator Media Ponderată</h2>
+            <div class="input-group">
+                <input type="text" id="subject1" placeholder="Materia 1" />
+                <input type="number" id="grade1" placeholder="Nota (5-10)" min="5" max="10" step="0.1" />
+                <input type="number" id="credits1" placeholder="Credite ECTS" min="1" max="30" />
+            </div>
+            <div class="input-group">
+                <input type="text" id="subject2" placeholder="Materia 2" />
+                <input type="number" id="grade2" placeholder="Nota (5-10)" min="5" max="10" step="0.1" />
+                <input type="number" id="credits2" placeholder="Credite ECTS" min="1" max="30" />
+            </div>
+            <button class="btn" onclick="calculateGrade()">Calculează Media</button>
+            <div id="result" class="result" style="display: none;"></div>
+        </div>
+    </div>
+    
+    <script>
+        function calculateGrade() {
+            const grade1 = parseFloat(document.getElementById('grade1').value) || 0;
+            const credits1 = parseFloat(document.getElementById('credits1').value) || 0;
+            const grade2 = parseFloat(document.getElementById('grade2').value) || 0;
+            const credits2 = parseFloat(document.getElementById('credits2').value) || 0;
+            
+            if (grade1 > 0 && credits1 > 0) {
+                const totalWeighted = (grade1 * credits1) + (grade2 * credits2);
+                const totalCredits = credits1 + credits2;
+                const average = totalWeighted / totalCredits;
+                
+                let classification = '';
+                if (average >= 9.5) classification = 'Summa Cum Laude';
+                else if (average >= 8.5) classification = 'Magna Cum Laude';
+                else if (average >= 7.5) classification = 'Cum Laude';
+                else if (average >= 6.5) classification = 'Bine';
+                else if (average >= 5.5) classification = 'Satisfăcător';
+                else classification = 'Respins';
+                
+                document.getElementById('result').style.display = 'block';
+                document.getElementById('result').innerHTML = `
+                    <h3>Rezultat</h3>
+                    <p><strong>Media ponderată:</strong> ${average.toFixed(2)}</p>
+                    <p><strong>Clasificare:</strong> ${classification}</p>
+                    <p><strong>Total credite:</strong> ${totalCredits} ECTS</p>
+                `;
+            } else {
+                alert('Vă rugăm să completați cel puțin prima materie cu nota și creditele.');
+            }
+        }
+    </script>
+</body>
+</html>
