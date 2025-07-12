@@ -113,6 +113,7 @@ Calculator Medie Facultate is a comprehensive Romanian university grade calculat
 - June 25, 2025. ADS.TXT REDIRECT: Added ads.txt redirect configuration to netlify.toml for monetization setup. Configured permanent redirect from /ads.txt to Ads.txt Manager service URL. Redirect will be active after next Netlify deployment.
 - June 26, 2025. SEARCH CONSOLE INDEXING FIXES: Comprehensive solution for Google Search Console indexing issues. Enhanced HTML with complete meta tags, Open Graph, Twitter Cards, structured data (JSON-LD), and static fallback content in noscript tags. Optimized robots.txt with specific bot directives and crawling instructions. Updated build scripts to properly deploy SEO files. Added SEO validation tool for ongoing monitoring.
 - July 12, 2025. ADS.TXT REDIRECT UPDATE: Updated ads.txt redirect URL from 74573 to 19390 account ID across all build files. Modified netlify-build-final.js, netlify-simple.js, netlify.toml, and client/public/_redirects to point to https://srv.adstxtmanager.com/19390/calculatormediefacultate.com for proper monetization setup.
+- July 12, 2025. REDIRECT DEPLOYMENT ISSUE: The redirect configuration is correctly set up in all files but requires deployment to Netlify to become active. Created complete deployment package in dist-final/ with force flags and proper configuration. The live site still serves old configuration until deployment happens.
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.

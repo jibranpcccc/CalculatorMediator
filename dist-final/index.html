@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Medie Facultate - Calculează Media Universității</title>
+    <meta name="description" content="Calculator gratuit pentru calcularea mediei la facultate cu credite ECTS. Clasificări academice, conversii note și ghiduri complete pentru studenți.">
+    <meta name="keywords" content="calculator medie facultate, credite ECTS, nota medie, clasificare academica, universitate">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Calculator Medie Facultate">
+    <meta property="og:description" content="Calculator gratuit pentru calcularea mediei la facultate cu credite ECTS">
+    <meta property="og:url" content="https://calculatormediefacultate.com">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://calculatormediefacultate.com">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f8fafc; line-height: 1.6; color: #1f2937; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; padding: 2rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .tagline { font-size: 1rem; opacity: 0.9; }
+        .main { padding: 3rem 0; }
+        .hero { text-align: center; margin-bottom: 3rem; }
+        .hero h1 { font-size: 3rem; color: #1f2937; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; color: #6b7280; max-width: 600px; margin: 0 auto; }
+        .calculator { background: white; border-radius: 16px; padding: 2.5rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 3rem; }
+        .calc-header { text-align: center; margin-bottom: 2rem; }
+        .calc-header h2 { color: #1f2937; font-size: 2rem; margin-bottom: 0.5rem; }
+        .calc-header p { color: #6b7280; font-size: 1.1rem; }
+        .subjects-grid { display: grid; gap: 2rem; margin-bottom: 2rem; }
+        .subject-card { background: #f8fafc; border: 2px solid #e5e7eb; border-radius: 12px; padding: 2rem; transition: all 0.3s ease; }
+        .subject-card:hover { border-color: #f97316; box-shadow: 0 5px 15px rgba(249,115,22,0.1); }
+        .subject-card h3 { color: #374151; margin-bottom: 1rem; font-size: 1.2rem; }
+        .input-group { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; }
+        .input-group input { padding: 1rem; border: 2px solid #e5e7eb; border-radius: 8px; font-size: 1rem; transition: border-color 0.3s ease; }
+        .input-group input:focus { outline: none; border-color: #f97316; box-shadow: 0 0 0 3px rgba(249,115,22,0.1); }
+        .btn { background: linear-gradient(135deg, #f97316 0%, #fb923c 100%); color: white; padding: 1.2rem 2.5rem; border: none; border-radius: 10px; cursor: pointer; font-weight: 600; font-size: 1.1rem; transition: all 0.3s ease; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(249,115,22,0.3); }
+        .btn-secondary { background: #6b7280; padding: 0.8rem 1.5rem; font-size: 0.9rem; }
+        .btn-secondary:hover { background: #4b5563; transform: translateY(-1px); }
+        .result { margin-top: 2rem; padding: 2rem; background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%); border-radius: 12px; border: 2px solid #d1fae5; }
+        .result h3 { color: #065f46; margin-bottom: 1rem; font-size: 1.5rem; }
+        .result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+        .result-item { background: white; padding: 1rem; border-radius: 8px; border: 1px solid #d1fae5; }
+        .result-label { font-size: 0.9rem; color: #6b7280; margin-bottom: 0.5rem; }
+        .result-value { font-size: 1.3rem; font-weight: bold; color: #059669; }
+        .footer { background: #1f2937; color: white; padding: 3rem 0; margin-top: 4rem; }
+        .footer-content { text-align: center; }
+        .footer h3 { margin-bottom: 1rem; }
+        .footer p { opacity: 0.8; }
+        @media (max-width: 768px) {
+            .input-group { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            .calculator { padding: 1.5rem; }
+            .result-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">Calculator Medie Facultate</div>
+                <div class="tagline">Calculează media cu credite ECTS</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="main">
+            <div class="hero">
+                <h1>Calculator Medie Facultate</h1>
+                <p>Calculează media ponderată a anului universitar folosind creditele ECTS pentru fiecare materie. Obține clasificarea academică și echivalența ECTS.</p>
+            </div>
+            
+            <div class="calculator">
+                <div class="calc-header">
+                    <h2>Calculator Media cu Credite ECTS</h2>
+                    <p>Introdu materiile, notele și creditele ECTS pentru a calcula media ponderată</p>
+                </div>
+                
+                <div id="subjects-container" class="subjects-grid">
+                    <div class="subject-card">
+                        <h3>Materia 1</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Numele materiei" class="subject-name" data-subject="1">
+                            <input type="number" placeholder="Nota (5-10)" min="5" max="10" step="0.1" class="subject-grade" data-subject="1">
+                            <input type="number" placeholder="Credite ECTS" min="1" max="30" class="subject-credits" data-subject="1">
+                        </div>
+                    </div>
+                    
+                    <div class="subject-card">
+                        <h3>Materia 2</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Numele materiei" class="subject-name" data-subject="2">
+                            <input type="number" placeholder="Nota (5-10)" min="5" max="10" step="0.1" class="subject-grade" data-subject="2">
+                            <input type="number" placeholder="Credite ECTS" min="1" max="30" class="subject-credits" data-subject="2">
+                        </div>
+                    </div>
+                    
+                    <div class="subject-card">
+                        <h3>Materia 3</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Numele materiei" class="subject-name" data-subject="3">
+                            <input type="number" placeholder="Nota (5-10)" min="5" max="10" step="0.1" class="subject-grade" data-subject="3">
+                            <input type="number" placeholder="Credite ECTS" min="1" max="30" class="subject-credits" data-subject="3">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button class="btn btn-secondary" onclick="addSubject()">+ Adaugă Materie</button>
+                    <button class="btn" onclick="calculateGrade()">Calculează Media</button>
+                </div>
+                
+                <div id="result" class="result" style="display: none;">
+                    <h3>Rezultatele Calculului</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-label">Media Ponderată</div>
+                            <div class="result-value" id="weighted-average">-</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Clasificare Academică</div>
+                            <div class="result-value" id="classification">-</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Nota ECTS</div>
+                            <div class="result-value" id="ects-grade">-</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Total Credite</div>
+                            <div class="result-value" id="total-credits">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3>Calculator Medie Facultate</h3>
+                <p>Calculator gratuit pentru calcularea mediei universitare cu credite ECTS</p>
+                <p style="margin-top: 1rem;">© 2025 Calculator Medie Facultate. Toate drepturile rezervate.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let subjectCount = 3;
+        
+        function addSubject() {
+            subjectCount++;
+            const container = document.getElementById('subjects-container');
+            const subjectDiv = document.createElement('div');
+            subjectDiv.className = 'subject-card';
+            subjectDiv.innerHTML = `
+                <h3>Materia ${subjectCount}</h3>
+                <div class="input-group">
+                    <input type="text" placeholder="Numele materiei" class="subject-name" data-subject="${subjectCount}">
+                    <input type="number" placeholder="Nota (5-10)" min="5" max="10" step="0.1" class="subject-grade" data-subject="${subjectCount}">
+                    <input type="number" placeholder="Credite ECTS" min="1" max="30" class="subject-credits" data-subject="${subjectCount}">
+                </div>
+            `;
+            container.appendChild(subjectDiv);
+        }
+        
+        function calculateGrade() {
+            const subjects = [];
+            const subjectCards = document.querySelectorAll('.subject-card');
+            
+            subjectCards.forEach(card => {
+                const nameInput = card.querySelector('.subject-name');
+                const gradeInput = card.querySelector('.subject-grade');
+                const creditsInput = card.querySelector('.subject-credits');
+                
+                const name = nameInput.value.trim();
+                const grade = parseFloat(gradeInput.value);
+                const credits = parseFloat(creditsInput.value);
+                
+                if (name && grade >= 5 && grade <= 10 && credits > 0) {
+                    subjects.push({ name, grade, credits });
+                }
+            });
+            
+            if (subjects.length === 0) {
+                alert('Vă rugăm să completați cel puțin o materie cu toate datele necesare.');
+                return;
+            }
+            
+            const totalWeightedGrades = subjects.reduce((sum, s) => sum + (s.grade * s.credits), 0);
+            const totalCredits = subjects.reduce((sum, s) => sum + s.credits, 0);
+            const average = totalWeightedGrades / totalCredits;
+            
+            let classification, ectsGrade;
+            
+            if (average >= 9.5) {
+                classification = 'Summa Cum Laude';
+                ectsGrade = 'A (Excellent)';
+            } else if (average >= 8.5) {
+                classification = 'Magna Cum Laude';
+                ectsGrade = 'B (Foarte Bine)';
+            } else if (average >= 7.5) {
+                classification = 'Cum Laude';
+                ectsGrade = 'C (Bine)';
+            } else if (average >= 6.5) {
+                classification = 'Bine';
+                ectsGrade = 'D (Satisfăcător)';
+            } else if (average >= 5.5) {
+                classification = 'Satisfăcător';
+                ectsGrade = 'E (Suficient)';
+            } else {
+                classification = 'Respins';
+                ectsGrade = 'F (Respins)';
+            }
+            
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('weighted-average').textContent = average.toFixed(2);
+            document.getElementById('classification').textContent = classification;
+            document.getElementById('ects-grade').textContent = ectsGrade;
+            document.getElementById('total-credits').textContent = totalCredits + ' ECTS';
+            
+            // Smooth scroll to results
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
