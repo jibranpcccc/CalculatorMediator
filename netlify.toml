@@ -6,6 +6,7 @@
   from = "/ads.txt"
   to = "https://srv.adstxtmanager.com/19390/calculatormediefacultate.com"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/*"
