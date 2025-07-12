@@ -1,0 +1,6 @@
+# Force redirect for ads.txt - Override any existing file
+/ads.txt https://srv.adstxtmanager.com/19390/calculatormediefacultate.com 301!
+/ads.txt/* https://srv.adstxtmanager.com/19390/calculatormediefacultate.com 301!
+
+# Fallback for SPA
+/* /index.html 200

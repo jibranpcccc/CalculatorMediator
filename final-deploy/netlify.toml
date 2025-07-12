@@ -1,0 +1,29 @@
+[build]
+  publish = "."
+  command = "echo 'Deployment complete'"
+
+# Multiple redirect configurations for maximum compatibility
+[[redirects]]
+  from = "/ads.txt"
+  to = "https://srv.adstxtmanager.com/19390/calculatormediefacultate.com"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ads.txt/*"
+  to = "https://srv.adstxtmanager.com/19390/calculatormediefacultate.com"
+  status = 301
+  force = true
+
+# Headers to prevent caching of ads.txt
+[[headers]]
+  for = "/ads.txt"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+    Pragma = "no-cache"
+    Expires = "0"
+    X-Robots-Tag = "noindex, nofollow"
+
+# Build settings to ensure redirects work
+[build.environment]
+  NODE_VERSION = "18"
