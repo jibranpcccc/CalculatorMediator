@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Medie Facultate - Calculează Media Universității</title>
+    <meta name="description" content="Calculator gratuit pentru calcularea mediei la facultate cu credite ECTS">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; text-align: center; margin-bottom: 30px; }
+        .calculator { background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .input-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; }
+        .btn { background: #007cba; color: white; padding: 12px 30px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn:hover { background: #005a8b; }
+        .result { background: #e8f5e8; padding: 15px; border-radius: 4px; margin-top: 20px; display: none; }
+        .footer { text-align: center; margin-top: 30px; color: #666; }
+        <!-- DEPLOYMENT TIMESTAMP: 2025-07-13-07:40 -->
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculator Medie Facultate</h1>
+        <div class="calculator">
+            <div class="input-group">
+                <label>Materia 1:</label>
+                <input type="text" id="subject1" placeholder="Numele materiei">
+                <input type="number" id="grade1" placeholder="Nota (5-10)" min="5" max="10" step="0.1">
+                <input type="number" id="credits1" placeholder="Credite ECTS" min="1" max="30">
+            </div>
+            <div class="input-group">
+                <label>Materia 2:</label>
+                <input type="text" id="subject2" placeholder="Numele materiei">
+                <input type="number" id="grade2" placeholder="Nota (5-10)" min="5" max="10" step="0.1">
+                <input type="number" id="credits2" placeholder="Credite ECTS" min="1" max="30">
+            </div>
+            <button class="btn" onclick="calculateGrade()">Calculează Media</button>
+            <div id="result" class="result"></div>
+        </div>
+        <div class="footer">
+            <p>Calculator Medie Facultate - Calculează media cu credite ECTS</p>
+            <p>© 2025 Calculator Medie Facultate. Toate drepturile rezervate.</p>
+        </div>
+    </div>
+    <script>
+        function calculateGrade() {
+            const grade1 = parseFloat(document.getElementById('grade1').value) || 0;
+            const credits1 = parseFloat(document.getElementById('credits1').value) || 0;
+            const grade2 = parseFloat(document.getElementById('grade2').value) || 0;
+            const credits2 = parseFloat(document.getElementById('credits2').value) || 0;
+            
+            if (grade1 === 0 || credits1 === 0) {
+                alert('Vă rugăm să completați cel puțin prima materie cu nota și creditele.');
+                return;
+            }
+            
+            const totalWeighted = (grade1 * credits1) + (grade2 * credits2);
+            const totalCredits = credits1 + credits2;
+            const average = totalWeighted / totalCredits;
+            
+            let classification = '';
+            if (average >= 9.5) classification = 'Summa Cum Laude';
+            else if (average >= 8.5) classification = 'Magna Cum Laude';
+            else if (average >= 7.5) classification = 'Cum Laude';
+            else if (average >= 6.5) classification = 'Bine';
+            else if (average >= 5.5) classification = 'Satisfăcător';
+            else classification = 'Respins';
+            
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.innerHTML = `
+                <h3>Rezultat Calculat</h3>
+                <p><strong>Media ponderată:</strong> ${average.toFixed(2)}</p>
+                <p><strong>Clasificare academică:</strong> ${classification}</p>
+                <p><strong>Total credite:</strong> ${totalCredits} ECTS</p>
+                <p><strong>Materii calculate:</strong> ${grade2 > 0 ? '2' : '1'}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

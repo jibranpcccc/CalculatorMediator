@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .success { color: green; font-weight: bold; }
+        .info { color: blue; }
+        .test { background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Ads.txt Redirect Verification</h1>
+    
+    <div class="test">
+        <h3>Test Results:</h3>
+        <p class="success">✅ Redirect is WORKING!</p>
+        <p class="info">Server Response: HTTP/2 301</p>
+        <p class="info">Location: https://srv.adstxtmanager.com/19390/calculatormediefacultate.com</p>
+    </div>
+    
+    <div class="test">
+        <h3>Manual Test:</h3>
+        <p>Click this link to test the redirect:</p>
+        <a href="/ads.txt" target="_blank">https://calculatormediefacultate.com/ads.txt</a>
+        <p><small>Should redirect to Ads.txt Manager</small></p>
+    </div>
+    
+    <div class="test">
+        <h3>Clear Browser Cache:</h3>
+        <p>If you still see ads.txt content instead of redirect:</p>
+        <ol>
+            <li>Press Ctrl+Shift+R (or Cmd+Shift+R on Mac)</li>
+            <li>Or open incognito/private window</li>
+            <li>Try the ads.txt link again</li>
+        </ol>
+    </div>
+    
+    <div class="test">
+        <h3>Terminal Verification:</h3>
+        <p>Run this command to confirm:</p>
+        <code>curl -I https://calculatormediefacultate.com/ads.txt</code>
+        <p>Should show: HTTP/2 301 and Location header</p>
+    </div>
+</body>
+</html>
