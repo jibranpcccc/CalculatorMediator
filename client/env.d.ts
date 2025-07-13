@@ -7,3 +7,13 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
+
+// Ezoic types
+declare global {
+  interface Window {
+    ezstandalone: {
+      cmd: Array<() => void>;
+      showAds: (id: number) => void;
+    };
+  }
+}

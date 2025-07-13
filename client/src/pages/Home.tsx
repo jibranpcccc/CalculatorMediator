@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -23,6 +23,16 @@ export default function Home() {
   // Get articles from static data
   const articles = getAllArticles().slice(0, 3); // Show first 3 articles
   const articlesLoading = false;
+
+  // Initialize Ezoic ads when component mounts
+  useEffect(() => {
+    // Ensure ezstandalone is available and push the ad command
+    if (window.ezstandalone && window.ezstandalone.cmd) {
+      window.ezstandalone.cmd.push(function () {
+        window.ezstandalone.showAds(101);
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -166,6 +176,11 @@ export default function Home() {
             </div>
             
             <TrustIndicators />
+          </section>
+
+          {/* Ezoic Ad Placement */}
+          <section className="text-center mb-8 sm:mb-12">
+            <div id="ezoic-pub-ad-placeholder-101"></div>
           </section>
 
           {/* Grade Calculator */}
